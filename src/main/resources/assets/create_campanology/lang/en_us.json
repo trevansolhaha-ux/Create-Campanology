@@ -1,0 +1,20 @@
+{
+  "itemGroup.create_campanology": "Example Mod Tab",
+  "block.create_campanology.example_block": "Example Block",
+  "item.create_campanology.example_item": "Example Item",
+
+  "create_campanology.configuration.title": "Create: Campanology Configs",
+  "create_campanology.configuration.section.create_campanology.common.toml": "Create: Campanology Configs",
+  "create_campanology.configuration.section.create_campanology.common.toml.title": "Create: Campanology Configs",
+  "create_campanology.configuration.items": "Item List",
+  "create_campanology.configuration.logDirtBlock": "Log Dirt Block",
+  "create_campanology.configuration.magicNumberIntroduction": "Magic Number Text",
+  "create_campanology.configuration.magicNumber": "Magic Number",
+
+
+  "item.create_campanology.musical_bronze_ingot": "Musical Bronze Ingot",
+  "item.create_campanology.musical_tin_ingot": "Musical Tin Ingot",
+  "item.create_campanology.raw_musical_tin": "Raw Musical Tin",
+
+  "block.create_campanology.musical_tin_block": "Musical Tin Block"
+}
