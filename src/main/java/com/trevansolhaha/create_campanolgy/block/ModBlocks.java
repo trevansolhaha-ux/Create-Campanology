@@ -27,7 +27,37 @@ public class ModBlocks {
                     .strength(5.0f,6.0f)
             ));
 
+    public static final DeferredBlock<Block> MUSICAL_BRONZE_BLOCK = registerBlock("musical_bronze_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.METAL)
+                    .mapColor(MapColor.COLOR_ORANGE)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0f,6.0f)
+            ));
 
+    public static final DeferredBlock<Block> MUSICAL_TIN_ORE = registerBlock("musical_tin_ore",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.STONE)
+                    .mapColor(MapColor.STONE)
+                    .requiresCorrectToolForDrops()
+                    .strength(3.0f,3.0f)
+            ));
+
+    public static final DeferredBlock<Block> MUSICAL_ZINC_BLOCK = registerBlock("musical_zinc_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.METAL)
+                    .mapColor(MapColor.METAL)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0f,5.0f)
+            ));
+
+    public static final DeferredBlock<Block> MUSICAL_COPPER_BLOCK = registerBlock("musical_copper_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.METAL)
+                    .mapColor(MapColor.COLOR_ORANGE)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0f,5.0f)
+            ));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name,block);

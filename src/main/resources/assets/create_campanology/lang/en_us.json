@@ -15,6 +15,13 @@
   "item.create_campanology.musical_bronze_ingot": "Musical Bronze Ingot",
   "item.create_campanology.musical_tin_ingot": "Musical Tin Ingot",
   "item.create_campanology.raw_musical_tin": "Raw Musical Tin",
+  "item.create_campanology.musical_copper_ingot": "Musical Copper Ingot",
+  "item.create_campanology.musical_zinc_ingot": "Musical Zinc Ingot",
+  "item.create_campanology.musical_brass_ingot": "Musical Brass Ingot",
 
-  "block.create_campanology.musical_tin_block": "Musical Tin Block"
+  "block.create_campanology.musical_tin_block": "Musical Tin Block",
+  "block.create_campanology.musical_bronze_block": "Musical Bronze Block",
+  "block.create_campanology.musical_tin_ore":"Musical Tin Ore",
+  "block.create_campanology.musical_zinc_block": "Musical Zinc Block",
+  "block.create_campanology.musical_copper_block": "Musical Copper Block"
 }

@@ -76,7 +76,15 @@ public class CreateCampanology
             event.accept(ModItems.MUSICAL_BRONZE_INGOT);
             event.accept(ModItems.MUSICAL_TIN_INGOT);
             event.accept(ModItems.RAW_MUSICAL_TIN);
+            event.accept(ModItems.MUSICAL_COPPER_INGOT);
+            event.accept(ModItems.MUSICAL_ZINC_INGOT);
+            event.accept(ModItems.MUSICAL_BRASS_INGOT);
+
             event.accept(ModBlocks.MUSICAL_TIN_BLOCK);
+            event.accept(ModBlocks.MUSICAL_BRONZE_BLOCK);
+            event.accept(ModBlocks.MUSICAL_TIN_ORE);
+            event.accept(ModBlocks.MUSICAL_ZINC_BLOCK);
+            event.accept(ModBlocks.MUSICAL_COPPER_BLOCK);
         }
     }
 
