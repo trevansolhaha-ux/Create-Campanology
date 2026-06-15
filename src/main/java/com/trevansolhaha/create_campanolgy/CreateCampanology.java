@@ -2,25 +2,14 @@ package com.trevansolhaha.create_campanolgy;
 
 import com.trevansolhaha.create_campanolgy.block.ModBlocks;
 import com.trevansolhaha.create_campanolgy.item.ModItems;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
-import net.neoforged.api.distmarker.Dist;
+import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -28,11 +17,8 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
@@ -44,6 +30,33 @@ public class CreateCampanology
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
+    // Register a creative tab for our mod
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CREATE_CAMPANOLOGY_TAB =
+            CREATIVE_MODE_TABS.register("create_campanology_tab",
+                    () -> CreativeModeTab.builder()
+                            .title(Component.translatable("itemGroup.create_campanology"))
+                            .icon(() -> new ItemStack(ModItems.MUSICAL_BRONZE_INGOT.get()))
+                            .displayItems((parameters, output) -> {
+                                // Add all items from ModItems
+                                output.accept(ModItems.MUSICAL_BRONZE_INGOT.get());
+                                output.accept(ModItems.MUSICAL_TIN_INGOT.get());
+                                output.accept(ModItems.RAW_MUSICAL_TIN.get());
+                                output.accept(ModItems.MUSICAL_COPPER_INGOT.get());
+                                output.accept(ModItems.MUSICAL_ZINC_INGOT.get());
+                                output.accept(ModItems.MUSICAL_BRASS_INGOT.get());
+
+                                // Add all blocks from ModBlocks (registered as BlockItems)
+                                output.accept(ModBlocks.MUSICAL_TIN_BLOCK.get());
+                                output.accept(ModBlocks.MUSICAL_BRONZE_BLOCK.get());
+                                output.accept(ModBlocks.MUSICAL_TIN_ORE.get());
+                                output.accept(ModBlocks.MUSICAL_ZINC_BLOCK.get());
+                                output.accept(ModBlocks.MUSICAL_COPPER_BLOCK.get());
+                            })
+                            .build());
+
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public CreateCampanology(IEventBus modEventBus, ModContainer modContainer) {
@@ -53,13 +66,13 @@ public class CreateCampanology
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        // Register the creative mode tab
+        CREATIVE_MODE_TABS.register(modEventBus);
+
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (CreateCampanology) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
-
-        // Register the item to a creative tab
-        modEventBus.addListener(this::addCreative);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -68,26 +81,6 @@ public class CreateCampanology
     private void commonSetup(FMLCommonSetupEvent event) {
 
     }
-
-
-    // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModItems.MUSICAL_BRONZE_INGOT);
-            event.accept(ModItems.MUSICAL_TIN_INGOT);
-            event.accept(ModItems.RAW_MUSICAL_TIN);
-            event.accept(ModItems.MUSICAL_COPPER_INGOT);
-            event.accept(ModItems.MUSICAL_ZINC_INGOT);
-            event.accept(ModItems.MUSICAL_BRASS_INGOT);
-
-            event.accept(ModBlocks.MUSICAL_TIN_BLOCK);
-            event.accept(ModBlocks.MUSICAL_BRONZE_BLOCK);
-            event.accept(ModBlocks.MUSICAL_TIN_ORE);
-            event.accept(ModBlocks.MUSICAL_ZINC_BLOCK);
-            event.accept(ModBlocks.MUSICAL_COPPER_BLOCK);
-        }
-    }
-
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
