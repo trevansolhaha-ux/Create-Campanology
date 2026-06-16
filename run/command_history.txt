@@ -2,3 +2,5 @@
 /effect give @a minecraft:hunger infinite
 /effect clear @a minecraft:hunger
 /time set night
+/gamerule doDaylightCycle false
+/time set day
