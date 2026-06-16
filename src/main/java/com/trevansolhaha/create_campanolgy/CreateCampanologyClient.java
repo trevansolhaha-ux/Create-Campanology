@@ -1,4 +1,4 @@
-package com.trevansolhaha.create_campanolgy;
+package com.trevansolhaha.create_campanology;
 
 import com.trevansolhaha.create_campanolgy.client.renderer.block.*;
 import com.trevansolhaha.create_campanolgy.init.ModBlockEntities;

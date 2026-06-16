@@ -1,5 +1,7 @@
-package com.trevansolhaha.create_campanolgy.block;
+package com.trevansolhaha.create_campanology.block;
 
+import com.trevansolhaha.create_campanology.CreateCampanology;
+import com.trevansolhaha.create_campanology.item.ModItems;
 import com.trevansolhaha.create_campanolgy.CreateCampanology;
 import com.trevansolhaha.create_campanolgy.content.bell.*;
 import com.trevansolhaha.create_campanolgy.item.ModItems;
@@ -13,26 +15,28 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import javax.swing.*;
 import java.util.function.Supplier;
 
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(CreateCampanology.MOD_ID);
 
+
     public static final DeferredBlock<Block> MUSICAL_TIN_BLOCK = registerBlock("musical_tin_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .sound(SoundType.METAL)
+                    .sound(SoundType.COPPER)
                     .mapColor(MapColor.METAL)
                     .requiresCorrectToolForDrops()
                     .strength(5.0f,6.0f)
             ));
 
-    public static final DeferredBlock<Block> MUSICAL_BRONZE_BLOCK = registerBlock("musical_bronze_block",
+    public static final DeferredBlock<Block> NETHER_MUSICAL_TIN_ORE = registerBlock("nether_musical_tin_ore",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .sound(SoundType.METAL)
-                    .mapColor(MapColor.COLOR_ORANGE)
+                    .sound(SoundType.NETHER_GOLD_ORE)
+                    .mapColor(MapColor.NETHER)
                     .requiresCorrectToolForDrops()
-                    .strength(5.0f,6.0f)
+                    .strength(3.0f,3.0f)
             ));
 
     public static final DeferredBlock<Block> MUSICAL_TIN_ORE = registerBlock("musical_tin_ore",
@@ -43,9 +47,17 @@ public class ModBlocks {
                     .strength(3.0f,3.0f)
             ));
 
+    public static final DeferredBlock<Block> MUSICAL_BRONZE_BLOCK = registerBlock("musical_bronze_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.COPPER)
+                    .mapColor(MapColor.COLOR_ORANGE)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0f,5.0f)
+            ));
+
     public static final DeferredBlock<Block> MUSICAL_ZINC_BLOCK = registerBlock("musical_zinc_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .sound(SoundType.METAL)
+                    .sound(SoundType.COPPER)
                     .mapColor(MapColor.METAL)
                     .requiresCorrectToolForDrops()
                     .strength(5.0f,5.0f)
@@ -53,8 +65,55 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> MUSICAL_COPPER_BLOCK = registerBlock("musical_copper_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .sound(SoundType.METAL)
+                    .sound(SoundType.COPPER)
                     .mapColor(MapColor.COLOR_ORANGE)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0f,5.0f)
+            ));
+
+    public static final DeferredBlock<Block> MUSICAL_ANDESITE_BLOCK = registerBlock("musical_andesite_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.COPPER)
+                    .mapColor(MapColor.METAL)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0f,5.0f)
+            ));
+    public static final DeferredBlock<Block> MUSICAL_BRASS_BLOCK = registerBlock("musical_brass_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.COPPER)
+                    .mapColor(MapColor.GOLD)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0f,5.0f)
+            ));
+
+    public static final DeferredBlock<Block> MUSICAL_GOLD_BLOCK = registerBlock("musical_gold_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.COPPER)
+                    .mapColor(MapColor.GOLD)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0f,5.0f)
+            ));
+
+    public static final DeferredBlock<Block> MUSICAL_IRON_BLOCK = registerBlock("musical_iron_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.COPPER)
+                    .mapColor(MapColor.METAL)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0f,5.0f)
+            ));
+
+    public static final DeferredBlock<Block> OXIDISED_MUSICAL_BLOCK = registerBlock("oxidised_musical_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.COPPER)
+                    .mapColor(MapColor.COLOR_CYAN)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0f,5.0f)
+            ));
+
+    public static final DeferredBlock<Block> RAW_MUSICAL_TIN_BLOCK = registerBlock("raw_musical_tin_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.STONE)
+                    .mapColor(MapColor.METAL)
                     .requiresCorrectToolForDrops()
                     .strength(5.0f,5.0f)
             ));

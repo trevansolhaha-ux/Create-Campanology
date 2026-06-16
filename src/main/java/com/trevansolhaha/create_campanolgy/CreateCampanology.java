@@ -1,4 +1,10 @@
-package com.trevansolhaha.create_campanolgy;
+package com.trevansolhaha.create_campanology;
+
+import com.trevansolhaha.create_campanology.block.ModBlocks;
+import com.trevansolhaha.create_campanology.item.ModItems;
+import org.slf4j.Logger;
+
+import com.mojang.logging.LogUtils;
 
 import com.mojang.logging.LogUtils;
 import com.trevansolhaha.create_campanolgy.block.ModBlocks;
@@ -40,19 +46,40 @@ public class CreateCampanology
                             .icon(() -> new ItemStack(ModItems.MUSICAL_BRONZE_INGOT.get()))
                             .displayItems((parameters, output) -> {
                                 // Add all items from ModItems
-                                output.accept(ModItems.MUSICAL_BRONZE_INGOT.get());
                                 output.accept(ModItems.MUSICAL_TIN_INGOT.get());
+                                output.accept(ModItems.MUSICAL_TIN_NUGGET.get());
                                 output.accept(ModItems.RAW_MUSICAL_TIN.get());
+                                output.accept(ModItems.MUSICAL_BRONZE_INGOT.get());
+                                output.accept(ModItems.MUSICAL_BRONZE_NUGGET.get());
                                 output.accept(ModItems.MUSICAL_COPPER_INGOT.get());
+                                output.accept(ModItems.MUSICAL_COPPER_NUGGET.get());
                                 output.accept(ModItems.MUSICAL_ZINC_INGOT.get());
+                                output.accept(ModItems.MUSICAL_ZINC_NUGGET.get());
                                 output.accept(ModItems.MUSICAL_BRASS_INGOT.get());
+                                output.accept(ModItems.MUSICAL_BRASS_NUGGET.get());
+                                output.accept(ModItems.MUSICAL_ANDESITE_INGOT.get());
+                                output.accept(ModItems.MUSICAL_ANDESITE_NUGGET.get());
+                                output.accept(ModItems.MUSICAL_GOLD_INGOT.get());
+                                output.accept(ModItems.MUSICAL_GOLD_NUGGET.get());
+                                output.accept(ModItems.MUSICAL_IRON_INGOT.get());
+                                output.accept(ModItems.MUSICAL_IRON_NUGGET.get());
+                                output.accept(ModItems.OXIDISED_MUSICAL_INGOT.get());
+                                output.accept(ModItems.OXIDISED_MUSICAL_NUGGET.get());
+                                output.accept(ModItems.OXIDISED_COPPER_INGOT.get());
 
                                 // Add all blocks from ModBlocks (registered as BlockItems)
                                 output.accept(ModBlocks.MUSICAL_TIN_BLOCK.get());
-                                output.accept(ModBlocks.MUSICAL_BRONZE_BLOCK.get());
                                 output.accept(ModBlocks.MUSICAL_TIN_ORE.get());
+                                output.accept(ModBlocks.NETHER_MUSICAL_TIN_ORE.get());
+                                output.accept(ModBlocks.MUSICAL_BRONZE_BLOCK.get());
                                 output.accept(ModBlocks.MUSICAL_ZINC_BLOCK.get());
                                 output.accept(ModBlocks.MUSICAL_COPPER_BLOCK.get());
+                                output.accept(ModBlocks.MUSICAL_ANDESITE_BLOCK.get());
+                                output.accept(ModBlocks.MUSICAL_BRASS_BLOCK.get());
+                                output.accept(ModBlocks.MUSICAL_GOLD_BLOCK.get());
+                                output.accept(ModBlocks.MUSICAL_IRON_BLOCK.get());
+                                output.accept(ModBlocks.OXIDISED_MUSICAL_BLOCK.get());
+                                output.accept(ModBlocks.RAW_MUSICAL_TIN_BLOCK.get());
 
                                 output.accept(ModItems.COPPER_BELL.get());
                                 output.accept(ModItems.OXIDIZED_COPPER_BELL.get());

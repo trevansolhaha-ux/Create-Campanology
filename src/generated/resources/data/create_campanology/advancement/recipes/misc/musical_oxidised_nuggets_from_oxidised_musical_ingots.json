@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_oxidised_musical_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "create_campanology:oxidised_musical_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "create_campanology:musical_oxidised_nuggets_from_oxidised_musical_ingots"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_oxidised_musical_ingot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "create_campanology:musical_oxidised_nuggets_from_oxidised_musical_ingots"
+    ]
+  }
+}
