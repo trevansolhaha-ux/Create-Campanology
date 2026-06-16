@@ -44,5 +44,12 @@ public class ModDatagen {
         ModBlockStates blockStates = new ModBlockStates(output, existingFileHelper);
         generator.addProvider(event.includeClient(), blockStates);
         generator.addProvider(event.includeClient(), new ModItemModels(output, blockStates.models().existingFileHelper));
+
+        generator.addProvider(
+                event.includeServer(),
+                new ModMixerRecipes(output, lookupProvider, CreateCampanology.MOD_ID)
+        );
+
+
     }
 }

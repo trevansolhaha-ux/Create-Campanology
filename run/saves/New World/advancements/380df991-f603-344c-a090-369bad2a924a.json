@@ -1618,5 +1618,233 @@
     },
     "done": true
   },
+  "create_campanology:recipes/misc/musical_tin_ingot_from_blasting_raw": {
+    "criteria": {
+      "has_raw": "2026-06-16 17:12:32 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_tin_ingot_from_smelting_raw": {
+    "criteria": {
+      "has_raw": "2026-06-16 17:12:32 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_raw_tin_block_from_raw_tin": {
+    "criteria": {
+      "has_raw_tin": "2026-06-16 17:12:32 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_oxidised_ingots_from_oxidised_musical_block": {
+    "criteria": {
+      "has_oxidised_musical_block": "2026-06-16 17:12:33 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/building_blocks/vanilla_oxidized_copper_block_from_ingots": {
+    "criteria": {
+      "has_oxidized_copper_ingot": "2026-06-16 17:12:37 +0000"
+    },
+    "done": true
+  },
+  "create:recipes/misc/crafting/appliances/crafting_blueprint": {
+    "criteria": {
+      "has_item": "2026-06-16 17:12:46 +0000"
+    },
+    "done": true
+  },
+  "minecraft:story/root": {
+    "criteria": {
+      "crafting_table": "2026-06-16 17:12:46 +0000"
+    },
+    "done": true
+  },
+  "create:recipes/misc/crafting/kinetics/gearbox": {
+    "criteria": {
+      "has_item": "2026-06-16 17:13:18 +0000"
+    },
+    "done": true
+  },
+  "create:recipes/misc/crafting/kinetics/vertical_gearbox": {
+    "criteria": {
+      "has_item": "2026-06-16 17:13:18 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/oxidized_copper_bulb": {
+    "criteria": {
+      "has_oxidized_copper": "2026-06-16 17:13:44 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/oxidized_copper_ingots_from_vanilla_block": {
+    "criteria": {
+      "has_oxidized_copper_block": "2026-06-16 17:13:44 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/oxidized_copper_grate": {
+    "criteria": {
+      "has_oxidized_copper": "2026-06-16 17:13:44 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/oxidized_cut_copper": {
+    "criteria": {
+      "has_oxidized_copper": "2026-06-16 17:13:44 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/oxidized_cut_copper_from_oxidized_copper_stonecutting": {
+    "criteria": {
+      "has_oxidized_copper": "2026-06-16 17:13:44 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/oxidized_copper_grate_from_oxidized_copper_stonecutting": {
+    "criteria": {
+      "has_oxidized_copper": "2026-06-16 17:13:44 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/oxidized_cut_copper_slab_from_oxidized_copper_stonecutting": {
+    "criteria": {
+      "has_oxidized_copper": "2026-06-16 17:13:44 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/oxidized_cut_copper_stairs_from_oxidized_copper_stonecutting": {
+    "criteria": {
+      "has_oxidized_copper": "2026-06-16 17:13:44 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/waxed_oxidized_copper_from_honeycomb": {
+    "criteria": {
+      "has_oxidized_copper": "2026-06-16 17:13:44 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/oxidized_chiseled_copper_from_oxidized_copper_stonecutting": {
+    "criteria": {
+      "has_oxidized_copper": "2026-06-16 17:13:44 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/smoker": {
+    "criteria": {
+      "has_furnace": "2026-06-16 17:14:44 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_tin_nuggets_from_tin_ingots": {
+    "criteria": {
+      "has_tin_ingot": "2026-06-16 17:14:57 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_tin_block_from_ingots": {
+    "criteria": {
+      "has_tin_ingot": "2026-06-16 17:14:57 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/coal_block": {
+    "criteria": {
+      "has_coal": "2026-06-16 18:33:20 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/campfire": {
+    "criteria": {
+      "has_coal": "2026-06-16 18:33:20 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_bronze_block_from_ingots": {
+    "criteria": {
+      "has_bronze_ingot": "2026-06-16 18:40:39 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_bronze_nuggets_from_bronze_ingots": {
+    "criteria": {
+      "has_bronze_ingot": "2026-06-16 18:40:39 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_andesite_block_from_ingots": {
+    "criteria": {
+      "has_anesite_ingot": "2026-06-16 19:27:46 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_andesite_nuggets_from_tin_ingots": {
+    "criteria": {
+      "has_andesite_ingot": "2026-06-16 19:27:46 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_zinc_nuggets_from_zinc_ingots": {
+    "criteria": {
+      "has_zinc_ingot": "2026-06-16 19:28:36 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_zinc_block_from_ingots": {
+    "criteria": {
+      "has_zinc_ingot": "2026-06-16 19:28:36 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_copper_nuggets_from_copper_ingots": {
+    "criteria": {
+      "has_copper_ingot": "2026-06-16 19:30:32 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_copper_block_from_ingots": {
+    "criteria": {
+      "has_copper_ingot": "2026-06-16 19:30:32 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_brass_nuggets_from_brass_ingots": {
+    "criteria": {
+      "has_brass_ingot": "2026-06-16 19:31:26 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_brass_block_from_ingots": {
+    "criteria": {
+      "has_brass_ingot": "2026-06-16 19:31:26 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_gold_block_from_ingots": {
+    "criteria": {
+      "has_gold_ingot": "2026-06-16 19:32:41 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_gold_nuggets_from_gold_ingots": {
+    "criteria": {
+      "has_gold_ingot": "2026-06-16 19:32:41 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_iron_nuggets_from_iron_ingots": {
+    "criteria": {
+      "has_iron_ingot": "2026-06-16 19:33:28 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_iron_block_from_ingots": {
+    "criteria": {
+      "has_iron_ingot": "2026-06-16 19:33:28 +0000"
+    },
+    "done": true
+  },
   "DataVersion": 3955
 }
