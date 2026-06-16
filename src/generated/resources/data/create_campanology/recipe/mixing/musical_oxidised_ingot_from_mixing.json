@@ -1,0 +1,22 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "create_campanology:musical_bronze_ingot"
+    },
+    {
+      "item": "create_campanology:oxidised_copper_ingot"
+    },
+    {
+      "item": "create_campanology:oxidised_copper_ingot"
+    }
+  ],
+  "processing_time": 100,
+  "results": [
+    {
+      "count": 3,
+      "id": "create_campanology:musical_tin_ingot"
+    }
+  ]
+}
