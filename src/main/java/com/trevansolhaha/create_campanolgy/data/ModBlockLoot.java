@@ -28,5 +28,14 @@ public class ModBlockLoot extends BlockLootSubProvider {
         dropSelf(ModBlocks.MUSICAL_TIN_ORE.get());
         dropSelf(ModBlocks.MUSICAL_ZINC_BLOCK.get());
         dropSelf(ModBlocks.MUSICAL_COPPER_BLOCK.get());
+
+        dropSelf(ModBlocks.COPPER_BELL.get());
+        dropSelf(ModBlocks.OXIDIZED_COPPER_BELL.get());
+        dropSelf(ModBlocks.IRON_BELL.get());
+        dropSelf(ModBlocks.BRONZE_BELL.get());
+        dropSelf(ModBlocks.BRASS_BELL.get());
+        dropSelf(ModBlocks.GOLD_BELL.get());
+        dropSelf(ModBlocks.ZINC_BELL.get());
+        dropSelf(ModBlocks.ANDESITE_ALLOY_BELL.get());
     }
 }

@@ -1,5 +1,7 @@
 package com.trevansolhaha.create_campanolgy;
 
+import com.trevansolhaha.create_campanolgy.client.renderer.block.*;
+import com.trevansolhaha.create_campanolgy.init.ModBlockEntities;
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -7,6 +9,7 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
@@ -27,5 +30,17 @@ public class CreateCampanologyClient {
         // Some client setup code
         CreateCampanology.LOGGER.info("HELLO FROM CLIENT SETUP");
         CreateCampanology.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+    }
+
+    @SubscribeEvent
+    public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(ModBlockEntities.COPPER_BELL.get(), CopperBellBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.OXIDIZED_COPPER_BELL.get(), OxidizedCopperBellBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.IRON_BELL.get(), IronBellBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.BRONZE_BELL.get(), BronzeBellBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.BRASS_BELL.get(), BrassBellBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.GOLD_BELL.get(), GoldBellBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.ZINC_BELL.get(), ZincBellBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.ANDESITE_ALLOY_BELL.get(), AndesiteBellBlockRenderer::new);
     }
 }

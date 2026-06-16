@@ -1,25 +1,24 @@
 package com.trevansolhaha.create_campanolgy;
 
-import com.trevansolhaha.create_campanolgy.block.ModBlocks;
-import com.trevansolhaha.create_campanolgy.item.ModItems;
-import org.slf4j.Logger;
-
 import com.mojang.logging.LogUtils;
-
+import com.trevansolhaha.create_campanolgy.block.ModBlocks;
+import com.trevansolhaha.create_campanolgy.init.ModBlockEntities;
+import com.trevansolhaha.create_campanolgy.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
-import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(CreateCampanology.MOD_ID)
@@ -54,6 +53,15 @@ public class CreateCampanology
                                 output.accept(ModBlocks.MUSICAL_TIN_ORE.get());
                                 output.accept(ModBlocks.MUSICAL_ZINC_BLOCK.get());
                                 output.accept(ModBlocks.MUSICAL_COPPER_BLOCK.get());
+
+                                output.accept(ModItems.COPPER_BELL.get());
+                                output.accept(ModItems.OXIDIZED_COPPER_BELL.get());
+                                output.accept(ModItems.IRON_BELL.get());
+                                output.accept(ModItems.BRONZE_BELL.get());
+                                output.accept(ModItems.BRASS_BELL.get());
+                                output.accept(ModItems.GOLD_BELL.get());
+                                output.accept(ModItems.ZINC_BELL.get());
+                                output.accept(ModItems.ANDESITE_ALLOY_BELL.get());
                             })
                             .build());
 
@@ -65,6 +73,7 @@ public class CreateCampanology
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         // Register the creative mode tab
         CREATIVE_MODE_TABS.register(modEventBus);

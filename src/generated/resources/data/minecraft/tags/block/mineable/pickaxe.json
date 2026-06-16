@@ -1,0 +1,9 @@
+{
+  "values": [
+    "create_campanology:musical_tin_block",
+    "create_campanology:musical_bronze_block",
+    "create_campanology:musical_tin_ore",
+    "create_campanology:musical_zinc_block",
+    "create_campanology:musical_copper_block"
+  ]
+}

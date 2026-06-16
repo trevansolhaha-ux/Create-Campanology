@@ -1,6 +1,7 @@
 package com.trevansolhaha.create_campanolgy.data;
 
 import com.trevansolhaha.create_campanolgy.CreateCampanology;
+import com.trevansolhaha.create_campanolgy.block.ModBlocks;
 import com.trevansolhaha.create_campanolgy.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
@@ -19,5 +20,14 @@ public class ModItemModels extends ItemModelProvider {
         basicItem(ModItems.MUSICAL_COPPER_INGOT.get());
         basicItem(ModItems.MUSICAL_ZINC_INGOT.get());
         basicItem(ModItems.MUSICAL_BRASS_INGOT.get());
+
+        simpleBlockItem(ModBlocks.COPPER_BELL.get());
+        simpleBlockItem(ModBlocks.OXIDIZED_COPPER_BELL.get());
+        simpleBlockItem(ModBlocks.IRON_BELL.get());
+        simpleBlockItem(ModBlocks.BRONZE_BELL.get());
+        simpleBlockItem(ModBlocks.BRASS_BELL.get());
+        simpleBlockItem(ModBlocks.GOLD_BELL.get());
+        simpleBlockItem(ModBlocks.ZINC_BELL.get());
+        simpleBlockItem(ModBlocks.ANDESITE_ALLOY_BELL.get());
     }
 }

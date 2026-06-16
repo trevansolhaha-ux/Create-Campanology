@@ -1,6 +1,7 @@
 package com.trevansolhaha.create_campanolgy.block;
 
 import com.trevansolhaha.create_campanolgy.CreateCampanology;
+import com.trevansolhaha.create_campanolgy.content.bell.*;
 import com.trevansolhaha.create_campanolgy.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -17,7 +18,6 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(CreateCampanology.MOD_ID);
-
 
     public static final DeferredBlock<Block> MUSICAL_TIN_BLOCK = registerBlock("musical_tin_block",
             () -> new Block(BlockBehaviour.Properties.of()
@@ -57,6 +57,72 @@ public class ModBlocks {
                     .mapColor(MapColor.COLOR_ORANGE)
                     .requiresCorrectToolForDrops()
                     .strength(5.0f,5.0f)
+            ));
+
+    // Bells
+    public static final DeferredBlock<Block> COPPER_BELL = BLOCKS.register("copper_bell_1",
+            () -> new CopperBellBlock(BlockBehaviour.Properties.of()
+                    .sound(SoundType.METAL)
+                    .mapColor(MapColor.METAL)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0f,5.0f)
+                    .noOcclusion()
+            ));
+    public static final DeferredBlock<Block> OXIDIZED_COPPER_BELL = BLOCKS.register("oxidized_copper_bell_1",
+            () -> new OxidizedCopperBellBlock(BlockBehaviour.Properties.of()
+                    .sound(SoundType.METAL)
+                    .mapColor(MapColor.METAL)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0f,5.0f)
+                    .noOcclusion()
+            ));
+    public static final DeferredBlock<Block> IRON_BELL = BLOCKS.register("iron_bell_1",
+            () -> new IronBellBlock(BlockBehaviour.Properties.of()
+                    .sound(SoundType.METAL)
+                    .mapColor(MapColor.METAL)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0f,5.0f)
+                    .noOcclusion()
+            ));
+    public static final DeferredBlock<Block> BRONZE_BELL = BLOCKS.register("bronze_bell_1",
+            () -> new BronzeBellBlock(BlockBehaviour.Properties.of()
+                    .sound(SoundType.METAL)
+                    .mapColor(MapColor.METAL)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0f,5.0f)
+                    .noOcclusion()
+            ));
+    public static final DeferredBlock<Block> BRASS_BELL = BLOCKS.register("brass_bell_1",
+            () -> new BrassBellBlock(BlockBehaviour.Properties.of()
+                    .sound(SoundType.METAL)
+                    .mapColor(MapColor.METAL)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0f,5.0f)
+                    .noOcclusion()
+            ));
+    public static final DeferredBlock<Block> GOLD_BELL = BLOCKS.register("gold_bell_1",
+            () -> new GoldBellBlock(BlockBehaviour.Properties.of()
+                    .sound(SoundType.METAL)
+                    .mapColor(MapColor.METAL)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0f,5.0f)
+                    .noOcclusion()
+            ));
+    public static final DeferredBlock<Block> ZINC_BELL = BLOCKS.register("zinc_bell_1",
+            () -> new ZincBellBlock(BlockBehaviour.Properties.of()
+                    .sound(SoundType.METAL)
+                    .mapColor(MapColor.METAL)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0f,5.0f)
+                    .noOcclusion()
+            ));
+    public static final DeferredBlock<Block> ANDESITE_ALLOY_BELL = BLOCKS.register("andesite_alloy_bell_1",
+            () -> new AndesiteBellBlock(BlockBehaviour.Properties.of()
+                    .sound(SoundType.METAL)
+                    .mapColor(MapColor.METAL)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0f,5.0f)
+                    .noOcclusion()
             ));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
