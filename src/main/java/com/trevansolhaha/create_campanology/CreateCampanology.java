@@ -77,14 +77,14 @@ public class CreateCampanology
                                 output.accept(ModBlocks.OXIDISED_MUSICAL_BLOCK.get());
                                 output.accept(ModBlocks.RAW_MUSICAL_TIN_BLOCK.get());
 
-                                output.accept(ModItems.COPPER_BELL.get());
-                                output.accept(ModItems.OXIDIZED_COPPER_BELL.get());
-                                output.accept(ModItems.IRON_BELL.get());
                                 output.accept(ModItems.BRONZE_BELL.get());
+                                output.accept(ModItems.ZINC_BELL.get());
+                                output.accept(ModItems.COPPER_BELL.get());
+                                output.accept(ModItems.ANDESITE_ALLOY_BELL.get());
                                 output.accept(ModItems.BRASS_BELL.get());
                                 output.accept(ModItems.GOLD_BELL.get());
-                                output.accept(ModItems.ZINC_BELL.get());
-                                output.accept(ModItems.ANDESITE_ALLOY_BELL.get());
+                                output.accept(ModItems.IRON_BELL.get());
+                                output.accept(ModItems.OXIDIZED_COPPER_BELL.get());
                             })
                             .build());
 
