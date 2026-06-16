@@ -31,6 +31,14 @@
   "item.create_campanology.oxidised_musical_ingot": "Oxidized Musical Ingot",
   "item.create_campanology.oxidised_musical_nugget": "Oxidized Musical Nugget",
   "item.create_campanology.oxidised_copper_ingot": "Oxidized Copper Ingot",
+  "item.create_campanology.copper_bell_1": "Copper Bell",
+  "item.create_campanology.oxidized_copper_bell_1": "Oxidized Copper Bell",
+  "item.create_campanology.iron_bell_1": "Iron Bell",
+  "item.create_campanology.bronze_bell_1": "Bronze Bell",
+  "item.create_campanology.brass_bell_1": "Brass Bell",
+  "item.create_campanology.gold_bell_1": "Gold Bell",
+  "item.create_campanology.zinc_bell_1": "Zinc Bell",
+  "item.create_campanology.andesite_alloy_bell_1": "Andesite Alloy Bell",
 
   "block.create_campanology.musical_tin_block": "Musical Tin Block",
   "block.create_campanology.musical_tin_ore":"Musical Tin Ore",
@@ -43,5 +51,14 @@
   "block.create_campanology.musical_gold_block": "Musical Gold Block",
   "block.create_campanology.musical_iron_block": "Musical Iron Block",
   "block.create_campanology.oxidised_musical_block": "Oxidized Musical Block",
-  "block.create_campanology.raw_musical_tin_block": "Block of Raw Musical Tin"
+  "block.create_campanology.raw_musical_tin_block": "Block of Raw Musical Tin",
+  "block.create_campanology.musical_copper_block": "Musical Copper Block",
+  "block.create_campanology.copper_bell_1": "Copper Bell",
+  "block.create_campanology.oxidized_copper_bell_1": "Oxidized Copper Bell",
+  "block.create_campanology.iron_bell_1": "Iron Bell",
+  "block.create_campanology.bronze_bell_1": "Bronze Bell",
+  "block.create_campanology.brass_bell_1": "Brass Bell",
+  "block.create_campanology.gold_bell_1": "Gold Bell",
+  "block.create_campanology.zinc_bell_1": "Zinc Bell",
+  "block.create_campanology.andesite_alloy_bell_1": "Andesite Alloy Bell"
 }
