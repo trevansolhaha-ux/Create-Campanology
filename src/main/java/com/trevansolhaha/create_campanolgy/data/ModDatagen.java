@@ -1,6 +1,6 @@
-package com.trevansolhaha.create_campanolgy.data;
+package com.trevansolhaha.create_campanology.data;
 
-import com.trevansolhaha.create_campanolgy.CreateCampanology;
+import com.trevansolhaha.create_campanology.CreateCampanology;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.data.DataGenerator;

@@ -1,4 +1,4 @@
-package com.trevansolhaha.create_campanolgy;
+package com.trevansolhaha.create_campanology;
 
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;

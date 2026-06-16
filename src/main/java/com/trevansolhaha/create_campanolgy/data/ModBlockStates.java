@@ -1,7 +1,7 @@
-package com.trevansolhaha.create_campanolgy.data;
+package com.trevansolhaha.create_campanology.data;
 
-import com.trevansolhaha.create_campanolgy.CreateCampanology;
-import com.trevansolhaha.create_campanolgy.block.ModBlocks;
+import com.trevansolhaha.create_campanology.CreateCampanology;
+import com.trevansolhaha.create_campanology.block.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -16,7 +16,14 @@ public class ModBlockStates extends BlockStateProvider {
         cubeAll(ModBlocks.MUSICAL_TIN_BLOCK.get());
         cubeAll(ModBlocks.MUSICAL_BRONZE_BLOCK.get());
         cubeAll(ModBlocks.MUSICAL_TIN_ORE.get());
+        cubeAll(ModBlocks.NETHER_MUSICAL_TIN_ORE.get());
         cubeAll(ModBlocks.MUSICAL_ZINC_BLOCK.get());
         cubeAll(ModBlocks.MUSICAL_COPPER_BLOCK.get());
+        cubeAll(ModBlocks.MUSICAL_ANDESITE_BLOCK.get());
+        cubeAll(ModBlocks.MUSICAL_BRASS_BLOCK.get());
+        cubeAll(ModBlocks.MUSICAL_GOLD_BLOCK.get());
+        cubeAll(ModBlocks.MUSICAL_IRON_BLOCK.get());
+        cubeAll(ModBlocks.OXIDISED_MUSICAL_BLOCK.get());
+        cubeAll(ModBlocks.RAW_MUSICAL_TIN_BLOCK.get());
     }
 }

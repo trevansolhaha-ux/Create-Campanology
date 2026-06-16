@@ -1,0 +1,16 @@
+{
+  "values": [
+    "create_campanology:musical_tin_block",
+    "create_campanology:musical_bronze_block",
+    "create_campanology:musical_tin_ore",
+    "create_campanology:musical_zinc_block",
+    "create_campanology:musical_copper_block",
+    "create_campanology:musical_andesite_block",
+    "create_campanology:musical_brass_block",
+    "create_campanology:musical_gold_block",
+    "create_campanology:musical_iron_block",
+    "create_campanology:oxidised_musical_block",
+    "create_campanology:raw_musical_tin_block",
+    "create_campanology:nether_musical_tin_ore"
+  ]
+}

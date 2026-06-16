@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 250,
+  "experience": 6.3,
+  "group": "tin_block",
+  "ingredient": {
+    "item": "create_campanology:raw_musical_tin_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "create_campanology:musical_tin_block"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_anesite_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "create_campanology:musical_andesite_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "create_campanology:musical_andesite_block_from_ingots"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_anesite_ingot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "create_campanology:musical_andesite_block_from_ingots"
+    ]
+  }
+}

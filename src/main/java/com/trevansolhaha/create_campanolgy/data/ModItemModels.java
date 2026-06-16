@@ -1,7 +1,7 @@
-package com.trevansolhaha.create_campanolgy.data;
+package com.trevansolhaha.create_campanology.data;
 
-import com.trevansolhaha.create_campanolgy.CreateCampanology;
-import com.trevansolhaha.create_campanolgy.item.ModItems;
+import com.trevansolhaha.create_campanology.CreateCampanology;
+import com.trevansolhaha.create_campanology.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -13,11 +13,25 @@ public class ModItemModels extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        basicItem(ModItems.MUSICAL_BRONZE_INGOT.get());
         basicItem(ModItems.MUSICAL_TIN_INGOT.get());
+        basicItem(ModItems.MUSICAL_TIN_NUGGET.get());
         basicItem(ModItems.RAW_MUSICAL_TIN.get());
+        basicItem(ModItems.MUSICAL_BRONZE_INGOT.get());
+        basicItem(ModItems.MUSICAL_BRONZE_NUGGET.get());
         basicItem(ModItems.MUSICAL_COPPER_INGOT.get());
+        basicItem(ModItems.MUSICAL_COPPER_NUGGET.get());
         basicItem(ModItems.MUSICAL_ZINC_INGOT.get());
+        basicItem(ModItems.MUSICAL_ZINC_NUGGET.get());
         basicItem(ModItems.MUSICAL_BRASS_INGOT.get());
+        basicItem(ModItems.MUSICAL_BRASS_NUGGET.get());
+        basicItem(ModItems.MUSICAL_ANDESITE_INGOT.get());
+        basicItem(ModItems.MUSICAL_ANDESITE_NUGGET.get());
+        basicItem(ModItems.MUSICAL_GOLD_INGOT.get());
+        basicItem(ModItems.MUSICAL_GOLD_NUGGET.get());
+        basicItem(ModItems.MUSICAL_IRON_INGOT.get());
+        basicItem(ModItems.MUSICAL_IRON_NUGGET.get());
+        basicItem(ModItems.OXIDISED_MUSICAL_INGOT.get());
+        basicItem(ModItems.OXIDISED_MUSICAL_NUGGET.get());
+        basicItem(ModItems.OXIDISED_COPPER_INGOT.get());
     }
 }

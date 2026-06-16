@@ -1,5 +1,5 @@
 {
-  "itemGroup.create_campanology": "Example Mod Tab",
+  "itemGroup.create_campanology": "Create: Campanology",
   "block.create_campanology.example_block": "Example Block",
   "item.create_campanology.example_item": "Example Item",
 
@@ -11,17 +11,37 @@
   "create_campanology.configuration.magicNumberIntroduction": "Magic Number Text",
   "create_campanology.configuration.magicNumber": "Magic Number",
 
-
-  "item.create_campanology.musical_bronze_ingot": "Musical Bronze Ingot",
   "item.create_campanology.musical_tin_ingot": "Musical Tin Ingot",
+  "item.create_campanology.musical_tin_nugget": "Musical Tin Nugget",
   "item.create_campanology.raw_musical_tin": "Raw Musical Tin",
+  "item.create_campanology.musical_bronze_ingot": "Musical Bronze Ingot",
+  "item.create_campanology.musical_bronze_nugget": "Musical Bronze Nugget",
   "item.create_campanology.musical_copper_ingot": "Musical Copper Ingot",
+  "item.create_campanology.musical_copper_nugget": "Musical Copper Nugget",
   "item.create_campanology.musical_zinc_ingot": "Musical Zinc Ingot",
+  "item.create_campanology.musical_zinc_nugget": "Musical Zinc Nugget",
   "item.create_campanology.musical_brass_ingot": "Musical Brass Ingot",
+  "item.create_campanology.musical_brass_nugget": "Musical Brass Nugget",
+  "item.create_campanology.musical_andesite_ingot": "Musical Andesite Ingot",
+  "item.create_campanology.musical_andesite_nugget": "Musical Andesite Nugget",
+  "item.create_campanology.musical_gold_ingot": "Musical Gold Ingot",
+  "item.create_campanology.musical_gold_nugget": "Musical Gold Nugget",
+  "item.create_campanology.musical_iron_ingot": "Musical Iron Ingot",
+  "item.create_campanology.musical_iron_nugget": "Musical Iron Nugget",
+  "item.create_campanology.oxidised_musical_ingot": "Oxidized Musical Ingot",
+  "item.create_campanology.oxidised_musical_nugget": "Oxidized Musical Nugget",
+  "item.create_campanology.oxidised_copper_ingot": "Oxidized Copper Ingot",
 
   "block.create_campanology.musical_tin_block": "Musical Tin Block",
-  "block.create_campanology.musical_bronze_block": "Musical Bronze Block",
   "block.create_campanology.musical_tin_ore":"Musical Tin Ore",
+  "block.create_campanology.nether_musical_tin_ore":"Nether Musical Tin Ore",
+  "block.create_campanology.musical_bronze_block": "Musical Bronze Block",
   "block.create_campanology.musical_zinc_block": "Musical Zinc Block",
-  "block.create_campanology.musical_copper_block": "Musical Copper Block"
+  "block.create_campanology.musical_copper_block": "Musical Copper Block",
+  "block.create_campanology.musical_andesite_block": "Musical Andesite Block",
+  "block.create_campanology.musical_brass_block": "Musical Brass Block",
+  "block.create_campanology.musical_gold_block": "Musical Gold Block",
+  "block.create_campanology.musical_iron_block": "Musical Iron Block",
+  "block.create_campanology.oxidised_musical_block": "Oxidized Musical Block",
+  "block.create_campanology.raw_musical_tin_block": "Block of Raw Musical Tin"
 }
