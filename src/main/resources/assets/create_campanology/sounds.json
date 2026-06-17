@@ -1,0 +1,74 @@
+{
+  "block.copper_bell": {
+    "subtitle": "create_campanology.subtitles.block.copper_bell",
+    "sounds": [
+      {
+        "name": "block.bell.use",
+        "type": "event"
+      }
+    ]
+  },
+  "block.oxidized_copper_bell": {
+    "subtitle": "create_campanology.subtitles.block.oxidized_copper_bell",
+    "sounds": [
+      {
+        "name": "block.bell.use",
+        "type": "event"
+      }
+    ]
+  },
+  "block.iron_bell": {
+    "subtitle": "create_campanology.subtitles.block.iron_bell",
+    "sounds": [
+      {
+        "name": "block.bell.use",
+        "type": "event"
+      }
+    ]
+  },
+  "block.bronze_bell": {
+    "subtitle": "create_campanology.subtitles.block.bronze_bell",
+    "sounds": [
+      {
+        "name": "block.bell.use",
+        "type": "event"
+      }
+    ]
+  },
+  "block.brass_bell": {
+    "subtitle": "create_campanology.subtitles.block.brass_bell",
+    "sounds": [
+      {
+        "name": "block.bell.use",
+        "type": "event"
+      }
+    ]
+  },
+  "block.gold_bell": {
+    "subtitle": "create_campanology.subtitles.block.gold_bell",
+    "sounds": [
+      {
+        "name": "block.bell.use",
+        "type": "event"
+      }
+    ]
+  },
+  "block.zinc_bell": {
+    "subtitle": "create_campanology.subtitles.block.zinc_bell",
+    "sounds": [
+      {
+        "name": "block.bell.use",
+        "type": "event"
+      }
+    ]
+  },
+  "block.andesite_alloy_bell": {
+    "subtitle": "create_campanology.subtitles.block.andesite_alloy_bell",
+    "sounds": [
+      {
+        "name": "block.bell.use",
+        "type": "event"
+      }
+    ]
+  }
+}
