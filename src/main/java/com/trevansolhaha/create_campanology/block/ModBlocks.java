@@ -1,6 +1,7 @@
 package com.trevansolhaha.create_campanology.block;
 
 import com.trevansolhaha.create_campanology.CreateCampanology;
+import com.trevansolhaha.create_campanology.init.ModBlockEntities;
 import com.trevansolhaha.create_campanology.item.ModItems;
 import com.trevansolhaha.create_campanology.content.bell.*;
 import net.minecraft.world.item.BlockItem;
@@ -148,14 +149,60 @@ public class ModBlocks {
                     .strength(5.0f,5.0f)
                     .noOcclusion()
             ));
+
+
+    //Brass bells blocks
+
+    //small ones
     public static final DeferredBlock<Block> BRASS_BELL_1 = BLOCKS.register("brass_bell_1",
             () -> new BrassBellBlock(BlockBehaviour.Properties.of()
                     .sound(SoundType.ANVIL)
                     .mapColor(MapColor.COLOR_YELLOW)
                     .requiresCorrectToolForDrops()
                     .strength(5.0f,5.0f)
-                    .noOcclusion()
-            ));
+                    .noOcclusion(),
+                    ModBlockEntities.BRASS_BELL_1,
+                    ModItems.BRASS_BELL_1,
+                    Block.box(4.0D, 5.0D, 4.0D, 12.0D, 16.0D, 12.0D)
+            ) {
+                @Override
+                public Block getNextBellVariant() {
+                    return BRASS_BELL_2.get();
+                }
+            });
+    public static final DeferredBlock<Block> BRASS_BELL_2 = BLOCKS.register("brass_bell_2",
+            () -> new BrassBellBlock(BlockBehaviour.Properties.of()
+                    .sound(SoundType.ANVIL)
+                    .mapColor(MapColor.COLOR_YELLOW)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.5f,5.0f)
+                    .noOcclusion(),
+                    ModBlockEntities.BRASS_BELL_2,
+                    ModItems.BRASS_BELL_1,
+                    Block.box(5.0D, 6.0D, 5.0D, 11.0D, 14.0D, 11.0D)
+            ) {
+                @Override
+                public Block getNextBellVariant() {
+                    return BRASS_BELL_3.get();
+                }
+            });
+    public static final DeferredBlock<Block> BRASS_BELL_3 = BLOCKS.register("brass_bell_3",
+            () -> new BrassBellBlock(BlockBehaviour.Properties.of()
+                    .sound(SoundType.ANVIL)
+                    .mapColor(MapColor.COLOR_YELLOW)
+                    .requiresCorrectToolForDrops()
+                    .strength(6.0f,5.0f)
+                    .noOcclusion(),
+                    ModBlockEntities.BRASS_BELL_3,
+                    ModItems.BRASS_BELL_1,
+                    Block.box(5.0D, 6.0D, 5.0D, 11.0D, 14.0D, 11.0D)
+            ) {
+                @Override
+                public Block getNextBellVariant() {
+                    return BRASS_BELL_1.get();
+                }
+            });
+
     public static final DeferredBlock<Block> GOLD_BELL_1 = BLOCKS.register("gold_bell_1",
             () -> new GoldBellBlock(BlockBehaviour.Properties.of()
                     .sound(SoundType.ANVIL)
