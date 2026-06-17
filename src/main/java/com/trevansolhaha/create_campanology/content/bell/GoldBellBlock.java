@@ -7,8 +7,10 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
@@ -20,6 +22,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.function.BiConsumer;
 
 public class GoldBellBlock extends ModBaseBellBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -93,5 +97,24 @@ public class GoldBellBlock extends ModBaseBellBlock {
             }
         }
         return InteractionResult.SUCCESS;
+    }
+
+    @Override
+    protected void onExplosionHit(BlockState blockState, Level level, BlockPos blockPos, Explosion explosion, BiConsumer<ItemStack, BlockPos> biConsumer) {
+        if (explosion.canTriggerBlocks() && !level.isClientSide()) {
+            if (!blockState.hasProperty(FACING)) return;
+
+            Direction bellFacing = level.getBlockState(blockPos).getValue(FACING);
+            Direction explosionSourceDirection = getExplosionSourceDirection(explosion, blockPos, bellFacing);
+
+            BlockEntity blockEntity = level.getBlockEntity(blockPos);
+            if (blockEntity instanceof GoldBellBlockEntity goldBell) {
+                if (explosionSourceDirection == bellFacing) {
+                    goldBell.triggerAnim("click_controller", "trigger_click_front");
+                } else {// If it's not front (including sides defaulting to back), play back
+                    goldBell.triggerAnim("click_controller", "trigger_click_back");
+                }
+            }
+        }
     }
 }
