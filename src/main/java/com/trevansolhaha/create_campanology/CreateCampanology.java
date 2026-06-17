@@ -29,7 +29,7 @@ public class CreateCampanology
 {
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "create_campanology";
-    // Directly reference a slf4j logger
+
     public static final Logger LOGGER = LogUtils.getLogger();
 
     // Register a creative tab for our mod
@@ -86,6 +86,35 @@ public class CreateCampanology
                                 output.accept(ModItems.GOLD_BELL_1.get());
                                 output.accept(ModItems.IRON_BELL_1.get());
                                 output.accept(ModItems.OXIDIZED_COPPER_BELL_1.get());
+
+                                //clappers
+                                output.accept(ModItems.BRONZE_SMALL_CLAPPER.get());
+                                output.accept(ModItems.BRONZE_MEDIUM_CLAPPER.get());
+                                output.accept(ModItems.BRONZE_BIG_CLAPPER.get());
+                                output.accept(ModItems.ZINC_SMALL_CLAPPER.get());
+                                output.accept(ModItems.ZINC_MEDIUM_CLAPPER.get());
+                                output.accept(ModItems.ZINC_BIG_CLAPPER.get());
+                                output.accept(ModItems.GOLD_SMALL_CLAPPER.get());
+                                output.accept(ModItems.GOLD_MEDIUM_CLAPPER.get());
+                                output.accept(ModItems.GOLD_BIG_CLAPPER.get());
+                                output.accept(ModItems.COPPER_SMALL_CLAPPER.get());
+                                output.accept(ModItems.COPPER_MEDIUM_CLAPPER.get());
+                                output.accept(ModItems.COPPER_BIG_CLAPPER.get());
+                                output.accept(ModItems.IRON_SMALL_CLAPPER.get());
+                                output.accept(ModItems.IRON_MEDIUM_CLAPPER.get());
+                                output.accept(ModItems.IRON_BIG_CLAPPER.get());
+                                output.accept(ModItems.ANDESITE_SMALL_CLAPPER.get());
+                                output.accept(ModItems.ANDESITE_MEDIUM_CLAPPER.get());
+                                output.accept(ModItems.ANDESITE_BIG_CLAPPER.get());
+                                output.accept(ModItems.OXIDISED_SMALL_CLAPPER.get());
+                                output.accept(ModItems.OXIDISED_MEDIUM_CLAPPER.get());
+                                output.accept(ModItems.OXIDISED_BIG_CLAPPER.get());
+                                output.accept(ModItems.BRASS_SMALL_CLAPPER.get());
+                                output.accept(ModItems.BRASS_MEDIUM_CLAPPER.get());
+                                output.accept(ModItems.BRASS_BIG_CLAPPER.get());
+
+
+
                             })
                             .build());
 
