@@ -109,8 +109,9 @@ public class CreateCampanology
                                 output.accept(ModItems.OXIDISED_SMALL_CLAPPER.get());
                                 output.accept(ModItems.OXIDISED_MEDIUM_CLAPPER.get());
                                 output.accept(ModItems.OXIDISED_BIG_CLAPPER.get());
-
-
+                                output.accept(ModItems.BRASS_SMALL_CLAPPER.get());
+                                output.accept(ModItems.BRASS_MEDIUM_CLAPPER.get());
+                                output.accept(ModItems.BRASS_BIG_CLAPPER.get());
 
 
 
