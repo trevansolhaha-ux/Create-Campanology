@@ -49,7 +49,5 @@ public class ModDatagen {
                 event.includeServer(),
                 new ModMixerRecipes(output, lookupProvider, CreateCampanology.MOD_ID)
         );
-
-
     }
 }

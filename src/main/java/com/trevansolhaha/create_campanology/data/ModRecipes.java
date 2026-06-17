@@ -362,7 +362,235 @@ public class ModRecipes extends RecipeProvider {
 
 
 
-        //Musical Zinc Recipes//
+        //clapper recipes//
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.COPPER_SMALL_CLAPPER.get())
+                .pattern("N")
+                .pattern("N")
+                .pattern("I")
+                .define('I', ModItems.MUSICAL_COPPER_INGOT.get())
+                .define('N', ModItems.MUSICAL_COPPER_NUGGET.get())
+                .unlockedBy("has_copper_ingot", has(ModItems.MUSICAL_COPPER_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "copper_small_clapper_from_copper_ingots"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.COPPER_MEDIUM_CLAPPER.get())
+                .pattern("I")
+                .pattern("I")
+                .pattern("I")
+                .define('I', ModItems.MUSICAL_COPPER_INGOT.get())
+                .unlockedBy("has_copper_ingot", has(ModItems.MUSICAL_COPPER_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "copper_medium_clapper_from_copper_ingots"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.COPPER_BIG_CLAPPER.get())
+                .pattern("I")
+                .pattern("I")
+                .pattern("B")
+                .define('I', ModItems.MUSICAL_COPPER_INGOT.get())
+                .define('B', ModBlocks.MUSICAL_COPPER_BLOCK.get())
+                .unlockedBy("has_copper_ingot", has(ModItems.MUSICAL_COPPER_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "copper_big_clapper_from_copper_ingots"));
+
+
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BRONZE_SMALL_CLAPPER.get())
+                .pattern("N")
+                .pattern("N")
+                .pattern("I")
+                .define('I', ModItems.MUSICAL_BRONZE_INGOT.get())
+                .define('N', ModItems.MUSICAL_BRONZE_NUGGET.get())
+                .unlockedBy("has_bronze_ingot", has(ModItems.MUSICAL_BRONZE_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "bronze_small_clapper_from_bronze_ingots"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BRONZE_MEDIUM_CLAPPER.get())
+                .pattern("I")
+                .pattern("I")
+                .pattern("I")
+                .define('I', ModItems.MUSICAL_BRONZE_INGOT.get())
+                .unlockedBy("has_bronze_ingot", has(ModItems.MUSICAL_BRONZE_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "bronze_medium_clapper_from_bronze_ingots"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BRONZE_BIG_CLAPPER.get())
+                .pattern("I")
+                .pattern("I")
+                .pattern("B")
+                .define('I', ModItems.MUSICAL_BRONZE_INGOT.get())
+                .define('B', ModBlocks.MUSICAL_BRONZE_BLOCK.get())
+                .unlockedBy("has_bronze_ingot", has(ModItems.MUSICAL_BRONZE_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "bronze_big_clapper_from_bronze_ingots"));
+
+
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BRASS_SMALL_CLAPPER.get())
+                .pattern("N")
+                .pattern("N")
+                .pattern("I")
+                .define('I', ModItems.MUSICAL_BRASS_INGOT.get())
+                .define('N', ModItems.MUSICAL_BRASS_NUGGET.get())
+                .unlockedBy("has_brass_ingot", has(ModItems.MUSICAL_BRASS_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "brass_small_clapper_from_brass_ingots"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BRASS_MEDIUM_CLAPPER.get())
+                .pattern("I")
+                .pattern("I")
+                .pattern("I")
+                .define('I', ModItems.MUSICAL_BRASS_INGOT.get())
+                .unlockedBy("has_brass_ingot", has(ModItems.MUSICAL_BRASS_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "brass_medium_clapper_from_brass_ingots"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BRASS_BIG_CLAPPER.get())
+                .pattern("I")
+                .pattern("I")
+                .pattern("B")
+                .define('I', ModItems.MUSICAL_BRASS_INGOT.get())
+                .define('B', ModBlocks.MUSICAL_BRASS_BLOCK.get())
+                .unlockedBy("has_brass_ingot", has(ModItems.MUSICAL_BRASS_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "brass_big_clapper_from_brass_ingots"));
+
+
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GOLD_SMALL_CLAPPER.get())
+                .pattern("N")
+                .pattern("N")
+                .pattern("I")
+                .define('I', ModItems.MUSICAL_GOLD_INGOT.get())
+                .define('N', ModItems.MUSICAL_GOLD_NUGGET.get())
+                .unlockedBy("has_gold_ingot", has(ModItems.MUSICAL_GOLD_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "gold_small_clapper_from_gold_ingots"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GOLD_MEDIUM_CLAPPER.get())
+                .pattern("I")
+                .pattern("I")
+                .pattern("I")
+                .define('I', ModItems.MUSICAL_GOLD_INGOT.get())
+                .unlockedBy("has_gold_ingot", has(ModItems.MUSICAL_GOLD_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "gold_medium_clapper_from_gold_ingots"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GOLD_BIG_CLAPPER.get())
+                .pattern("I")
+                .pattern("I")
+                .pattern("B")
+                .define('I', ModItems.MUSICAL_GOLD_INGOT.get())
+                .define('B', ModBlocks.MUSICAL_GOLD_BLOCK.get())
+                .unlockedBy("has_gold_ingot", has(ModItems.MUSICAL_GOLD_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "gold_big_clapper_from_gold_ingots"));
+
+
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IRON_SMALL_CLAPPER.get())
+                .pattern("N")
+                .pattern("N")
+                .pattern("I")
+                .define('I', ModItems.MUSICAL_IRON_INGOT.get())
+                .define('N', ModItems.MUSICAL_IRON_NUGGET.get())
+                .unlockedBy("has_iron_ingot", has(ModItems.MUSICAL_IRON_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "iron_small_clapper_from_iron_ingots"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IRON_MEDIUM_CLAPPER.get())
+                .pattern("I")
+                .pattern("I")
+                .pattern("I")
+                .define('I', ModItems.MUSICAL_IRON_INGOT.get())
+                .unlockedBy("has_iron_ingot", has(ModItems.MUSICAL_IRON_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "iron_medium_clapper_from_iron_ingots"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IRON_BIG_CLAPPER.get())
+                .pattern("I")
+                .pattern("I")
+                .pattern("B")
+                .define('I', ModItems.MUSICAL_IRON_INGOT.get())
+                .define('B', ModBlocks.MUSICAL_IRON_BLOCK.get())
+                .unlockedBy("has_iron_ingot", has(ModItems.MUSICAL_IRON_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "iron_big_clapper_from_iron_ingots"));
+
+
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ANDESITE_SMALL_CLAPPER.get())
+                .pattern("N")
+                .pattern("N")
+                .pattern("I")
+                .define('I', ModItems.MUSICAL_ANDESITE_INGOT.get())
+                .define('N', ModItems.MUSICAL_ANDESITE_NUGGET.get())
+                .unlockedBy("has_andesite_ingot", has(ModItems.MUSICAL_ANDESITE_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "andesite_small_clapper_from_andesite_ingots"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ANDESITE_MEDIUM_CLAPPER.get())
+                .pattern("I")
+                .pattern("I")
+                .pattern("I")
+                .define('I', ModItems.MUSICAL_ANDESITE_INGOT.get())
+                .unlockedBy("has_andesite_ingot", has(ModItems.MUSICAL_ANDESITE_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "andesite_medium_clapper_from_andesite_ingots"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ANDESITE_BIG_CLAPPER.get())
+                .pattern("I")
+                .pattern("I")
+                .pattern("B")
+                .define('I', ModItems.MUSICAL_ANDESITE_INGOT.get())
+                .define('B', ModBlocks.MUSICAL_ANDESITE_BLOCK.get())
+                .unlockedBy("has_andesite_ingot", has(ModItems.MUSICAL_ANDESITE_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "andesite_big_clapper_from_andesite_ingots"));
+
+
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.OXIDISED_COPPER_SMALL_CLAPPER.get())
+                .pattern("N")
+                .pattern("N")
+                .pattern("I")
+                .define('I', ModItems.OXIDISED_COPPER_INGOT.get())
+                .define('N', ModItems.OXIDISED_MUSICAL_NUGGET.get())
+                .unlockedBy("has_oxidised_copper_ingot", has(ModItems.OXIDISED_COPPER_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "oxidised_copper_small_clapper_from_oxidised_copper_ingots"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.OXIDISED_COPPER_MEDIUM_CLAPPER.get())
+                .pattern("I")
+                .pattern("I")
+                .pattern("I")
+                .define('I', ModItems.OXIDISED_COPPER_INGOT.get())
+                .unlockedBy("has_oxidised_copper_ingot", has(ModItems.OXIDISED_COPPER_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "oxidised_copper_medium_clapper_from_oxidised_copper_ingots"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.OXIDISED_COPPER_BIG_CLAPPER.get())
+                .pattern("I")
+                .pattern("I")
+                .pattern("B")
+                .define('I', ModItems.OXIDISED_COPPER_INGOT.get())
+                .define('B', ModBlocks.OXIDISED_MUSICAL_BLOCK.get())
+                .unlockedBy("has_oxidised_copper_ingot", has(ModItems.OXIDISED_COPPER_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "oxidised_copper_big_clapper_from_oxidised_copper_ingots"));
+
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ZINC_SMALL_CLAPPER.get())
+                .pattern("N")
+                .pattern("N")
+                .pattern("I")
+                .define('I', ModItems.MUSICAL_ZINC_INGOT.get())
+                .define('N', ModItems.MUSICAL_ZINC_NUGGET.get())
+                .unlockedBy("has_zinc_ingot", has(ModItems.MUSICAL_ZINC_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "zinc_small_clapper_from_zinc_ingots"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ZINC_MEDIUM_CLAPPER.get())
+                .pattern("I")
+                .pattern("I")
+                .pattern("I")
+                .define('I', ModItems.MUSICAL_ZINC_INGOT.get())
+                .unlockedBy("has_zinc_ingot", has(ModItems.MUSICAL_ZINC_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "zinc_medium_clapper_from_zinc_ingots"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ZINC_BIG_CLAPPER.get())
+                .pattern("I")
+                .pattern("I")
+                .pattern("B")
+                .define('I', ModItems.MUSICAL_ZINC_INGOT.get())
+                .define('B', ModBlocks.MUSICAL_ZINC_BLOCK.get())
+                .unlockedBy("has_zinc_ingot", has(ModItems.MUSICAL_ZINC_INGOT.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "zinc_big_clapper_from_zinc_ingots"));
+
+
+
+
+
+
+
 
 
     }

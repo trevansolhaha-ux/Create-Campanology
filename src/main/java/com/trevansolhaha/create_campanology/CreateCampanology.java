@@ -86,6 +86,34 @@ public class CreateCampanology
                                 output.accept(ModItems.GOLD_BELL_1.get());
                                 output.accept(ModItems.IRON_BELL_1.get());
                                 output.accept(ModItems.OXIDIZED_COPPER_BELL_1.get());
+
+                                //clappers
+                                output.accept(ModItems.BRONZE_SMALL_CLAPPER.get());
+                                output.accept(ModItems.BRONZE_MEDIUM_CLAPPER.get());
+                                output.accept(ModItems.BRONZE_BIG_CLAPPER.get());
+                                output.accept(ModItems.ZINC_SMALL_CLAPPER.get());
+                                output.accept(ModItems.ZINC_MEDIUM_CLAPPER.get());
+                                output.accept(ModItems.ZINC_BIG_CLAPPER.get());
+                                output.accept(ModItems.GOLD_SMALL_CLAPPER.get());
+                                output.accept(ModItems.GOLD_MEDIUM_CLAPPER.get());
+                                output.accept(ModItems.GOLD_BIG_CLAPPER.get());
+                                output.accept(ModItems.COPPER_SMALL_CLAPPER.get());
+                                output.accept(ModItems.COPPER_MEDIUM_CLAPPER.get());
+                                output.accept(ModItems.COPPER_BIG_CLAPPER.get());
+                                output.accept(ModItems.IRON_SMALL_CLAPPER.get());
+                                output.accept(ModItems.IRON_MEDIUM_CLAPPER.get());
+                                output.accept(ModItems.IRON_BIG_CLAPPER.get());
+                                output.accept(ModItems.ANDESITE_SMALL_CLAPPER.get());
+                                output.accept(ModItems.ANDESITE_MEDIUM_CLAPPER.get());
+                                output.accept(ModItems.ANDESITE_BIG_CLAPPER.get());
+                                output.accept(ModItems.OXIDISED_COPPER_SMALL_CLAPPER.get());
+                                output.accept(ModItems.OXIDISED_COPPER_MEDIUM_CLAPPER.get());
+                                output.accept(ModItems.OXIDISED_COPPER_BIG_CLAPPER.get());
+
+
+
+
+
                             })
                             .build());
 

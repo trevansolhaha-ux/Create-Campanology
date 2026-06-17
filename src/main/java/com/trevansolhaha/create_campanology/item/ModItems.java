@@ -81,6 +81,112 @@ public class ModItems {
     public static final DeferredItem<BlockItem> ANDESITE_ALLOY_BELL_1 = ITEMS.register("andesite_alloy_bell_1",
             () -> new BlockItem(ModBlocks.ANDESITE_ALLOY_BELL_1.get(), new Item.Properties()));
 
+    //clappers
+    public static final DeferredItem<Item> COPPER_SMALL_CLAPPER = ITEMS.register("copper_small_clapper",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPER_MEDIUM_CLAPPER = ITEMS.register("copper_medium_clapper",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPER_BIG_CLAPPER = ITEMS.register("copper_big_clapper",
+            () -> new Item(new Item.Properties()));
+
+
+
+    public static final DeferredItem<Item> ANDESITE_SMALL_CLAPPER = ITEMS.register("andesite_small_clapper",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> ANDESITE_MEDIUM_CLAPPER = ITEMS.register("andesite_medium_clapper",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> ANDESITE_BIG_CLAPPER = ITEMS.register("andesite_big_clapper",
+            () -> new Item(new Item.Properties()));
+
+
+
+    public static final DeferredItem<Item> BRASS_SMALL_CLAPPER = ITEMS.register("brass_small_clapper",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> BRASS_MEDIUM_CLAPPER = ITEMS.register("brass_medium_clapper",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> BRASS_BIG_CLAPPER = ITEMS.register("brass_big_clapper",
+            () -> new Item(new Item.Properties()));
+
+
+
+
+    public static final DeferredItem<Item> GOLD_SMALL_CLAPPER = ITEMS.register("gold_small_clapper",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> GOLD_MEDIUM_CLAPPER = ITEMS.register("gold_medium_clapper",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> GOLD_BIG_CLAPPER = ITEMS.register("gold_big_clapper",
+            () -> new Item(new Item.Properties()));
+
+
+
+    public static final DeferredItem<Item> BRONZE_SMALL_CLAPPER = ITEMS.register("bronze_small_clapper",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> BRONZE_MEDIUM_CLAPPER = ITEMS.register("bronze_medium_clapper",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> BRONZE_BIG_CLAPPER = ITEMS.register("bronze_big_clapper",
+            () -> new Item(new Item.Properties()));
+
+
+
+
+    public static final DeferredItem<Item> IRON_SMALL_CLAPPER = ITEMS.register("iron_small_clapper",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> IRON_MEDIUM_CLAPPER = ITEMS.register("iron_medium_clapper",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> IRON_BIG_CLAPPER = ITEMS.register("iron_big_clapper",
+            () -> new Item(new Item.Properties()));
+
+
+
+
+    public static final DeferredItem<Item> ZINC_SMALL_CLAPPER = ITEMS.register("zinc_small_clapper",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> ZINC_MEDIUM_CLAPPER = ITEMS.register("zinc_medium_clapper",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> ZINC_BIG_CLAPPER = ITEMS.register("zinc_big_clapper",
+            () -> new Item(new Item.Properties()));
+
+
+
+
+    public static final DeferredItem<Item> OXIDISED_COPPER_SMALL_CLAPPER = ITEMS.register("oxidised_copper_small_clapper",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> OXIDISED_COPPER_MEDIUM_CLAPPER = ITEMS.register("oxidised_copper_medium_clapper",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> OXIDISED_COPPER_BIG_CLAPPER = ITEMS.register("oxidised_copper_big_clapper",
+            () -> new Item(new Item.Properties()));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     public static void register(IEventBus eventBus) {

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "create_campanology:musical_iron_ingot"
+    }
+  },
+  "pattern": [
+    "I",
+    "I",
+    "I"
+  ],
+  "result": {
+    "count": 1,
+    "id": "create_campanology:iron_medium_clapper"
+  }
+}

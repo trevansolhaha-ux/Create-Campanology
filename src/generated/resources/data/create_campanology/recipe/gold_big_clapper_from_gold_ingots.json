@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "create_campanology:musical_gold_block"
+    },
+    "I": {
+      "item": "create_campanology:musical_gold_ingot"
+    }
+  },
+  "pattern": [
+    "I",
+    "I",
+    "B"
+  ],
+  "result": {
+    "count": 1,
+    "id": "create_campanology:gold_big_clapper"
+  }
+}
