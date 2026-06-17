@@ -29,7 +29,7 @@ public class CreateCampanology
 {
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "create_campanology";
-    // Directly reference a slf4j logger
+
     public static final Logger LOGGER = LogUtils.getLogger();
 
     // Register a creative tab for our mod
@@ -106,9 +106,9 @@ public class CreateCampanology
                                 output.accept(ModItems.ANDESITE_SMALL_CLAPPER.get());
                                 output.accept(ModItems.ANDESITE_MEDIUM_CLAPPER.get());
                                 output.accept(ModItems.ANDESITE_BIG_CLAPPER.get());
-                                output.accept(ModItems.OXIDISED_COPPER_SMALL_CLAPPER.get());
-                                output.accept(ModItems.OXIDISED_COPPER_MEDIUM_CLAPPER.get());
-                                output.accept(ModItems.OXIDISED_COPPER_BIG_CLAPPER.get());
+                                output.accept(ModItems.OXIDISED_SMALL_CLAPPER.get());
+                                output.accept(ModItems.OXIDISED_MEDIUM_CLAPPER.get());
+                                output.accept(ModItems.OXIDISED_BIG_CLAPPER.get());
 
 
 

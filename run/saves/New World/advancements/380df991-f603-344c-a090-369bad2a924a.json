@@ -1978,5 +1978,53 @@
     },
     "done": true
   },
+  "create_campanology:recipes/misc/bronze_medium_clapper_from_bronze_ingots": {
+    "criteria": {
+      "has_bronze_ingot": "2026-06-17 20:29:22 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/bronze_big_clapper_from_bronze_ingots": {
+    "criteria": {
+      "has_bronze_ingot": "2026-06-17 20:29:22 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/bronze_small_clapper_from_bronze_ingots": {
+    "criteria": {
+      "has_bronze_ingot": "2026-06-17 20:29:22 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_oxidised_nuggets_from_oxidised_musical_ingots": {
+    "criteria": {
+      "has_oxidised_musical_ingot": "2026-06-17 20:29:41 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_oxidised_block_from_ingots": {
+    "criteria": {
+      "has_oxidised_musical_ingot": "2026-06-17 20:29:41 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/oxidised_big_clapper_from_oxidised_copper_ingots": {
+    "criteria": {
+      "has_oxidised_copper_ingot": "2026-06-17 20:37:16 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/oxidised_small_clapper_from_oxidised_copper_ingots": {
+    "criteria": {
+      "has_oxidised_copper_ingot": "2026-06-17 20:37:16 +0000"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/oxidised_medium_clapper_from_oxidised_copper_ingots": {
+    "criteria": {
+      "has_oxidised_copper_ingot": "2026-06-17 20:37:16 +0000"
+    },
+    "done": true
+  },
   "DataVersion": 3955
 }

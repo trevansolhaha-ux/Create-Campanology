@@ -43,5 +43,31 @@ public class ModItemModels extends ItemModelProvider {
         simpleBlockItem(ModBlocks.GOLD_BELL_1.get());
         simpleBlockItem(ModBlocks.ZINC_BELL_1.get());
         simpleBlockItem(ModBlocks.ANDESITE_ALLOY_BELL_1.get());
+
+        basicItem(ModItems.BRASS_SMALL_CLAPPER.get());
+        basicItem(ModItems.BRASS_MEDIUM_CLAPPER.get());
+        basicItem(ModItems.BRASS_BIG_CLAPPER.get());
+        basicItem(ModItems.IRON_SMALL_CLAPPER.get());
+        basicItem(ModItems.IRON_MEDIUM_CLAPPER.get());
+        basicItem(ModItems.IRON_BIG_CLAPPER.get());
+        basicItem(ModItems.BRONZE_SMALL_CLAPPER.get());
+        basicItem(ModItems.BRONZE_MEDIUM_CLAPPER.get());
+        basicItem(ModItems.BRONZE_BIG_CLAPPER.get());
+        basicItem(ModItems.ANDESITE_SMALL_CLAPPER.get());
+        basicItem(ModItems.ANDESITE_MEDIUM_CLAPPER.get());
+        basicItem(ModItems.ANDESITE_BIG_CLAPPER.get());
+        basicItem(ModItems.COPPER_SMALL_CLAPPER.get());
+        basicItem(ModItems.COPPER_MEDIUM_CLAPPER.get());
+        basicItem(ModItems.COPPER_BIG_CLAPPER.get());
+        basicItem(ModItems.GOLD_SMALL_CLAPPER.get());
+        basicItem(ModItems.GOLD_MEDIUM_CLAPPER.get());
+        basicItem(ModItems.GOLD_BIG_CLAPPER.get());
+        basicItem(ModItems.ZINC_SMALL_CLAPPER.get());
+        basicItem(ModItems.ZINC_MEDIUM_CLAPPER.get());
+        basicItem(ModItems.ZINC_BIG_CLAPPER.get());
+        basicItem(ModItems.OXIDISED_SMALL_CLAPPER.get());
+        basicItem(ModItems.OXIDISED_MEDIUM_CLAPPER.get());
+        basicItem(ModItems.OXIDISED_BIG_CLAPPER.get());
+
     }
 }

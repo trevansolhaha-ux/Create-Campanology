@@ -532,31 +532,31 @@ public class ModRecipes extends RecipeProvider {
 
 
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.OXIDISED_COPPER_SMALL_CLAPPER.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.OXIDISED_SMALL_CLAPPER.get())
                 .pattern("N")
                 .pattern("N")
                 .pattern("I")
                 .define('I', ModItems.OXIDISED_COPPER_INGOT.get())
                 .define('N', ModItems.OXIDISED_MUSICAL_NUGGET.get())
                 .unlockedBy("has_oxidised_copper_ingot", has(ModItems.OXIDISED_COPPER_INGOT.get()))
-                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "oxidised_copper_small_clapper_from_oxidised_copper_ingots"));
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "oxidised_small_clapper_from_oxidised_copper_ingots"));
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.OXIDISED_COPPER_MEDIUM_CLAPPER.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.OXIDISED_MEDIUM_CLAPPER.get())
                 .pattern("I")
                 .pattern("I")
                 .pattern("I")
                 .define('I', ModItems.OXIDISED_COPPER_INGOT.get())
                 .unlockedBy("has_oxidised_copper_ingot", has(ModItems.OXIDISED_COPPER_INGOT.get()))
-                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "oxidised_copper_medium_clapper_from_oxidised_copper_ingots"));
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "oxidised_medium_clapper_from_oxidised_copper_ingots"));
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.OXIDISED_COPPER_BIG_CLAPPER.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.OXIDISED_BIG_CLAPPER.get())
                 .pattern("I")
                 .pattern("I")
                 .pattern("B")
                 .define('I', ModItems.OXIDISED_COPPER_INGOT.get())
                 .define('B', ModBlocks.OXIDISED_MUSICAL_BLOCK.get())
                 .unlockedBy("has_oxidised_copper_ingot", has(ModItems.OXIDISED_COPPER_INGOT.get()))
-                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "oxidised_copper_big_clapper_from_oxidised_copper_ingots"));
+                .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "oxidised_big_clapper_from_oxidised_copper_ingots"));
 
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ZINC_SMALL_CLAPPER.get())

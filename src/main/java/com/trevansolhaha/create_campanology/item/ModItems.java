@@ -163,13 +163,13 @@ public class ModItems {
 
 
 
-    public static final DeferredItem<Item> OXIDISED_COPPER_SMALL_CLAPPER = ITEMS.register("oxidised_copper_small_clapper",
+    public static final DeferredItem<Item> OXIDISED_SMALL_CLAPPER = ITEMS.register("oxidised_small_clapper",
             () -> new Item(new Item.Properties()));
 
-    public static final DeferredItem<Item> OXIDISED_COPPER_MEDIUM_CLAPPER = ITEMS.register("oxidised_copper_medium_clapper",
+    public static final DeferredItem<Item> OXIDISED_MEDIUM_CLAPPER = ITEMS.register("oxidised_medium_clapper",
             () -> new Item(new Item.Properties()));
 
-    public static final DeferredItem<Item> OXIDISED_COPPER_BIG_CLAPPER = ITEMS.register("oxidised_copper_big_clapper",
+    public static final DeferredItem<Item> OXIDISED_BIG_CLAPPER = ITEMS.register("oxidised_big_clapper",
             () -> new Item(new Item.Properties()));
 
 
