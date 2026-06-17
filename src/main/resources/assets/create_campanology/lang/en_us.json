@@ -52,13 +52,12 @@
   "block.create_campanology.musical_iron_block": "Musical Iron Block",
   "block.create_campanology.oxidised_musical_block": "Oxidized Musical Block",
   "block.create_campanology.raw_musical_tin_block": "Block of Raw Musical Tin",
-  "block.create_campanology.musical_copper_block": "Musical Copper Block",
-  "block.create_campanology.copper_bell_1": "Copper Bell",
-  "block.create_campanology.oxidized_copper_bell_1": "Oxidized Copper Bell",
-  "block.create_campanology.iron_bell_1": "Iron Bell",
-  "block.create_campanology.bronze_bell_1": "Bronze Bell",
-  "block.create_campanology.brass_bell_1": "Brass Bell",
-  "block.create_campanology.gold_bell_1": "Gold Bell",
-  "block.create_campanology.zinc_bell_1": "Zinc Bell",
-  "block.create_campanology.andesite_alloy_bell_1": "Andesite Alloy Bell"
+  "block.create_campanology.copper_bell_1": "Small Copper Bell",
+  "block.create_campanology.oxidized_copper_bell_1": "Small Oxidized Copper Bell",
+  "block.create_campanology.iron_bell_1": "Small Iron Bell",
+  "block.create_campanology.bronze_bell_1": "Small Bronze Bell",
+  "block.create_campanology.brass_bell_1": "Small Brass Bell",
+  "block.create_campanology.gold_bell_1": "Small Gold Bell",
+  "block.create_campanology.zinc_bell_1": "Small Zinc Bell",
+  "block.create_campanology.andesite_alloy_bell_1": "Small Andesite Alloy Bell"
 }

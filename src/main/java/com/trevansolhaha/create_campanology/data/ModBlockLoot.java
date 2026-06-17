@@ -45,14 +45,14 @@ public class ModBlockLoot extends BlockLootSubProvider {
         dropSelf(ModBlocks.OXIDISED_MUSICAL_BLOCK.get());
         dropSelf(ModBlocks.RAW_MUSICAL_TIN_BLOCK.get());
 
-        dropSelf(ModBlocks.COPPER_BELL.get());
-        dropSelf(ModBlocks.OXIDIZED_COPPER_BELL.get());
-        dropSelf(ModBlocks.IRON_BELL.get());
-        dropSelf(ModBlocks.BRONZE_BELL.get());
-        dropSelf(ModBlocks.BRASS_BELL.get());
-        dropSelf(ModBlocks.GOLD_BELL.get());
-        dropSelf(ModBlocks.ZINC_BELL.get());
-        dropSelf(ModBlocks.ANDESITE_ALLOY_BELL.get());
+        dropSelf(ModBlocks.COPPER_BELL_1.get());
+        dropSelf(ModBlocks.OXIDIZED_COPPER_BELL_1.get());
+        dropSelf(ModBlocks.IRON_BELL_1.get());
+        dropSelf(ModBlocks.BRONZE_BELL_1.get());
+        dropSelf(ModBlocks.BRASS_BELL_1.get());
+        dropSelf(ModBlocks.GOLD_BELL_1.get());
+        dropSelf(ModBlocks.ZINC_BELL_1.get());
+        dropSelf(ModBlocks.ANDESITE_ALLOY_BELL_1.get());
 
         this.add(ModBlocks.MUSICAL_TIN_ORE.get(),
                 block -> createOreDrop(ModBlocks.MUSICAL_TIN_ORE.get(),ModItems.RAW_MUSICAL_TIN.get()));

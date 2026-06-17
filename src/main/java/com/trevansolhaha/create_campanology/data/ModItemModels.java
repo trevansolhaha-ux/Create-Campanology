@@ -35,13 +35,13 @@ public class ModItemModels extends ItemModelProvider {
         basicItem(ModItems.OXIDISED_MUSICAL_NUGGET.get());
         basicItem(ModItems.OXIDISED_COPPER_INGOT.get());
 
-        simpleBlockItem(ModBlocks.COPPER_BELL.get());
-        simpleBlockItem(ModBlocks.OXIDIZED_COPPER_BELL.get());
-        simpleBlockItem(ModBlocks.IRON_BELL.get());
-        simpleBlockItem(ModBlocks.BRONZE_BELL.get());
-        simpleBlockItem(ModBlocks.BRASS_BELL.get());
-        simpleBlockItem(ModBlocks.GOLD_BELL.get());
-        simpleBlockItem(ModBlocks.ZINC_BELL.get());
-        simpleBlockItem(ModBlocks.ANDESITE_ALLOY_BELL.get());
+        simpleBlockItem(ModBlocks.COPPER_BELL_1.get());
+        simpleBlockItem(ModBlocks.OXIDIZED_COPPER_BELL_1.get());
+        simpleBlockItem(ModBlocks.IRON_BELL_1.get());
+        simpleBlockItem(ModBlocks.BRONZE_BELL_1.get());
+        simpleBlockItem(ModBlocks.BRASS_BELL_1.get());
+        simpleBlockItem(ModBlocks.GOLD_BELL_1.get());
+        simpleBlockItem(ModBlocks.ZINC_BELL_1.get());
+        simpleBlockItem(ModBlocks.ANDESITE_ALLOY_BELL_1.get());
     }
 }

@@ -116,66 +116,66 @@ public class ModBlocks {
             ));
 
     // Bells
-    public static final DeferredBlock<Block> COPPER_BELL = BLOCKS.register("copper_bell_1",
+    public static final DeferredBlock<Block> COPPER_BELL_1 = BLOCKS.register("copper_bell_1",
             () -> new CopperBellBlock(BlockBehaviour.Properties.of()
-                    .sound(SoundType.METAL)
-                    .mapColor(MapColor.METAL)
+                    .sound(SoundType.ANVIL)
+                    .mapColor(MapColor.COLOR_ORANGE)
                     .requiresCorrectToolForDrops()
                     .strength(5.0f,5.0f)
                     .noOcclusion()
             ));
-    public static final DeferredBlock<Block> OXIDIZED_COPPER_BELL = BLOCKS.register("oxidized_copper_bell_1",
+    public static final DeferredBlock<Block> OXIDIZED_COPPER_BELL_1 = BLOCKS.register("oxidized_copper_bell_1",
             () -> new OxidizedCopperBellBlock(BlockBehaviour.Properties.of()
-                    .sound(SoundType.METAL)
-                    .mapColor(MapColor.METAL)
+                    .sound(SoundType.ANVIL)
+                    .mapColor(MapColor.COLOR_CYAN)
                     .requiresCorrectToolForDrops()
                     .strength(5.0f,5.0f)
                     .noOcclusion()
             ));
-    public static final DeferredBlock<Block> IRON_BELL = BLOCKS.register("iron_bell_1",
+    public static final DeferredBlock<Block> IRON_BELL_1 = BLOCKS.register("iron_bell_1",
             () -> new IronBellBlock(BlockBehaviour.Properties.of()
-                    .sound(SoundType.METAL)
+                    .sound(SoundType.ANVIL)
                     .mapColor(MapColor.METAL)
                     .requiresCorrectToolForDrops()
                     .strength(5.0f,5.0f)
                     .noOcclusion()
             ));
-    public static final DeferredBlock<Block> BRONZE_BELL = BLOCKS.register("bronze_bell_1",
+    public static final DeferredBlock<Block> BRONZE_BELL_1 = BLOCKS.register("bronze_bell_1",
             () -> new BronzeBellBlock(BlockBehaviour.Properties.of()
-                    .sound(SoundType.METAL)
-                    .mapColor(MapColor.METAL)
+                    .sound(SoundType.ANVIL)
+                    .mapColor(MapColor.COLOR_ORANGE)
                     .requiresCorrectToolForDrops()
                     .strength(5.0f,5.0f)
                     .noOcclusion()
             ));
-    public static final DeferredBlock<Block> BRASS_BELL = BLOCKS.register("brass_bell_1",
+    public static final DeferredBlock<Block> BRASS_BELL_1 = BLOCKS.register("brass_bell_1",
             () -> new BrassBellBlock(BlockBehaviour.Properties.of()
-                    .sound(SoundType.METAL)
-                    .mapColor(MapColor.METAL)
+                    .sound(SoundType.ANVIL)
+                    .mapColor(MapColor.COLOR_YELLOW)
                     .requiresCorrectToolForDrops()
                     .strength(5.0f,5.0f)
                     .noOcclusion()
             ));
-    public static final DeferredBlock<Block> GOLD_BELL = BLOCKS.register("gold_bell_1",
+    public static final DeferredBlock<Block> GOLD_BELL_1 = BLOCKS.register("gold_bell_1",
             () -> new GoldBellBlock(BlockBehaviour.Properties.of()
-                    .sound(SoundType.METAL)
-                    .mapColor(MapColor.METAL)
+                    .sound(SoundType.ANVIL)
+                    .mapColor(MapColor.GOLD)
                     .requiresCorrectToolForDrops()
                     .strength(5.0f,5.0f)
                     .noOcclusion()
             ));
-    public static final DeferredBlock<Block> ZINC_BELL = BLOCKS.register("zinc_bell_1",
+    public static final DeferredBlock<Block> ZINC_BELL_1 = BLOCKS.register("zinc_bell_1",
             () -> new ZincBellBlock(BlockBehaviour.Properties.of()
-                    .sound(SoundType.METAL)
-                    .mapColor(MapColor.METAL)
+                    .sound(SoundType.ANVIL)
+                    .mapColor(MapColor.COLOR_CYAN)
                     .requiresCorrectToolForDrops()
                     .strength(5.0f,5.0f)
                     .noOcclusion()
             ));
-    public static final DeferredBlock<Block> ANDESITE_ALLOY_BELL = BLOCKS.register("andesite_alloy_bell_1",
+    public static final DeferredBlock<Block> ANDESITE_ALLOY_BELL_1 = BLOCKS.register("andesite_alloy_bell_1",
             () -> new AndesiteBellBlock(BlockBehaviour.Properties.of()
-                    .sound(SoundType.METAL)
-                    .mapColor(MapColor.METAL)
+                    .sound(SoundType.ANVIL)
+                    .mapColor(MapColor.COLOR_GRAY)
                     .requiresCorrectToolForDrops()
                     .strength(5.0f,5.0f)
                     .noOcclusion()

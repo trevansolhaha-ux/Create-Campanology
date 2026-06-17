@@ -1924,15 +1924,15 @@
     },
     "done": true
   },
-  "create_campanology:recipes/misc/musical_andesite_ingots_from_andesite_block": {
-    "criteria": {
-      "has_andesite_block": "2026-06-16 16:42:05 -0600"
-    },
-    "done": true
-  },
   "create_campanology:recipes/misc/musical_zinc_ingots_from_zinc_block": {
     "criteria": {
       "has_zinc_block": "2026-06-16 16:42:04 -0600"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_andesite_ingots_from_andesite_block": {
+    "criteria": {
+      "has_andesite_block": "2026-06-16 16:42:05 -0600"
     },
     "done": true
   },

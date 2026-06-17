@@ -62,23 +62,24 @@ public class ModItems {
     public static final DeferredItem<Item> OXIDISED_COPPER_INGOT = ITEMS.register("oxidised_copper_ingot",
             () -> new Item(new Item.Properties()));
 
-    // Bell Items
-    public static final DeferredItem<BlockItem> COPPER_BELL = ITEMS.register("copper_bell_1",
-            () -> new BlockItem(ModBlocks.COPPER_BELL.get(), new Item.Properties()));
-    public static final DeferredItem<BlockItem> OXIDIZED_COPPER_BELL = ITEMS.register("oxidized_copper_bell_1",
-            () -> new BlockItem(ModBlocks.OXIDIZED_COPPER_BELL.get(), new Item.Properties()));
-    public static final DeferredItem<BlockItem> IRON_BELL = ITEMS.register("iron_bell_1",
-            () -> new BlockItem(ModBlocks.IRON_BELL.get(), new Item.Properties()));
-    public static final DeferredItem<BlockItem> BRONZE_BELL = ITEMS.register("bronze_bell_1",
-            () -> new BlockItem(ModBlocks.BRONZE_BELL.get(), new Item.Properties()));
-    public static final DeferredItem<BlockItem> BRASS_BELL = ITEMS.register("brass_bell_1",
-            () -> new BlockItem(ModBlocks.BRASS_BELL.get(), new Item.Properties()));
-    public static final DeferredItem<BlockItem> GOLD_BELL = ITEMS.register("gold_bell_1",
-            () -> new BlockItem(ModBlocks.GOLD_BELL.get(), new Item.Properties()));
-    public static final DeferredItem<BlockItem> ZINC_BELL = ITEMS.register("zinc_bell_1",
-            () -> new BlockItem(ModBlocks.ZINC_BELL.get(), new Item.Properties()));
-    public static final DeferredItem<BlockItem> ANDESITE_ALLOY_BELL = ITEMS.register("andesite_alloy_bell_1",
-            () -> new BlockItem(ModBlocks.ANDESITE_ALLOY_BELL.get(), new Item.Properties()));
+    // Bell size 1 Items //
+
+    public static final DeferredItem<BlockItem> COPPER_BELL_1 = ITEMS.register("copper_bell_1",
+            () -> new BlockItem(ModBlocks.COPPER_BELL_1.get(), new Item.Properties()));
+    public static final DeferredItem<BlockItem> OXIDIZED_COPPER_BELL_1 = ITEMS.register("oxidized_copper_bell_1",
+            () -> new BlockItem(ModBlocks.OXIDIZED_COPPER_BELL_1.get(), new Item.Properties()));
+    public static final DeferredItem<BlockItem> IRON_BELL_1 = ITEMS.register("iron_bell_1",
+            () -> new BlockItem(ModBlocks.IRON_BELL_1.get(), new Item.Properties()));
+    public static final DeferredItem<BlockItem> BRONZE_BELL_1 = ITEMS.register("bronze_bell_1",
+            () -> new BlockItem(ModBlocks.BRONZE_BELL_1.get(), new Item.Properties()));
+    public static final DeferredItem<BlockItem> BRASS_BELL_1 = ITEMS.register("brass_bell_1",
+            () -> new BlockItem(ModBlocks.BRASS_BELL_1.get(), new Item.Properties()));
+    public static final DeferredItem<BlockItem> GOLD_BELL_1 = ITEMS.register("gold_bell_1",
+            () -> new BlockItem(ModBlocks.GOLD_BELL_1.get(), new Item.Properties()));
+    public static final DeferredItem<BlockItem> ZINC_BELL_1 = ITEMS.register("zinc_bell_1",
+            () -> new BlockItem(ModBlocks.ZINC_BELL_1.get(), new Item.Properties()));
+    public static final DeferredItem<BlockItem> ANDESITE_ALLOY_BELL_1 = ITEMS.register("andesite_alloy_bell_1",
+            () -> new BlockItem(ModBlocks.ANDESITE_ALLOY_BELL_1.get(), new Item.Properties()));
 
 
 
