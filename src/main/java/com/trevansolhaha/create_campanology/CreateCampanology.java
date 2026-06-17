@@ -1,6 +1,7 @@
 package com.trevansolhaha.create_campanology;
 
 import com.trevansolhaha.create_campanology.block.ModBlocks;
+import com.trevansolhaha.create_campanology.init.ModSoundEvents;
 import com.trevansolhaha.create_campanology.item.ModItems;
 import org.slf4j.Logger;
 
@@ -97,6 +98,7 @@ public class CreateCampanology
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
+        ModSoundEvents.register(modEventBus);
 
         // Register the creative mode tab
         CREATIVE_MODE_TABS.register(modEventBus);

@@ -59,5 +59,14 @@
   "block.create_campanology.brass_bell_1": "Small Brass Bell",
   "block.create_campanology.gold_bell_1": "Small Gold Bell",
   "block.create_campanology.zinc_bell_1": "Small Zinc Bell",
-  "block.create_campanology.andesite_alloy_bell_1": "Small Andesite Alloy Bell"
+  "block.create_campanology.andesite_alloy_bell_1": "Small Andesite Alloy Bell",
+
+  "create_campanology.subtitles.block.copper_bell": "Copper Bell Rings",
+  "create_campanology.subtitles.block.oxidized_copper_bell": "Oxidized Copper Bell Rings",
+  "create_campanology.subtitles.block.iron_bell": "Iron Bell Rings",
+  "create_campanology.subtitles.block.bronze_bell": "Bronze Bell Rings",
+  "create_campanology.subtitles.block.brass_bell": "Brass Bell Rings",
+  "create_campanology.subtitles.block.gold_bell": "Gold Bell Rings",
+  "create_campanology.subtitles.block.zinc_bell": "Zinc Bell Rings",
+  "create_campanology.subtitles.block.andesite_alloy_bell": "Andesite Alloy Bell Rings"
 }
