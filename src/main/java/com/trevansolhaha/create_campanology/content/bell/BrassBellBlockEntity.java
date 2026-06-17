@@ -18,9 +18,14 @@ import java.util.List;
 
 public class BrassBellBlockEntity extends SmartBlockEntity implements GeoBlockEntity, IHaveGoggleInformation {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
-    protected static final RawAnimation CLICK_ANIMATION = RawAnimation.begin().thenPlay("brass_bell_1.swing");
+
+    protected static final RawAnimation SWING_FRONT = RawAnimation.begin().thenPlay("brass_bell_1.swing_front");
+    protected static final RawAnimation SWING_BACK = RawAnimation.begin().thenPlay("brass_bell_1.swing_back");
+
+    private AnimationController<BrassBellBlockEntity> clickController;
+
     public BrassBellBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.BRASS_BELL.get(), pos, state);
+        super(ModBlockEntities.BRASS_BELL_1.get(), pos, state);
     }
 
     @Override
@@ -30,9 +35,19 @@ public class BrassBellBlockEntity extends SmartBlockEntity implements GeoBlockEn
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(new AnimationController<>(this, "click_controller", 0, state -> PlayState.STOP)
-                .triggerableAnim("trigger_click", CLICK_ANIMATION)
-        );
+        this.clickController = new AnimationController<>(this, "click_controller", 0, state -> PlayState.STOP)
+                .triggerableAnim("trigger_click_front", SWING_FRONT)
+                .triggerableAnim("trigger_click_back", SWING_BACK);
+
+        controllers.add(this.clickController);
+    }
+
+    @Override
+    public void triggerAnim(String controllerName, String animName) {
+        if ("click_controller".equals(controllerName) && this.clickController != null) {
+            this.clickController.forceAnimationReset();
+        }
+        GeoBlockEntity.super.triggerAnim(controllerName, animName);
     }
 
     @Override

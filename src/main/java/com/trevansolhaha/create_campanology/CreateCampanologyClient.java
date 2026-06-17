@@ -34,13 +34,13 @@ public class CreateCampanologyClient {
 
     @SubscribeEvent
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
-        event.registerBlockEntityRenderer(ModBlockEntities.COPPER_BELL.get(), CopperBellBlockRenderer::new);
-        event.registerBlockEntityRenderer(ModBlockEntities.OXIDIZED_COPPER_BELL.get(), OxidizedCopperBellBlockRenderer::new);
-        event.registerBlockEntityRenderer(ModBlockEntities.IRON_BELL.get(), IronBellBlockRenderer::new);
-        event.registerBlockEntityRenderer(ModBlockEntities.BRONZE_BELL.get(), BronzeBellBlockRenderer::new);
-        event.registerBlockEntityRenderer(ModBlockEntities.BRASS_BELL.get(), BrassBellBlockRenderer::new);
-        event.registerBlockEntityRenderer(ModBlockEntities.GOLD_BELL.get(), GoldBellBlockRenderer::new);
-        event.registerBlockEntityRenderer(ModBlockEntities.ZINC_BELL.get(), ZincBellBlockRenderer::new);
-        event.registerBlockEntityRenderer(ModBlockEntities.ANDESITE_ALLOY_BELL.get(), AndesiteBellBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.COPPER_BELL_1.get(), CopperBellBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.OXIDIZED_COPPER_BELL_1.get(), OxidizedCopperBellBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.IRON_BELL_1.get(), IronBellBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.BRONZE_BELL_1.get(), BronzeBellBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.BRASS_BELL_1.get(), BrassBellBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.GOLD_BELL_1.get(), GoldBellBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.ZINC_BELL_1.get(), ZincBellBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.ANDESITE_ALLOY_BELL_1.get(), AndesiteBellBlockRenderer::new);
     }
 }
