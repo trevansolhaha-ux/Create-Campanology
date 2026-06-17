@@ -359,5 +359,11 @@ public class ModRecipes extends RecipeProvider {
                 .define('#', ModItems.OXIDISED_COPPER_INGOT.get())
                 .unlockedBy("has_oxidized_copper_ingot", has(ModItems.OXIDISED_COPPER_INGOT.get()))
                 .save(output, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "vanilla_oxidized_copper_block_from_ingots"));
+
+
+
+        //Musical Zinc Recipes//
+
+
     }
 }

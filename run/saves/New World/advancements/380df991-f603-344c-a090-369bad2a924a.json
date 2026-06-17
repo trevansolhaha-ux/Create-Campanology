@@ -1936,5 +1936,41 @@
     },
     "done": true
   },
+  "create_campanology:recipes/misc/musical_bronze_ingots_from_bronze_block": {
+    "criteria": {
+      "has_bronze_block": "2026-06-16 21:28:42 -0600"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_tin_ingots_from_tin_block": {
+    "criteria": {
+      "has_tin_block": "2026-06-16 21:28:50 -0600"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_tin_ingot_from_blasting_nether_ore": {
+    "criteria": {
+      "has_nether_ore": "2026-06-16 21:29:25 -0600"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_tin_ingot_from_smelting_nether_ore": {
+    "criteria": {
+      "has_nether_ore": "2026-06-16 21:29:25 -0600"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_tin_block_from_blasting_raw_tin_block": {
+    "criteria": {
+      "has_raw_block": "2026-06-16 21:29:26 -0600"
+    },
+    "done": true
+  },
+  "create_campanology:recipes/misc/musical_tin_block_from_smelting_raw_tin_block": {
+    "criteria": {
+      "has_raw_block": "2026-06-16 21:29:26 -0600"
+    },
+    "done": true
+  },
   "DataVersion": 3955
 }

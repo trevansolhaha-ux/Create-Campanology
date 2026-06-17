@@ -16,9 +16,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 public class IronBellBlock extends ModBaseBellBlock {
-    protected static final VoxelShape SHAPE = Block.box(5.0D, 5.0D, 5.0D, 11.0D, 16.0D, 11.0D);
-    public IronBellBlock(Properties properties) {
-        super(properties);
+    protected static final VoxelShape SHAPE = Block.box(5.0D, 4.0D, 5.0D, 11.0D, 16.0D, 11.0D);
+    public IronBellBlock(Properties properties) { super(properties);
     }
 
     @Override

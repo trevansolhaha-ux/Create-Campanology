@@ -30,7 +30,7 @@ public class ZincBellBlockEntity extends SmartBlockEntity implements GeoBlockEnt
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(new AnimationController<>(this, "click_controller", 2, state -> PlayState.STOP)
+        controllers.add(new AnimationController<>(this, "click_controller", 0, state -> PlayState.STOP)
                 .triggerableAnim("trigger_click", CLICK_ANIMATION)
         );
     }
