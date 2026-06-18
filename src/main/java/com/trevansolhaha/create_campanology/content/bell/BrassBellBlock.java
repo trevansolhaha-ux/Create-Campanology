@@ -1,9 +1,12 @@
 package com.trevansolhaha.create_campanology.content.bell;
 
+import com.simibubi.create.content.equipment.wrench.WrenchItem;
 import com.trevansolhaha.create_campanology.block.ModBlocks;
 import com.trevansolhaha.create_campanology.content.bell.generic.ModBaseBellBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -11,18 +14,18 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Explosion;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
@@ -53,16 +56,16 @@ public class BrassBellBlock extends ModBaseBellBlock {
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         BlockPos blockPosAbove = pos.above();
         BlockState stateAbove = level.getBlockState(blockPosAbove);
-        if (stateAbove.is(net.minecraft.world.level.block.Blocks.CHAIN)) {
+        if (stateAbove.is(Blocks.CHAIN)) {
             return true;
         }
         return stateAbove.isFaceSturdy(level, blockPosAbove, Direction.DOWN);
     }
 
     @Override
-    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, net.minecraft.world.level.LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
         if (!state.canSurvive(level, pos)) {
-            return net.minecraft.world.level.block.Blocks.AIR.defaultBlockState();
+            return Blocks.AIR.defaultBlockState();
         }
         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
     }
@@ -80,7 +83,7 @@ public class BrassBellBlock extends ModBaseBellBlock {
     }
 
     @Override
-    public ItemStack getCloneItemStack(BlockState state, net.minecraft.world.phys.HitResult target, net.minecraft.world.level.LevelReader level, BlockPos pos, Player player) {
+    public ItemStack getCloneItemStack(BlockState state, HitResult target, LevelReader level, BlockPos pos, Player player) {
         return new ItemStack(cloneItem.get());
     }
 
@@ -101,12 +104,12 @@ public class BrassBellBlock extends ModBaseBellBlock {
 
     // for the wrench features
     @Override
-    public net.minecraft.world.InteractionResult onWrenched(net.minecraft.world.level.block.state.BlockState state, net.minecraft.world.item.context.UseOnContext context) {
-        net.minecraft.world.level.Level level = context.getLevel();
-        net.minecraft.core.BlockPos pos = context.getClickedPos();
+    public InteractionResult onWrenched(BlockState state, UseOnContext context) {
+        Level level = context.getLevel();
+        BlockPos pos = context.getClickedPos();
 
         if (!level.isClientSide) {
-            net.minecraft.world.level.block.Block nextBell = net.minecraft.world.level.block.Blocks.AIR;
+            Block nextBell = Blocks.AIR;
             if (this == ModBlocks.BRASS_BELL_1.get()) {
                 nextBell = ModBlocks.BRASS_BELL_2.get();
             } else if (this == ModBlocks.BRASS_BELL_2.get()) {
@@ -114,43 +117,42 @@ public class BrassBellBlock extends ModBaseBellBlock {
             } else if (this == ModBlocks.BRASS_BELL_3.get()) {
                 nextBell = ModBlocks.BRASS_BELL_1.get();
             }
-            if (nextBell == net.minecraft.world.level.block.Blocks.AIR) {
-                return net.minecraft.world.InteractionResult.PASS;
+            if (nextBell == Blocks.AIR) {
+                return InteractionResult.PASS;
             }
-            net.minecraft.world.level.block.state.BlockState newState = nextBell.defaultBlockState();
-            if (state.hasProperty(net.minecraft.world.level.block.state.properties.BlockStateProperties.HORIZONTAL_FACING)) {
-                newState = newState.setValue(net.minecraft.world.level.block.state.properties.BlockStateProperties.HORIZONTAL_FACING,
-                        state.getValue(net.minecraft.world.level.block.state.properties.BlockStateProperties.HORIZONTAL_FACING));
+            BlockState newState = nextBell.defaultBlockState();
+            if (state.hasProperty(BlockStateProperties.HORIZONTAL_FACING)) {
+                newState = newState.setValue(BlockStateProperties.HORIZONTAL_FACING,
+                        state.getValue(BlockStateProperties.HORIZONTAL_FACING));
             }
             level.removeBlockEntity(pos);
             level.setBlock(pos, newState, 3);
             level.blockUpdated(pos, nextBell);
-            level.playSound(null, pos, net.minecraft.sounds.SoundEvents.ANVIL_HIT, net.minecraft.sounds.SoundSource.BLOCKS, 0.5f, 1.5f);
+            level.playSound(null, pos, SoundEvents.ANVIL_HIT, SoundSource.BLOCKS, 0.5f, 1.5f);
         }
-        return net.minecraft.world.InteractionResult.SUCCESS;
+        return InteractionResult.SUCCESS;
     }
 
 
     @Override
-    protected net.minecraft.world.InteractionResult useWithoutItem(net.minecraft.world.level.block.state.BlockState state, net.minecraft.world.level.Level level, net.minecraft.core.BlockPos pos, net.minecraft.world.entity.player.Player player, net.minecraft.world.phys.BlockHitResult hitResult) {
+    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
 
-        if (player.getItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND).getItem() instanceof com.simibubi.create.content.equipment.wrench.WrenchItem ||
-                player.getItemInHand(net.minecraft.world.InteractionHand.OFF_HAND).getItem() instanceof com.simibubi.create.content.equipment.wrench.WrenchItem) {
-            return net.minecraft.world.InteractionResult.PASS;
+        if (player.getItemInHand(InteractionHand.MAIN_HAND).getItem() instanceof WrenchItem ||
+                player.getItemInHand(InteractionHand.OFF_HAND).getItem() instanceof WrenchItem) {
+            return InteractionResult.PASS;
         }
 
-        net.minecraft.world.level.block.entity.BlockEntity blockEntity = level.getBlockEntity(pos);
+        BlockEntity blockEntity = level.getBlockEntity(pos);
 
         if (blockEntity instanceof BrassBellBlockEntity brassBell) {
-            net.minecraft.core.Direction clickedFace = hitResult.getDirection();
-
-            net.minecraft.core.Direction bellFacing = state.getValue(FACING);
+            Direction clickedFace = hitResult.getDirection();
+            Direction bellFacing = state.getValue(FACING);
 
             brassBell.triggerBellAnimation(clickedFace, bellFacing);
 
-            return net.minecraft.world.InteractionResult.sidedSuccess(level.isClientSide());
+            return InteractionResult.sidedSuccess(level.isClientSide());
         }
-        return net.minecraft.world.InteractionResult.SUCCESS;
+        return InteractionResult.SUCCESS;
     }
 
     //for the animation features (explosion)

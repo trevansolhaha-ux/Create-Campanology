@@ -54,14 +54,11 @@ public class BrassBellBlockEntity extends SmartBlockEntity implements GeoBlockEn
 
     public void triggerBellAnimation(net.minecraft.core.Direction clickedFace, net.minecraft.core.Direction bellFacing) {
         if (clickedFace.getAxis() == bellFacing.getAxis()) {
-
             if (clickedFace == bellFacing) {
                 this.triggerAnim("click_controller", "trigger_click_front");
             } else {
                 this.triggerAnim("click_controller", "trigger_click_back");
             }
-
-        } else {
         }
     }
 
