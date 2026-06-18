@@ -1,8 +1,12 @@
 package com.trevansolhaha.create_campanology.data;
 
 import com.trevansolhaha.create_campanology.CreateCampanology;
+import com.trevansolhaha.create_campanology.worldgen.ModBiomeModifiers;
+import com.trevansolhaha.create_campanology.worldgen.ModConfiguredFeatures;
+import com.trevansolhaha.create_campanology.worldgen.ModPlacedFeatures;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
@@ -12,6 +16,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.Collections;
 import java.util.List;
@@ -27,7 +32,10 @@ public class ModDatagen {
         PackOutput output = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
-        RegistrySetBuilder registrySetBuilder = new RegistrySetBuilder();
+        RegistrySetBuilder registrySetBuilder = new RegistrySetBuilder()
+                .add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap)
+                .add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrap)
+                .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap);
         DatapackBuiltinEntriesProvider datapackBuiltinEntriesProvider = new DatapackBuiltinEntriesProvider(output, event.getLookupProvider(), registrySetBuilder, Set.of(CreateCampanology.MOD_ID));
         CompletableFuture<HolderLookup.Provider> lookupProvider = datapackBuiltinEntriesProvider.getRegistryProvider();
         generator.addProvider(event.includeServer(), datapackBuiltinEntriesProvider);
@@ -49,7 +57,5 @@ public class ModDatagen {
                 event.includeServer(),
                 new ModMixerRecipes(output, lookupProvider, CreateCampanology.MOD_ID)
         );
-
-
     }
 }

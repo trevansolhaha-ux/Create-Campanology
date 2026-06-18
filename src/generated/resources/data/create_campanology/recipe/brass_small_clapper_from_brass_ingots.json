@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "create_campanology:musical_brass_ingot"
+    },
+    "N": {
+      "item": "create_campanology:musical_brass_nugget"
+    }
+  },
+  "pattern": [
+    "N",
+    "N",
+    "I"
+  ],
+  "result": {
+    "count": 1,
+    "id": "create_campanology:brass_small_clapper"
+  }
+}
