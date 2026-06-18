@@ -11,6 +11,16 @@
     "create_campanology:musical_iron_block",
     "create_campanology:oxidised_musical_block",
     "create_campanology:raw_musical_tin_block",
-    "create_campanology:nether_musical_tin_ore"
+    "create_campanology:nether_musical_tin_ore",
+    "create_campanology:brass_bell_1",
+    "create_campanology:brass_bell_2",
+    "create_campanology:brass_bell_3",
+    "create_campanology:andesite_alloy_bell_1",
+    "create_campanology:bronze_bell_1",
+    "create_campanology:copper_bell_1",
+    "create_campanology:gold_bell_1",
+    "create_campanology:iron_bell_1",
+    "create_campanology:oxidized_copper_bell_1",
+    "create_campanology:zinc_bell_1"
   ]
 }

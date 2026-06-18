@@ -4,9 +4,11 @@ import com.trevansolhaha.create_campanology.CreateCampanology;
 import com.trevansolhaha.create_campanology.init.ModBlockEntities;
 import com.trevansolhaha.create_campanology.item.ModItems;
 import com.trevansolhaha.create_campanology.content.bell.*;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
@@ -30,7 +32,9 @@ public class ModBlocks {
             ));
 
     public static final DeferredBlock<Block> NETHER_MUSICAL_TIN_ORE = registerBlock("nether_musical_tin_ore",
-            () -> new Block(BlockBehaviour.Properties.of()
+            () -> new DropExperienceBlock(
+                    UniformInt.of(2,5),
+                    BlockBehaviour.Properties.of()
                     .sound(SoundType.NETHER_GOLD_ORE)
                     .mapColor(MapColor.NETHER)
                     .requiresCorrectToolForDrops()
@@ -163,7 +167,7 @@ public class ModBlocks {
                     .noOcclusion(),
                     ModBlockEntities.BRASS_BELL_1,
                     ModItems.BRASS_BELL_1,
-                    Block.box(4.0D, 5.0D, 4.0D, 12.0D, 16.0D, 12.0D)
+                    Block.box(4.0D, 6.0D, 4.0D, 12.0D, 16.0D, 12.0D)
             ) {
                 @Override
                 public Block getNextBellVariant() {
@@ -179,7 +183,7 @@ public class ModBlocks {
                     .noOcclusion(),
                     ModBlockEntities.BRASS_BELL_2,
                     ModItems.BRASS_BELL_1,
-                    Block.box(5.0D, 6.0D, 5.0D, 11.0D, 14.0D, 11.0D)
+                    Block.box(3.0D, 3.0D, 3.0D, 13.0D, 14.0D, 13.0D)
             ) {
                 @Override
                 public Block getNextBellVariant() {
@@ -195,7 +199,7 @@ public class ModBlocks {
                     .noOcclusion(),
                     ModBlockEntities.BRASS_BELL_3,
                     ModItems.BRASS_BELL_1,
-                    Block.box(5.0D, 6.0D, 5.0D, 11.0D, 14.0D, 11.0D)
+                    Block.box(2.0D, 2.0D, 2.0D, 14.0D, 14.0D, 14.0D)
             ) {
                 @Override
                 public Block getNextBellVariant() {

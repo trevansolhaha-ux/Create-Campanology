@@ -48,10 +48,14 @@ public class BrassBellBlock extends ModBaseBellBlock {
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
+    //Allows the bell to survive hanging in a chain or on a solid block
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         BlockPos blockPosAbove = pos.above();
         BlockState stateAbove = level.getBlockState(blockPosAbove);
+        if (stateAbove.is(net.minecraft.world.level.block.Blocks.CHAIN)) {
+            return true;
+        }
         return stateAbove.isFaceSturdy(level, blockPosAbove, Direction.DOWN);
     }
 
