@@ -1,14 +1,16 @@
 package com.trevansolhaha.create_campanology.content.bell;
 
+import com.trevansolhaha.create_campanology.block.ModBlocks;
 import com.trevansolhaha.create_campanology.content.bell.generic.ModBaseBellBlock;
-import com.trevansolhaha.create_campanology.init.ModBlockEntities;
-import com.trevansolhaha.create_campanology.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
@@ -16,6 +18,7 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
@@ -25,14 +28,23 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.BiConsumer;
+import java.util.function.Supplier;
 
 public class BrassBellBlock extends ModBaseBellBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
-    protected static final VoxelShape SHAPE = Block.box(4.0D, 5.0D, 4.0D, 12.0D, 16.0D, 12.0D);
+    private final Supplier<? extends BlockEntityType<?>> blockEntityType;
+    private final Supplier<? extends Item> cloneItem;
+    private final VoxelShape shape;
 
-    public BrassBellBlock(Properties properties) {
+    public BrassBellBlock(Properties properties,
+                          Supplier<? extends BlockEntityType<?>> blockEntityType,
+                          Supplier<? extends Item> cloneItem,
+                          VoxelShape shape) {
         super(properties);
+        this.blockEntityType = blockEntityType;
+        this.cloneItem = cloneItem;
+        this.shape = shape;
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
@@ -51,6 +63,7 @@ public class BrassBellBlock extends ModBaseBellBlock {
         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
     }
 
+    //for the facing of the bells
     @Nullable
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
@@ -63,11 +76,9 @@ public class BrassBellBlock extends ModBaseBellBlock {
     }
 
     @Override
-    public net.minecraft.world.item.ItemStack getCloneItemStack(BlockState state, net.minecraft.world.phys.HitResult target, net.minecraft.world.level.LevelReader level, BlockPos pos, Player player) {
-        return new net.minecraft.world.item.ItemStack(ModItems.BRASS_BELL_1.get());
+    public ItemStack getCloneItemStack(BlockState state, net.minecraft.world.phys.HitResult target, net.minecraft.world.level.LevelReader level, BlockPos pos, Player player) {
+        return new ItemStack(cloneItem.get());
     }
-
-
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
@@ -76,32 +87,69 @@ public class BrassBellBlock extends ModBaseBellBlock {
 
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return ModBlockEntities.BRASS_BELL_1.get().create(blockPos, blockState);
+        return blockEntityType.get().create(blockPos, blockState);
     }
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE;
+        return shape;
     }
+
+    // for the wrench features
+    @Override
+    public net.minecraft.world.InteractionResult onWrenched(net.minecraft.world.level.block.state.BlockState state, net.minecraft.world.item.context.UseOnContext context) {
+        net.minecraft.world.level.Level level = context.getLevel();
+        net.minecraft.core.BlockPos pos = context.getClickedPos();
+
+        if (!level.isClientSide) {
+            net.minecraft.world.level.block.Block nextBell = net.minecraft.world.level.block.Blocks.AIR;
+            if (this == ModBlocks.BRASS_BELL_1.get()) {
+                nextBell = ModBlocks.BRASS_BELL_2.get();
+            } else if (this == ModBlocks.BRASS_BELL_2.get()) {
+                nextBell = ModBlocks.BRASS_BELL_3.get();
+            } else if (this == ModBlocks.BRASS_BELL_3.get()) {
+                nextBell = ModBlocks.BRASS_BELL_1.get();
+            }
+            if (nextBell == net.minecraft.world.level.block.Blocks.AIR) {
+                return net.minecraft.world.InteractionResult.PASS;
+            }
+            net.minecraft.world.level.block.state.BlockState newState = nextBell.defaultBlockState();
+            if (state.hasProperty(net.minecraft.world.level.block.state.properties.BlockStateProperties.HORIZONTAL_FACING)) {
+                newState = newState.setValue(net.minecraft.world.level.block.state.properties.BlockStateProperties.HORIZONTAL_FACING,
+                        state.getValue(net.minecraft.world.level.block.state.properties.BlockStateProperties.HORIZONTAL_FACING));
+            }
+            level.removeBlockEntity(pos);
+            level.setBlock(pos, newState, 3);
+            level.blockUpdated(pos, nextBell);
+            level.playSound(null, pos, net.minecraft.sounds.SoundEvents.ANVIL_HIT, net.minecraft.sounds.SoundSource.BLOCKS, 0.5f, 1.5f);
+        }
+        return net.minecraft.world.InteractionResult.SUCCESS;
+    }
+
 
     @Override
-    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        if (!level.isClientSide()) {
-            Direction clickedFace = hitResult.getDirection();
-            Direction bellFacing = state.getValue(FACING);
+    protected net.minecraft.world.InteractionResult useWithoutItem(net.minecraft.world.level.block.state.BlockState state, net.minecraft.world.level.Level level, net.minecraft.core.BlockPos pos, net.minecraft.world.entity.player.Player player, net.minecraft.world.phys.BlockHitResult hitResult) {
 
-            net.minecraft.world.level.block.entity.BlockEntity blockEntity = level.getBlockEntity(pos);
-            if (blockEntity instanceof BrassBellBlockEntity brassBell) {
-                if (clickedFace == bellFacing) {
-                    brassBell.triggerAnim("click_controller", "trigger_click_front");
-                } else if (clickedFace == bellFacing.getOpposite()) {
-                    brassBell.triggerAnim("click_controller", "trigger_click_back");
-                }
-            }
+        if (player.getItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND).getItem() instanceof com.simibubi.create.content.equipment.wrench.WrenchItem ||
+                player.getItemInHand(net.minecraft.world.InteractionHand.OFF_HAND).getItem() instanceof com.simibubi.create.content.equipment.wrench.WrenchItem) {
+            return net.minecraft.world.InteractionResult.PASS;
         }
-        return InteractionResult.SUCCESS;
+
+        net.minecraft.world.level.block.entity.BlockEntity blockEntity = level.getBlockEntity(pos);
+
+        if (blockEntity instanceof BrassBellBlockEntity brassBell) {
+            net.minecraft.core.Direction clickedFace = hitResult.getDirection();
+
+            net.minecraft.core.Direction bellFacing = state.getValue(FACING);
+
+            brassBell.triggerBellAnimation(clickedFace, bellFacing);
+
+            return net.minecraft.world.InteractionResult.sidedSuccess(level.isClientSide());
+        }
+        return net.minecraft.world.InteractionResult.SUCCESS;
     }
 
+    //for the animation features (explosion)
     @Override
     protected void onExplosionHit(BlockState blockState, Level level, BlockPos blockPos, Explosion explosion, BiConsumer<ItemStack, BlockPos> biConsumer) {
         if (explosion.canTriggerBlocks() && !level.isClientSide()) {
@@ -114,7 +162,7 @@ public class BrassBellBlock extends ModBaseBellBlock {
             if (blockEntity instanceof BrassBellBlockEntity brassBell) {
                 if (explosionSourceDirection == bellFacing) {
                     brassBell.triggerAnim("click_controller", "trigger_click_front");
-                } else {// If it's not front (including sides defaulting to back), play back
+                } else {
                     brassBell.triggerAnim("click_controller", "trigger_click_back");
                 }
             }

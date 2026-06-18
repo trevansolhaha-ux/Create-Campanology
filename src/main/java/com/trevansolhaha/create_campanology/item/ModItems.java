@@ -72,8 +72,14 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.IRON_BELL_1.get(), new Item.Properties()));
     public static final DeferredItem<BlockItem> BRONZE_BELL_1 = ITEMS.register("bronze_bell_1",
             () -> new BlockItem(ModBlocks.BRONZE_BELL_1.get(), new Item.Properties()));
+
     public static final DeferredItem<BlockItem> BRASS_BELL_1 = ITEMS.register("brass_bell_1",
             () -> new BlockItem(ModBlocks.BRASS_BELL_1.get(), new Item.Properties()));
+    public static final DeferredItem<BlockItem> BRASS_BELL_2 = ITEMS.register("brass_bell_2",
+            () -> new BlockItem(ModBlocks.BRASS_BELL_2.get(), new Item.Properties()));
+    public static final DeferredItem<BlockItem> BRASS_BELL_3 = ITEMS.register("brass_bell_3",
+            () -> new BlockItem(ModBlocks.BRASS_BELL_3.get(), new Item.Properties()));
+
     public static final DeferredItem<BlockItem> GOLD_BELL_1 = ITEMS.register("gold_bell_1",
             () -> new BlockItem(ModBlocks.GOLD_BELL_1.get(), new Item.Properties()));
     public static final DeferredItem<BlockItem> ZINC_BELL_1 = ITEMS.register("zinc_bell_1",

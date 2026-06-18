@@ -5,6 +5,7 @@ import com.trevansolhaha.create_campanology.block.ModBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -31,6 +32,17 @@ public class ModBlockTags extends BlockTagsProvider {
                 .add(ModBlocks.OXIDISED_MUSICAL_BLOCK.get())
                 .add(ModBlocks.RAW_MUSICAL_TIN_BLOCK.get())
                 .add(ModBlocks.NETHER_MUSICAL_TIN_ORE.get())
+
+                .add(ModBlocks.BRASS_BELL_1.get())
+                .add(ModBlocks.BRASS_BELL_2.get())
+                .add(ModBlocks.BRASS_BELL_3.get())
+                .add(ModBlocks.ANDESITE_ALLOY_BELL_1.get())
+                .add(ModBlocks.BRONZE_BELL_1.get())
+                .add(ModBlocks.COPPER_BELL_1.get())
+                .add(ModBlocks.GOLD_BELL_1.get())
+                .add(ModBlocks.IRON_BELL_1.get())
+                .add(ModBlocks.OXIDIZED_COPPER_BELL_1.get())
+                .add(ModBlocks.ZINC_BELL_1.get())
         ;
     }
 }

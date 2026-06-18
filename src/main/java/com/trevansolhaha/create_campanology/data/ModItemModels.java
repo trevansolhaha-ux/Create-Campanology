@@ -39,7 +39,11 @@ public class ModItemModels extends ItemModelProvider {
         simpleBlockItem(ModBlocks.OXIDIZED_COPPER_BELL_1.get());
         simpleBlockItem(ModBlocks.IRON_BELL_1.get());
         simpleBlockItem(ModBlocks.BRONZE_BELL_1.get());
+
         simpleBlockItem(ModBlocks.BRASS_BELL_1.get());
+        simpleBlockItem(ModBlocks.BRASS_BELL_2.get());
+        simpleBlockItem(ModBlocks.BRASS_BELL_3.get());
+
         simpleBlockItem(ModBlocks.GOLD_BELL_1.get());
         simpleBlockItem(ModBlocks.ZINC_BELL_1.get());
         simpleBlockItem(ModBlocks.ANDESITE_ALLOY_BELL_1.get());

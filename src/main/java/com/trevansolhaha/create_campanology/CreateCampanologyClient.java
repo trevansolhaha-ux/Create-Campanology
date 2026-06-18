@@ -38,7 +38,11 @@ public class CreateCampanologyClient {
         event.registerBlockEntityRenderer(ModBlockEntities.OXIDIZED_COPPER_BELL_1.get(), OxidizedCopperBellBlockRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.IRON_BELL_1.get(), IronBellBlockRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.BRONZE_BELL_1.get(), BronzeBellBlockRenderer::new);
-        event.registerBlockEntityRenderer(ModBlockEntities.BRASS_BELL_1.get(), BrassBellBlockRenderer::new);
+
+        event.registerBlockEntityRenderer(ModBlockEntities.BRASS_BELL_1.get(), context -> new BrassBellBlockRenderer(context, "brass_bell_1"));
+        event.registerBlockEntityRenderer(ModBlockEntities.BRASS_BELL_2.get(), context -> new BrassBellBlockRenderer(context, "brass_bell_2"));
+        event.registerBlockEntityRenderer(ModBlockEntities.BRASS_BELL_3.get(), context -> new BrassBellBlockRenderer(context, "brass_bell_3"));
+
         event.registerBlockEntityRenderer(ModBlockEntities.GOLD_BELL_1.get(), GoldBellBlockRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.ZINC_BELL_1.get(), ZincBellBlockRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.ANDESITE_ALLOY_BELL_1.get(), AndesiteBellBlockRenderer::new);

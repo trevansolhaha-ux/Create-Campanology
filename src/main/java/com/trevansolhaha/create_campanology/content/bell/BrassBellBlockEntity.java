@@ -3,8 +3,8 @@ package com.trevansolhaha.create_campanology.content.bell;
 import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
-import com.trevansolhaha.create_campanology.init.ModBlockEntities;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import software.bernie.geckolib.animatable.GeoBlockEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
@@ -19,13 +19,15 @@ import java.util.List;
 public class BrassBellBlockEntity extends SmartBlockEntity implements GeoBlockEntity, IHaveGoggleInformation {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
-    protected static final RawAnimation SWING_FRONT = RawAnimation.begin().thenPlay("brass_bell_1.swing_front");
-    protected static final RawAnimation SWING_BACK = RawAnimation.begin().thenPlay("brass_bell_1.swing_back");
+    private final RawAnimation swingFront;
+    private final RawAnimation swingBack;
 
     private AnimationController<BrassBellBlockEntity> clickController;
 
-    public BrassBellBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.BRASS_BELL_1.get(), pos, state);
+    public BrassBellBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state, String animationName) {
+        super(type, pos, state);
+        this.swingFront = RawAnimation.begin().thenPlay(animationName + ".swing_front");
+        this.swingBack = RawAnimation.begin().thenPlay(animationName + ".swing_back");
     }
 
     @Override
@@ -36,8 +38,8 @@ public class BrassBellBlockEntity extends SmartBlockEntity implements GeoBlockEn
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         this.clickController = new AnimationController<>(this, "click_controller", 0, state -> PlayState.STOP)
-                .triggerableAnim("trigger_click_front", SWING_FRONT)
-                .triggerableAnim("trigger_click_back", SWING_BACK);
+                .triggerableAnim("trigger_click_front", swingFront)
+                .triggerableAnim("trigger_click_back", swingBack);
 
         controllers.add(this.clickController);
     }
@@ -48,6 +50,19 @@ public class BrassBellBlockEntity extends SmartBlockEntity implements GeoBlockEn
             this.clickController.forceAnimationReset();
         }
         GeoBlockEntity.super.triggerAnim(controllerName, animName);
+    }
+
+    public void triggerBellAnimation(net.minecraft.core.Direction clickedFace, net.minecraft.core.Direction bellFacing) {
+        if (clickedFace.getAxis() == bellFacing.getAxis()) {
+
+            if (clickedFace == bellFacing) {
+                this.triggerAnim("click_controller", "trigger_click_front");
+            } else {
+                this.triggerAnim("click_controller", "trigger_click_back");
+            }
+
+        } else {
+        }
     }
 
     @Override
