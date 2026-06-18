@@ -34,8 +34,6 @@ public class ModBlockTags extends BlockTagsProvider {
                 .add(ModBlocks.NETHER_MUSICAL_TIN_ORE.get())
 
                 .add(ModBlocks.BRASS_BELL_1.get())
-                .add(ModBlocks.BRASS_BELL_2.get())
-                .add(ModBlocks.BRASS_BELL_3.get())
                 .add(ModBlocks.ANDESITE_ALLOY_BELL_1.get())
                 .add(ModBlocks.BRONZE_BELL_1.get())
                 .add(ModBlocks.COPPER_BELL_1.get())

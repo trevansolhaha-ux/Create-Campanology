@@ -2,6 +2,8 @@ package com.trevansolhaha.create_campanology.item;
 
 import com.trevansolhaha.create_campanology.CreateCampanology;
 import com.trevansolhaha.create_campanology.block.ModBlocks;
+import com.trevansolhaha.create_campanology.component.BellSizeComponent;
+import com.trevansolhaha.create_campanology.init.ModDataComponents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
@@ -9,6 +11,11 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ModItems {
+
+    public static Item.Properties bell() {
+        return new Item.Properties().component(ModDataComponents.BELL_SIZE, BellSizeComponent.getDefaultValue());
+    }
+
     public static final DeferredRegister.Items ITEMS =
             DeferredRegister.createItems(CreateCampanology.MOD_ID);
 
@@ -65,27 +72,21 @@ public class ModItems {
     // Bell size 1 Items //
 
     public static final DeferredItem<BlockItem> COPPER_BELL_1 = ITEMS.register("copper_bell_1",
-            () -> new BlockItem(ModBlocks.COPPER_BELL_1.get(), new Item.Properties()));
+            () -> new ModBellBlockItem(ModBlocks.COPPER_BELL_1.get(), bell()));
     public static final DeferredItem<BlockItem> OXIDIZED_COPPER_BELL_1 = ITEMS.register("oxidized_copper_bell_1",
-            () -> new BlockItem(ModBlocks.OXIDIZED_COPPER_BELL_1.get(), new Item.Properties()));
+            () -> new ModBellBlockItem(ModBlocks.OXIDIZED_COPPER_BELL_1.get(), bell()));
     public static final DeferredItem<BlockItem> IRON_BELL_1 = ITEMS.register("iron_bell_1",
-            () -> new BlockItem(ModBlocks.IRON_BELL_1.get(), new Item.Properties()));
+            () -> new ModBellBlockItem(ModBlocks.IRON_BELL_1.get(), bell()));
     public static final DeferredItem<BlockItem> BRONZE_BELL_1 = ITEMS.register("bronze_bell_1",
-            () -> new BlockItem(ModBlocks.BRONZE_BELL_1.get(), new Item.Properties()));
-
+            () -> new ModBellBlockItem(ModBlocks.BRONZE_BELL_1.get(), bell()));
     public static final DeferredItem<BlockItem> BRASS_BELL_1 = ITEMS.register("brass_bell_1",
-            () -> new BlockItem(ModBlocks.BRASS_BELL_1.get(), new Item.Properties()));
-    public static final DeferredItem<BlockItem> BRASS_BELL_2 = ITEMS.register("brass_bell_2",
-            () -> new BlockItem(ModBlocks.BRASS_BELL_2.get(), new Item.Properties()));
-    public static final DeferredItem<BlockItem> BRASS_BELL_3 = ITEMS.register("brass_bell_3",
-            () -> new BlockItem(ModBlocks.BRASS_BELL_3.get(), new Item.Properties()));
-
+            () -> new ModBellBlockItem(ModBlocks.BRASS_BELL_1.get(), bell()));
     public static final DeferredItem<BlockItem> GOLD_BELL_1 = ITEMS.register("gold_bell_1",
-            () -> new BlockItem(ModBlocks.GOLD_BELL_1.get(), new Item.Properties()));
+            () -> new ModBellBlockItem(ModBlocks.GOLD_BELL_1.get(), bell()));
     public static final DeferredItem<BlockItem> ZINC_BELL_1 = ITEMS.register("zinc_bell_1",
-            () -> new BlockItem(ModBlocks.ZINC_BELL_1.get(), new Item.Properties()));
+            () -> new ModBellBlockItem(ModBlocks.ZINC_BELL_1.get(), bell()));
     public static final DeferredItem<BlockItem> ANDESITE_ALLOY_BELL_1 = ITEMS.register("andesite_alloy_bell_1",
-            () -> new BlockItem(ModBlocks.ANDESITE_ALLOY_BELL_1.get(), new Item.Properties()));
+            () -> new ModBellBlockItem(ModBlocks.ANDESITE_ALLOY_BELL_1.get(), bell()));
 
     //clappers
     public static final DeferredItem<Item> COPPER_SMALL_CLAPPER = ITEMS.register("copper_small_clapper",

@@ -22,20 +22,7 @@ public class ModBlockEntities {
             () -> BlockEntityType.Builder.of(BronzeBellBlockEntity::new, ModBlocks.BRONZE_BELL_1.get()).build(null));
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BrassBellBlockEntity>> BRASS_BELL_1 = BLOCK_ENTITIES.register("brass_bell",
-            () -> BlockEntityType.Builder.of(
-                    (pos, state) -> new BrassBellBlockEntity(ModBlockEntities.BRASS_BELL_1.get(), pos, state, "brass_bell_1"),
-                    ModBlocks.BRASS_BELL_1.get()
-            ).build(null));
-    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BrassBellBlockEntity>> BRASS_BELL_2 = BLOCK_ENTITIES.register("brass_bell_2",
-            () -> BlockEntityType.Builder.of(
-                    (pos, state) -> new BrassBellBlockEntity(ModBlockEntities.BRASS_BELL_2.get(), pos, state, "brass_bell_2"),
-                    ModBlocks.BRASS_BELL_2.get()
-            ).build(null));
-    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BrassBellBlockEntity>> BRASS_BELL_3 = BLOCK_ENTITIES.register("brass_bell_3",
-            () -> BlockEntityType.Builder.of(
-                    (pos, state) -> new BrassBellBlockEntity(ModBlockEntities.BRASS_BELL_3.get(), pos, state, "brass_bell_3"),
-                    ModBlocks.BRASS_BELL_3.get()
-            ).build(null));
+            () -> BlockEntityType.Builder.of(BrassBellBlockEntity::new, ModBlocks.BRASS_BELL_1.get()).build(null));
 
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<GoldBellBlockEntity>> GOLD_BELL_1 = BLOCK_ENTITIES.register("gold_bell",

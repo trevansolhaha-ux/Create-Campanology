@@ -1,12 +1,11 @@
 package com.trevansolhaha.create_campanology.content.bell;
 
 import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
-import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
+import com.trevansolhaha.create_campanology.content.bell.generic.ModBaseBellBlockEntity;
+import com.trevansolhaha.create_campanology.init.ModBlockEntities;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import software.bernie.geckolib.animatable.GeoBlockEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.AnimatableManager;
 import software.bernie.geckolib.animation.AnimationController;
@@ -16,18 +15,16 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.List;
 
-public class BrassBellBlockEntity extends SmartBlockEntity implements GeoBlockEntity, IHaveGoggleInformation {
+public class BrassBellBlockEntity extends ModBaseBellBlockEntity implements IHaveGoggleInformation {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
-    private final RawAnimation swingFront;
-    private final RawAnimation swingBack;
+    private final RawAnimation swingFront = RawAnimation.begin().thenPlay("brass_bell_1.swing_front");
+    private final RawAnimation swingBack = RawAnimation.begin().thenPlay("brass_bell_1.swing_back");
 
     private AnimationController<BrassBellBlockEntity> clickController;
 
-    public BrassBellBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state, String animationName) {
-        super(type, pos, state);
-        this.swingFront = RawAnimation.begin().thenPlay(animationName + ".swing_front");
-        this.swingBack = RawAnimation.begin().thenPlay(animationName + ".swing_back");
+    public BrassBellBlockEntity(BlockPos pos, BlockState state) {
+        super(ModBlockEntities.BRASS_BELL_1.get(), pos, state);
     }
 
     @Override
@@ -49,17 +46,7 @@ public class BrassBellBlockEntity extends SmartBlockEntity implements GeoBlockEn
         if ("click_controller".equals(controllerName) && this.clickController != null) {
             this.clickController.forceAnimationReset();
         }
-        GeoBlockEntity.super.triggerAnim(controllerName, animName);
-    }
-
-    public void triggerBellAnimation(net.minecraft.core.Direction clickedFace, net.minecraft.core.Direction bellFacing) {
-        if (clickedFace.getAxis() == bellFacing.getAxis()) {
-            if (clickedFace == bellFacing) {
-                this.triggerAnim("click_controller", "trigger_click_front");
-            } else {
-                this.triggerAnim("click_controller", "trigger_click_back");
-            }
-        }
+        super.triggerAnim(controllerName, animName);
     }
 
     @Override
