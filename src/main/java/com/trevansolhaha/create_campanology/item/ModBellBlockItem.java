@@ -20,7 +20,7 @@ public class ModBellBlockItem extends BlockItem {
     @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         ModBellSizes size = stack.getOrDefault(ModDataComponents.BELL_SIZE, BellSizeComponent.getDefaultValue()).getSize();
-        tooltipComponents.add(Component.literal(size.getSerializedName())); // TODO: add translations for this
+        tooltipComponents.add(Component.translatable("create_campanology.bell_size." + size.getSerializedName())); // TODO: add translations for this
 
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }

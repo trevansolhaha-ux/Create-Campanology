@@ -93,5 +93,9 @@
   "item.create_campanology.gold_big_clapper": "Gold small clapper",
   "item.create_campanology.oxidised_small_clapper": "Oxidised small clapper",
   "item.create_campanology.oxidised_medium_clapper": "Oxidised small clapper",
-  "item.create_campanology.oxidised_big_clapper": "Oxidised small clapper"
+  "item.create_campanology.oxidised_big_clapper": "Oxidised small clapper",
+
+  "create_campanology.bell_size.small": "Small",
+  "create_campanology.bell_size.medium": "Medium",
+  "create_campanology.bell_size.large": "Large"
 }

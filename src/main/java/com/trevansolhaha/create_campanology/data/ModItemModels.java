@@ -80,30 +80,37 @@ public class ModItemModels extends ItemModelProvider {
 
     // For future use when changing item models based on the size of bell
     // TODO: must adapt to use item instead of hard coded brass bell
+    //the above thing is done but if for any reason it crashs on startup then add the json files for the medium and large bells
+    //and or uncommnet the sizes 2 and 3 until they are added
+    // Generates an item model for a bell item that overrides based on the size property
+    // The item's registry name is used to derive the corresponding block models dynamically
     private void smallBellItem(Item item) {
-        // 1. Correctly grab the registry ID path (e.g., "brass_bell")
+        // Correctly grab the registry ID path (e.g., "brass_bell_1")
         ResourceLocation itemKey = BuiltInRegistries.ITEM.getKey(item);
         String baseName = itemKey.getPath();
 
+
+        String blockPrefix = baseName.endsWith("_1") ? baseName.substring(0, baseName.length() - 2) : baseName;
+
         ResourceLocation propertyId = ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "size");
 
-        // 1. Generate the main base item model (saved as models/item/brass_bell.json)
+        // Generate the main base item model (saved as models/item/{baseName}.json)
         getBuilder(baseName)
-                // Explicitly set the default small variant block model as the structural parent
-                .parent(getExistingFile(modLoc("block/brass_bell_1")))
+                // Set the default small variant block model as the structural parent
+                .parent(getExistingFile(modLoc("block/" + blockPrefix + "_1")))
 
-                // Override for Medium (Predicate >= 1.0)
+                // Override for Medium
                 .override()
                 .predicate(propertyId, 1.0F)
-                // Dynamically targets your existing block/brass_bell_2 model
-                .model(getExistingFile(modLoc("block/brass_bell_2")))
+                // Targets the corresponding medium block model
+                .model(getExistingFile(modLoc("block/" + blockPrefix + "_2")))
                 .end()
 
-                // Override for Large (Predicate >= 2.0)
+                // Override for Large
                 .override()
                 .predicate(propertyId, 2.0F)
-                // Dynamically targets your existing block/brass_bell_3 model
-                .model(getExistingFile(modLoc("block/brass_bell_3")))
+                // Targets the corresponding large block model
+                .model(getExistingFile(modLoc("block/" + blockPrefix + "_3")))
                 .end();
     }
 }
