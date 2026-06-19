@@ -1,9 +1,8 @@
-package com.trevansolhaha.create_campanology.item;
+package com.trevansolhaha.create_campanology.init;
 
 import com.trevansolhaha.create_campanology.CreateCampanology;
-import com.trevansolhaha.create_campanology.block.ModBlocks;
 import com.trevansolhaha.create_campanology.component.BellSizeComponent;
-import com.trevansolhaha.create_campanology.init.ModDataComponents;
+import com.trevansolhaha.create_campanology.item.ModBellBlockItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;

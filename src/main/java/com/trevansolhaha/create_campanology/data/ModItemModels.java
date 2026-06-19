@@ -1,8 +1,8 @@
 package com.trevansolhaha.create_campanology.data;
 
 import com.trevansolhaha.create_campanology.CreateCampanology;
-import com.trevansolhaha.create_campanology.item.ModItems;
-import com.trevansolhaha.create_campanology.block.ModBlocks;
+import com.trevansolhaha.create_campanology.init.ModItems;
+import com.trevansolhaha.create_campanology.init.ModBlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;

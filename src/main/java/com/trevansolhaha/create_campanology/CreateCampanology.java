@@ -1,9 +1,9 @@
 package com.trevansolhaha.create_campanology;
 
-import com.trevansolhaha.create_campanology.block.ModBlocks;
+import com.trevansolhaha.create_campanology.init.ModBlocks;
 import com.trevansolhaha.create_campanology.init.ModDataComponents;
 import com.trevansolhaha.create_campanology.init.ModSoundEvents;
-import com.trevansolhaha.create_campanology.item.ModItems;
+import com.trevansolhaha.create_campanology.init.ModItems;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;

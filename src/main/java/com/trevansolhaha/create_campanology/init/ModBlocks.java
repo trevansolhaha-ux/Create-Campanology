@@ -1,8 +1,7 @@
-package com.trevansolhaha.create_campanology.block;
+package com.trevansolhaha.create_campanology.init;
 
 import com.trevansolhaha.create_campanology.CreateCampanology;
 import com.trevansolhaha.create_campanology.content.bell.*;
-import com.trevansolhaha.create_campanology.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
