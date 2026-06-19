@@ -1,10 +1,11 @@
 {
-	"format_version": "1.21.11",
+	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/cube_bottom_top",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "block/brass_bell_3",
-		"particle": "block/brass_bell_3"
+		"0": "create_campanology:block/brass_bell_3",
+		"particle": "create_campanology:block/brass_bell_3"
 	},
 	"elements": [
 		{

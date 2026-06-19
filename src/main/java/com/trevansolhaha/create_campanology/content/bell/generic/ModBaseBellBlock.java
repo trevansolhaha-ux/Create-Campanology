@@ -1,24 +1,67 @@
 package com.trevansolhaha.create_campanology.content.bell.generic;
 
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
+import com.trevansolhaha.create_campanology.component.BellSizeComponent;
+import com.trevansolhaha.create_campanology.init.ModDataComponents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.EntityBlock;
-import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 public class ModBaseBellBlock extends Block implements IWrenchable, EntityBlock {
+    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    public static final EnumProperty<ModBellSizes> SIZE = EnumProperty.create("size", ModBellSizes.class);
     public ModBaseBellBlock(Properties properties) {
         super(properties);
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(SIZE, ModBellSizes.SMALL));
+    }
+
+    //Allows the bell to survive hanging in a chain or on a solid block
+    @Override
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        BlockPos blockPosAbove = pos.above();
+        BlockState stateAbove = level.getBlockState(blockPosAbove);
+        if (stateAbove.is(Blocks.CHAIN)) {
+            return true;
+        }
+        return stateAbove.isFaceSturdy(level, blockPosAbove, Direction.DOWN);
+    }
+
+    @Override
+    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+        if (!state.canSurvive(level, pos)) {
+            return Blocks.AIR.defaultBlockState();
+        }
+        return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+    }
+
+    //for the facing of the bells
+    @Nullable
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        Level level = context.getLevel();
+        BlockPos pos = context.getClickedPos();
+        if (!this.canSurvive(this.defaultBlockState(), level, pos)) {
+            return null;
+        }
+        ModBellSizes size = context.getItemInHand().getOrDefault(ModDataComponents.BELL_SIZE, BellSizeComponent.getDefaultValue()).getSize();
+        return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite()).setValue(SIZE, size);
     }
 
     // ==========================================
@@ -28,25 +71,25 @@ public class ModBaseBellBlock extends Block implements IWrenchable, EntityBlock 
     public InteractionResult onWrenched(BlockState state, UseOnContext context) {
         Level level = context.getLevel();
         BlockPos pos = context.getClickedPos();
-        Block nextBell = getNextBellVariant();
+        ModBellSizes nextSize = getNextSize(state.getValue(SIZE));
 
-        if (nextBell != null && nextBell != this) {
-            if (!level.isClientSide) {
-                BlockState newState = nextBell.defaultBlockState();
+        if (nextSize != state.getValue(SIZE) && !level.isClientSide()) {
+            BlockState newState = state.setValue(SIZE, nextSize);
+            level.setBlock(pos, newState, 3);
+            level.blockUpdated(pos, this);
 
-                if (state.hasProperty(net.minecraft.world.level.block.state.properties.BlockStateProperties.HORIZONTAL_FACING)) {
-                    newState = newState.setValue(net.minecraft.world.level.block.state.properties.BlockStateProperties.HORIZONTAL_FACING,
-                            state.getValue(net.minecraft.world.level.block.state.properties.BlockStateProperties.HORIZONTAL_FACING));
-                }
-                level.removeBlockEntity(pos);
-                level.setBlock(pos, newState, 3);
-                level.blockUpdated(pos, nextBell);
-
-                level.playSound(null, pos, net.minecraft.sounds.SoundEvents.ANVIL_HIT, net.minecraft.sounds.SoundSource.BLOCKS, 0.5f, 1.5f);
-            }
+            level.playSound(null, pos, SoundEvents.ANVIL_HIT, SoundSource.BLOCKS, 0.5f, 0.5f + nextSize.getPitchModifier());
             return InteractionResult.SUCCESS;
         }
         return InteractionResult.PASS;
+    }
+
+    private ModBellSizes getNextSize(ModBellSizes size) {
+        return switch (size) {
+            case SMALL -> ModBellSizes.MEDIUM;
+            case MEDIUM -> ModBellSizes.LARGE;
+            case LARGE -> ModBellSizes.SMALL;
+        };
     }
 
     public Block getNextBellVariant() {
@@ -61,6 +104,10 @@ public class ModBaseBellBlock extends Block implements IWrenchable, EntityBlock 
     // End of the wrench logic
     // ==========================================
 
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(FACING, SIZE);
+    }
 
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
