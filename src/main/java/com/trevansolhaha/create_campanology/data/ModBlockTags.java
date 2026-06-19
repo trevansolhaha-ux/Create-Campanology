@@ -1,7 +1,9 @@
 package com.trevansolhaha.create_campanology.data;
 
+import com.simibubi.create.AllTags;
 import com.trevansolhaha.create_campanology.CreateCampanology;
 import com.trevansolhaha.create_campanology.init.ModBlocks;
+import com.trevansolhaha.create_campanology.tag.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -41,5 +43,13 @@ public class ModBlockTags extends BlockTagsProvider {
                 .add(ModBlocks.OXIDIZED_COPPER_BELL_1.get())
                 .add(ModBlocks.ZINC_BELL_1.get())
         ;
+
+        tag(ModTags.Common.BlockTags.TIN_ORES.getTag())
+                .add(ModBlocks.MUSICAL_TIN_ORE.get())
+                .add(ModBlocks.NETHER_MUSICAL_TIN_ORE.get());
+
+        tag(ModTags.Common.BlockTags.TIN_STORAGE_BLOCKS.getTag())
+                .add(ModBlocks.MUSICAL_TIN_BLOCK.get())
+                .add(ModBlocks.RAW_MUSICAL_TIN_BLOCK.get());
     }
 }
