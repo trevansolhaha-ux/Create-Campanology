@@ -1,0 +1,24 @@
+{
+  "type": "create:mechanical_crafting",
+  "accept_mirrored": false,
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "create_campanology:bronze_small_clapper"
+    },
+    "I": {
+      "item": "create_campanology:musical_bronze_ingot"
+    }
+  },
+  "pattern": [
+    "  I  ",
+    " III ",
+    "IICII",
+    " I I "
+  ],
+  "result": {
+    "count": 1,
+    "id": "create_campanology:bronze_bell_1"
+  },
+  "show_notification": false
+}
