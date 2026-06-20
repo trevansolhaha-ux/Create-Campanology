@@ -1,7 +1,6 @@
 package com.trevansolhaha.create_campanology.init;
 
 import com.trevansolhaha.create_campanology.CreateCampanology;
-import com.trevansolhaha.create_campanology.block.ModBlocks;
 import com.trevansolhaha.create_campanology.content.bell.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;

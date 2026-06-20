@@ -3,7 +3,7 @@ package com.trevansolhaha.create_campanology.data;
 import com.simibubi.create.api.data.recipe.MechanicalCraftingRecipeBuilder;
 import com.simibubi.create.api.data.recipe.MechanicalCraftingRecipeGen;
 import com.trevansolhaha.create_campanology.CreateCampanology;
-import com.trevansolhaha.create_campanology.item.ModItems;
+import com.trevansolhaha.create_campanology.init.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;

@@ -3,7 +3,7 @@ package com.trevansolhaha.create_campanology.content.bell;
 import com.trevansolhaha.create_campanology.content.bell.generic.ModBaseBellBlock;
 import com.trevansolhaha.create_campanology.init.ModBlockEntities;
 import com.trevansolhaha.create_campanology.init.ModShapes;
-import com.trevansolhaha.create_campanology.item.ModItems;
+import com.trevansolhaha.create_campanology.init.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionResult;

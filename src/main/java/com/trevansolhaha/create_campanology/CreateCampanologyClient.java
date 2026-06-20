@@ -4,7 +4,7 @@ import com.trevansolhaha.create_campanology.client.renderer.block.*;
 import com.trevansolhaha.create_campanology.component.BellSizeComponent;
 import com.trevansolhaha.create_campanology.init.ModBlockEntities;
 import com.trevansolhaha.create_campanology.init.ModDataComponents;
-import com.trevansolhaha.create_campanology.item.ModItems;
+import com.trevansolhaha.create_campanology.init.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;

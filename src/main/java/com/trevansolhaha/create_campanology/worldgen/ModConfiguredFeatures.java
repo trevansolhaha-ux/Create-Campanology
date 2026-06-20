@@ -1,7 +1,7 @@
 package com.trevansolhaha.create_campanology.worldgen;
 
 import com.trevansolhaha.create_campanology.CreateCampanology;
-import com.trevansolhaha.create_campanology.block.ModBlocks;
+import com.trevansolhaha.create_campanology.init.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;

@@ -1,16 +1,14 @@
 package com.trevansolhaha.create_campanology.data;
 
 import com.trevansolhaha.create_campanology.CreateCampanology;
-import com.trevansolhaha.create_campanology.block.ModBlocks;
-import com.trevansolhaha.create_campanology.item.ModItems;
+import com.trevansolhaha.create_campanology.init.ModBlocks;
+import com.trevansolhaha.create_campanology.init.ModItems;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
 import javax.annotation.ParametersAreNonnullByDefault;

@@ -1,0 +1,13 @@
+{
+  "values": [
+    "create_campanology:musical_tin_ingot",
+    "create_campanology:musical_bronze_ingot",
+    "create_campanology:musical_copper_ingot",
+    "create_campanology:musical_zinc_ingot",
+    "create_campanology:musical_brass_ingot",
+    "create_campanology:musical_andesite_ingot",
+    "create_campanology:musical_gold_ingot",
+    "create_campanology:musical_iron_ingot",
+    "create_campanology:oxidised_musical_ingot"
+  ]
+}
