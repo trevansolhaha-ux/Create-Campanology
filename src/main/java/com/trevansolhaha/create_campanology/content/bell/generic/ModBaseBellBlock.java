@@ -71,7 +71,7 @@ public class ModBaseBellBlock extends Block implements IWrenchable, EntityBlock 
     public InteractionResult onWrenched(BlockState state, UseOnContext context) {
         Level level = context.getLevel();
         BlockPos pos = context.getClickedPos();
-        ModBellSizes nextSize = getNextSize(state.getValue(SIZE));
+        ModBellSizes nextSize = ModBellSizes.getNextSize(state.getValue(SIZE));
 
         if (nextSize != state.getValue(SIZE) && !level.isClientSide()) {
             BlockState newState = state.setValue(SIZE, nextSize);
@@ -82,14 +82,6 @@ public class ModBaseBellBlock extends Block implements IWrenchable, EntityBlock 
             return InteractionResult.SUCCESS;
         }
         return InteractionResult.PASS;
-    }
-
-    private ModBellSizes getNextSize(ModBellSizes size) { // TODO: move this method to ModBellSizes and make it a method of the enum
-        return switch (size) {
-            case SMALL -> ModBellSizes.MEDIUM;
-            case MEDIUM -> ModBellSizes.LARGE;
-            case LARGE -> ModBellSizes.SMALL;
-        };
     }
 
     private static <T extends Comparable<T>> BlockState copyProperty(BlockState from, BlockState to, Property<T> property) {

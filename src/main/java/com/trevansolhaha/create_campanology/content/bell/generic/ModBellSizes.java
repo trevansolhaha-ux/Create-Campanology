@@ -4,9 +4,12 @@ import com.mojang.serialization.Codec;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.util.ByIdMap;
 import net.minecraft.util.StringRepresentable;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Locale;
+import java.util.function.IntFunction;
 
 public enum ModBellSizes implements StringRepresentable {
     SMALL(0, 0.5F),
@@ -14,12 +17,13 @@ public enum ModBellSizes implements StringRepresentable {
     LARGE(2, 1.5F),
     ;
 
+    private static final ModBellSizes[] VALUES = values();
+    private static final IntFunction<ModBellSizes> BY_ID = ByIdMap.sparse(ModBellSizes::getId, VALUES, SMALL);
     public static final Codec<ModBellSizes> CODEC = StringRepresentable.fromEnum(ModBellSizes::values);
-    public static final StreamCodec<ByteBuf, ModBellSizes> STREAM_CODEC = ByteBufCodecs.STRING_UTF8.map(ModBellSizes::parse, ModBellSizes::getSerializedName);
+    public static final StreamCodec<ByteBuf, ModBellSizes> STREAM_CODEC = ByteBufCodecs.idMapper(BY_ID, ModBellSizes::getId);
 
     private final int id;
     private final float pitchModifier;
-
 
     ModBellSizes(int id, float pitchModifier) {
         this.id = id;
@@ -35,13 +39,18 @@ public enum ModBellSizes implements StringRepresentable {
     }
 
     @Override
-    public String getSerializedName() {
+    public @NotNull String getSerializedName() {
         return name().toLowerCase(Locale.ROOT);
     }
 
+    public static ModBellSizes getNextSize(ModBellSizes current) {
+        int nextIndex = (current.ordinal() + 1) % VALUES.length;
+        return VALUES[nextIndex];
+    }
+
     public static ModBellSizes parse(String name) {
-        for (ModBellSizes size : values()) {
-            if (size.getSerializedName().equals(name)) {
+        for (ModBellSizes size : VALUES) {
+            if (size.getSerializedName().equalsIgnoreCase(name)) {
                 return size;
             }
         }

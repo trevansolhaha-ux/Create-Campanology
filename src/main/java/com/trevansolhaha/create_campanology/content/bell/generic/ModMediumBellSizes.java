@@ -4,9 +4,12 @@ import com.mojang.serialization.Codec;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.util.ByIdMap;
 import net.minecraft.util.StringRepresentable;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Locale;
+import java.util.function.IntFunction;
 
 public enum ModMediumBellSizes implements StringRepresentable {
     ONE(0, 0.5F),
@@ -16,8 +19,10 @@ public enum ModMediumBellSizes implements StringRepresentable {
     FIVE(4, 2.5F),
     ;
 
+    private static final ModMediumBellSizes[] VALUES = values();
+    private static final IntFunction<ModMediumBellSizes> BY_ID = ByIdMap.sparse(ModMediumBellSizes::getId, VALUES, ONE);
     public static final Codec<ModMediumBellSizes> CODEC = StringRepresentable.fromEnum(ModMediumBellSizes::values);
-    public static final StreamCodec<ByteBuf, ModMediumBellSizes> STREAM_CODEC = ByteBufCodecs.STRING_UTF8.map(ModMediumBellSizes::parse, ModMediumBellSizes::getSerializedName);
+    public static final StreamCodec<ByteBuf, ModMediumBellSizes> STREAM_CODEC = ByteBufCodecs.idMapper(BY_ID, ModMediumBellSizes::getId);
 
     private final int id;
     private final float pitchModifier;
@@ -36,23 +41,18 @@ public enum ModMediumBellSizes implements StringRepresentable {
     }
 
     @Override
-    public String getSerializedName() {
+    public @NotNull String getSerializedName() {
         return name().toLowerCase(Locale.ROOT);
     }
 
-    public static ModMediumBellSizes getNextSize(ModMediumBellSizes current) { // is this the most efficient?
-        int nextId = (current.getId() + 1) % values().length;
-        for (ModMediumBellSizes size : values()) {
-            if (size.getId() == nextId) {
-                return size;
-            }
-        }
-        return ONE;
+    public static ModMediumBellSizes getNextSize(ModMediumBellSizes current) {
+        int nextIndex = (current.ordinal() + 1) % VALUES.length;
+        return VALUES[nextIndex];
     }
 
     public static ModMediumBellSizes parse(String name) {
-        for (ModMediumBellSizes size : values()) {
-            if (size.getSerializedName().equals(name)) {
+        for (ModMediumBellSizes size : VALUES) {
+            if (size.getSerializedName().equalsIgnoreCase(name)) {
                 return size;
             }
         }
