@@ -1,7 +1,7 @@
 package com.trevansolhaha.create_campanology.content.bell.generic;
 
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
-import com.trevansolhaha.create_campanology.component.BellSizeComponent;
+import com.trevansolhaha.create_campanology.component.MediumBellSizeComponent;
 import com.trevansolhaha.create_campanology.init.ModDataComponents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -24,12 +24,12 @@ import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
-public class ModBaseBellBlock extends Block implements IWrenchable, EntityBlock {
+public class ModBaseMediumBellBlock extends Block implements IWrenchable, EntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-    public static final EnumProperty<ModBellSizes> SIZE = EnumProperty.create("size", ModBellSizes.class);
-    public ModBaseBellBlock(Properties properties) {
+    public static final EnumProperty<ModMediumBellSizes> SIZE = EnumProperty.create("size", ModMediumBellSizes.class);  // TODO: create new size enum for medium bells
+    public ModBaseMediumBellBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(SIZE, ModBellSizes.SMALL));
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(SIZE, ModMediumBellSizes.ONE));
     }
 
     //Allows the bell to survive hanging in a chain or on a solid block
@@ -60,7 +60,7 @@ public class ModBaseBellBlock extends Block implements IWrenchable, EntityBlock 
         if (!this.canSurvive(this.defaultBlockState(), level, pos)) {
             return null;
         }
-        ModBellSizes size = context.getItemInHand().getOrDefault(ModDataComponents.BELL_SIZE, BellSizeComponent.getDefaultValue()).getSize();
+        ModMediumBellSizes size = context.getItemInHand().getOrDefault(ModDataComponents.MEDIUM_BELL_SIZE, MediumBellSizeComponent.getDefaultValue()).getSize();
         return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite()).setValue(SIZE, size);
     }
 
@@ -71,7 +71,7 @@ public class ModBaseBellBlock extends Block implements IWrenchable, EntityBlock 
     public InteractionResult onWrenched(BlockState state, UseOnContext context) {
         Level level = context.getLevel();
         BlockPos pos = context.getClickedPos();
-        ModBellSizes nextSize = getNextSize(state.getValue(SIZE));
+        ModMediumBellSizes nextSize = ModMediumBellSizes.getNextSize(state.getValue(SIZE));
 
         if (nextSize != state.getValue(SIZE) && !level.isClientSide()) {
             BlockState newState = state.setValue(SIZE, nextSize);
@@ -82,14 +82,6 @@ public class ModBaseBellBlock extends Block implements IWrenchable, EntityBlock 
             return InteractionResult.SUCCESS;
         }
         return InteractionResult.PASS;
-    }
-
-    private ModBellSizes getNextSize(ModBellSizes size) { // TODO: move this method to ModBellSizes and make it a method of the enum
-        return switch (size) {
-            case SMALL -> ModBellSizes.MEDIUM;
-            case MEDIUM -> ModBellSizes.LARGE;
-            case LARGE -> ModBellSizes.SMALL;
-        };
     }
 
     private static <T extends Comparable<T>> BlockState copyProperty(BlockState from, BlockState to, Property<T> property) {

@@ -79,6 +79,7 @@ public class CreateCampanology
                                 output.accept(ModBlocks.OXIDISED_MUSICAL_BLOCK.get());
                                 output.accept(ModBlocks.RAW_MUSICAL_TIN_BLOCK.get());
 
+                                // Small Bells
                                 output.accept(ModItems.BRONZE_BELL_1.get());
                                 output.accept(ModItems.ZINC_BELL_1.get());
                                 output.accept(ModItems.COPPER_BELL_1.get());
@@ -87,6 +88,11 @@ public class CreateCampanology
                                 output.accept(ModItems.GOLD_BELL_1.get());
                                 output.accept(ModItems.IRON_BELL_1.get());
                                 output.accept(ModItems.OXIDIZED_COPPER_BELL_1.get());
+
+                                // Medium Bells
+                                output.accept(ModItems.BRASS_BELL_2.get());
+
+                                // Large Bells
 
                                 //clappers
                                 output.accept(ModItems.BRONZE_SMALL_CLAPPER.get());

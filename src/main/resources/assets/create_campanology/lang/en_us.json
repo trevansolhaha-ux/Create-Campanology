@@ -52,6 +52,7 @@
   "block.create_campanology.musical_iron_block": "Musical Iron Block",
   "block.create_campanology.oxidised_musical_block": "Oxidized Musical Block",
   "block.create_campanology.raw_musical_tin_block": "Block of Raw Musical Tin",
+
   "block.create_campanology.copper_bell_1": "Small Copper Bell",
   "block.create_campanology.oxidized_copper_bell_1": "Small Oxidized Copper Bell",
   "block.create_campanology.iron_bell_1": "Small Iron Bell",
@@ -60,6 +61,15 @@
   "block.create_campanology.gold_bell_1": "Small Gold Bell",
   "block.create_campanology.zinc_bell_1": "Small Zinc Bell",
   "block.create_campanology.andesite_alloy_bell_1": "Small Andesite Alloy Bell",
+
+  "block.create_campanology.copper_bell_2": "Medium Copper Bell",
+  "block.create_campanology.oxidized_copper_bell_2": "Medium Oxidized Copper Bell",
+  "block.create_campanology.iron_bell_2": "Medium Iron Bell",
+  "block.create_campanology.bronze_bell_2": "Medium Bronze Bell",
+  "block.create_campanology.brass_bell_2": "Medium Brass Bell",
+  "block.create_campanology.gold_bell_2": "Medium Gold Bell",
+  "block.create_campanology.zinc_bell_2": "Medium Zinc Bell",
+  "block.create_campanology.andesite_alloy_bell_2": "Medium Andesite Alloy Bell",
 
   "create_campanology.subtitles.block.copper_bell": "Copper Bell Rings",
   "create_campanology.subtitles.block.oxidized_copper_bell": "Oxidized Copper Bell Rings",
@@ -97,5 +107,11 @@
 
   "create_campanology.bell_size.small": "Small",
   "create_campanology.bell_size.medium": "Medium",
-  "create_campanology.bell_size.large": "Large"
+  "create_campanology.bell_size.large": "Large",
+
+  "create_campanology.medium_bell_size.one": "One",
+  "create_campanology.medium_bell_size.two": "Two",
+  "create_campanology.medium_bell_size.three": "Three",
+  "create_campanology.medium_bell_size.four": "Four",
+  "create_campanology.medium_bell_size.five": "Five"
 }

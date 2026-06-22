@@ -2,6 +2,7 @@ package com.trevansolhaha.create_campanology;
 
 import com.trevansolhaha.create_campanology.client.renderer.block.*;
 import com.trevansolhaha.create_campanology.component.BellSizeComponent;
+import com.trevansolhaha.create_campanology.component.MediumBellSizeComponent;
 import com.trevansolhaha.create_campanology.init.ModBlockEntities;
 import com.trevansolhaha.create_campanology.init.ModDataComponents;
 import com.trevansolhaha.create_campanology.init.ModItems;
@@ -38,11 +39,18 @@ public class CreateCampanologyClient {
         CreateCampanology.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         // TODO: move to a more appropriate place when more bells are added
         registerBellItemProperty(ModItems.BRASS_BELL_1.get()); // TODO: add remaining bells when medium/large models are added
+
+        registerMediumBellItemProperty(ModItems.BRASS_BELL_2.get());
     }
 
     private static void registerBellItemProperty(Item item) {
         ItemProperties.register(item, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "size"), (stack, world, entity, i) ->
                 stack.getOrDefault(ModDataComponents.BELL_SIZE, BellSizeComponent.getDefaultValue()).getSize().getId());
+    }
+
+    private static void registerMediumBellItemProperty(Item item) {
+        ItemProperties.register(item, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "size"), (stack, world, entity, i) ->
+                stack.getOrDefault(ModDataComponents.MEDIUM_BELL_SIZE, MediumBellSizeComponent.getDefaultValue()).getSize().getId());
     }
 
     @SubscribeEvent
@@ -55,5 +63,7 @@ public class CreateCampanologyClient {
         event.registerBlockEntityRenderer(ModBlockEntities.GOLD_BELL_1.get(), GoldBellBlockRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.ZINC_BELL_1.get(), ZincBellBlockRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.ANDESITE_ALLOY_BELL_1.get(), AndesiteBellBlockRenderer::new);
+
+        event.registerBlockEntityRenderer(ModBlockEntities.BRASS_BELL_2.get(), BrassMediumBellBlockRenderer::new);
     }
 }
