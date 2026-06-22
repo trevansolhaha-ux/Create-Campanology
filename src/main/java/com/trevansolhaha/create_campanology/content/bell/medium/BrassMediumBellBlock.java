@@ -2,9 +2,11 @@ package com.trevansolhaha.create_campanology.content.bell.medium;
 
 import com.trevansolhaha.create_campanology.component.MediumBellSizeComponent;
 import com.trevansolhaha.create_campanology.content.bell.generic.ModBaseMediumBellBlock;
+import com.trevansolhaha.create_campanology.content.bell.generic.ModMediumBellSizes;
 import com.trevansolhaha.create_campanology.init.ModBlockEntities;
 import com.trevansolhaha.create_campanology.init.ModDataComponents;
 import com.trevansolhaha.create_campanology.init.ModItems;
+import com.trevansolhaha.create_campanology.init.ModSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionResult;
@@ -55,6 +57,7 @@ public class BrassMediumBellBlock extends ModBaseMediumBellBlock {
             Direction bellFacing = state.getValue(FACING);
 
             brassBell.triggerBellAnimation(clickedFace, bellFacing);
+            playBellSound(level, pos, state.getValue(SIZE));
 
             return InteractionResult.sidedSuccess(level.isClientSide());
         }
@@ -71,6 +74,7 @@ public class BrassMediumBellBlock extends ModBaseMediumBellBlock {
 
             BlockEntity blockEntity = level.getBlockEntity(blockPos);
             if (blockEntity instanceof BrassMediumBellBlockEntity brassBell) {
+                playBellSound(level, blockPos, blockState.getValue(SIZE));
                 if (explosionSourceDirection == bellFacing) {
                     brassBell.triggerAnim("click_controller", "trigger_click_front");
                 } else {// If it's not front (including sides defaulting to back), play back
@@ -78,5 +82,9 @@ public class BrassMediumBellBlock extends ModBaseMediumBellBlock {
                 }
             }
         }
+    }
+
+    private void playBellSound(Level level, BlockPos pos, ModMediumBellSizes size) {
+        playBellSound(level, pos, size, ModSoundEvents.BLOCK_BRASS_BELL.value());
     }
 }

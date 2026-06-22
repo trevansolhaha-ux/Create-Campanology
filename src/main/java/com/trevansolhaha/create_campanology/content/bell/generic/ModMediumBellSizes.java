@@ -12,11 +12,11 @@ import java.util.Locale;
 import java.util.function.IntFunction;
 
 public enum ModMediumBellSizes implements StringRepresentable {
-    ONE(0, 0.5F),
-    TWO(1, 1.0F),
+    ONE(0, 2.5F),
+    TWO(1, 2.0F),
     THREE(2, 1.5F),
-    FOUR(3, 2.0F),
-    FIVE(4, 2.5F),
+    FOUR(3, 1.0F),
+    FIVE(4, 0.5F),
     ;
 
     private static final ModMediumBellSizes[] VALUES = values();

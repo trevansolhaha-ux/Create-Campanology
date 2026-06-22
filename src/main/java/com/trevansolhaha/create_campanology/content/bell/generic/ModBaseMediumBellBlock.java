@@ -5,6 +5,7 @@ import com.trevansolhaha.create_campanology.component.MediumBellSizeComponent;
 import com.trevansolhaha.create_campanology.init.ModDataComponents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
@@ -125,5 +126,10 @@ public class ModBaseMediumBellBlock extends Block implements IWrenchable, Entity
         int stepX = facing.getStepX();
         int stepZ = facing.getStepZ();
         return (dx * stepX) + (dz * stepZ);
+    }
+
+    protected void playBellSound(Level level, BlockPos pos, ModMediumBellSizes size, SoundEvent soundEvent) {
+        float pitch = 0.5f + size.getPitchModifier(); // Should player be passed from
+        if (!level.isClientSide) level.playSound(null, pos, soundEvent, SoundSource.BLOCKS, 1.0f, pitch);
     }
 }

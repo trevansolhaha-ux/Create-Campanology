@@ -12,9 +12,9 @@ import java.util.Locale;
 import java.util.function.IntFunction;
 
 public enum ModBellSizes implements StringRepresentable {
-    SMALL(0, 0.5F),
+    SMALL(0, 1.5F),
     MEDIUM(1, 1.0F),
-    LARGE(2, 1.5F),
+    LARGE(2, 0.5F),
     ;
 
     private static final ModBellSizes[] VALUES = values();

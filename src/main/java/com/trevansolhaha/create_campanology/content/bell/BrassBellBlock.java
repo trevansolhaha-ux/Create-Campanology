@@ -3,10 +3,8 @@ package com.trevansolhaha.create_campanology.content.bell;
 import com.simibubi.create.content.equipment.wrench.WrenchItem;
 import com.trevansolhaha.create_campanology.component.BellSizeComponent;
 import com.trevansolhaha.create_campanology.content.bell.generic.ModBaseBellBlock;
-import com.trevansolhaha.create_campanology.init.ModBlockEntities;
-import com.trevansolhaha.create_campanology.init.ModDataComponents;
-import com.trevansolhaha.create_campanology.init.ModShapes;
-import com.trevansolhaha.create_campanology.init.ModItems;
+import com.trevansolhaha.create_campanology.content.bell.generic.ModBellSizes;
+import com.trevansolhaha.create_campanology.init.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
@@ -62,6 +60,7 @@ public class BrassBellBlock extends ModBaseBellBlock {
             Direction bellFacing = state.getValue(FACING);
 
             brassBell.triggerBellAnimation(clickedFace, bellFacing);
+            playBellSound(level, pos, state.getValue(SIZE));
 
             return InteractionResult.sidedSuccess(level.isClientSide());
         }
@@ -79,6 +78,7 @@ public class BrassBellBlock extends ModBaseBellBlock {
 
             BlockEntity blockEntity = level.getBlockEntity(blockPos);
             if (blockEntity instanceof BrassBellBlockEntity brassBell) {
+                playBellSound(level, blockPos, blockState.getValue(SIZE));
                 if (explosionSourceDirection == bellFacing) {
                     brassBell.triggerAnim("click_controller", "trigger_click_front");
                 } else {
@@ -86,5 +86,9 @@ public class BrassBellBlock extends ModBaseBellBlock {
                 }
             }
         }
+    }
+
+    private void playBellSound(Level level, BlockPos pos, ModBellSizes size) {
+        playBellSound(level, pos, size, ModSoundEvents.BLOCK_BRASS_BELL.value());
     }
 }

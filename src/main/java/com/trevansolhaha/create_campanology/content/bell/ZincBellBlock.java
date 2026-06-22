@@ -1,9 +1,11 @@
 package com.trevansolhaha.create_campanology.content.bell;
 
 import com.trevansolhaha.create_campanology.content.bell.generic.ModBaseBellBlock;
+import com.trevansolhaha.create_campanology.content.bell.generic.ModBellSizes;
 import com.trevansolhaha.create_campanology.init.ModBlockEntities;
-import com.trevansolhaha.create_campanology.init.ModShapes;
 import com.trevansolhaha.create_campanology.init.ModItems;
+import com.trevansolhaha.create_campanology.init.ModShapes;
+import com.trevansolhaha.create_campanology.init.ModSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionResult;
@@ -55,6 +57,7 @@ public class ZincBellBlock extends ModBaseBellBlock {
             Direction bellFacing = state.getValue(FACING);
 
             zincBell.triggerBellAnimation(clickedFace, bellFacing);
+            playBellSound(level, pos, state.getValue(SIZE));
 
             return InteractionResult.sidedSuccess(level.isClientSide());
         }
@@ -71,6 +74,7 @@ public class ZincBellBlock extends ModBaseBellBlock {
 
             BlockEntity blockEntity = level.getBlockEntity(blockPos);
             if (blockEntity instanceof ZincBellBlockEntity zincBell) {
+                playBellSound(level, blockPos, blockState.getValue(SIZE));
                 if (explosionSourceDirection == bellFacing) {
                     zincBell.triggerAnim("click_controller", "trigger_click_front");
                 } else {// If it's not front (including sides defaulting to back), play back
@@ -78,5 +82,9 @@ public class ZincBellBlock extends ModBaseBellBlock {
                 }
             }
         }
+    }
+
+    private void playBellSound(Level level, BlockPos pos, ModBellSizes size) {
+        playBellSound(level, pos, size, ModSoundEvents.BLOCK_ZINC_BELL.value());
     }
 }
