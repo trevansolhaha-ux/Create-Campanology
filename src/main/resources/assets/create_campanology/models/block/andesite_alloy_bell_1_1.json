@@ -1,11 +1,11 @@
 {
 	"format_version": "1.9.0",
 	"credit": "trevansolhaha",
-	"parent": "minecraft:block/cube_bottom_top",
-	"texture_size": [32, 32],
+    "parent": "minecraft:block/cube_bottom_top",
+    "texture_size": [32, 32],
 	"textures": {
-		"2": "create_campanology:block/brass_bell_1",
-		"particle": "create_campanology:block/brass_bell_1"
+		"2": "create_campanology:block/andesite_alloy_bell_1_1",
+		"particle": "create_campanology:block/andesite_alloy_bell_1_1"
 	},
 	"elements": [
 		{

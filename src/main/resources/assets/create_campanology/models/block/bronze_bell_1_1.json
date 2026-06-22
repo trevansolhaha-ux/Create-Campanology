@@ -4,8 +4,8 @@
   "parent": "minecraft:block/cube_bottom_top",
   "texture_size": [16, 16],
   "textures": {
-    "1": "create_campanology:block/bronze_bell_1",
-    "particle": "create_campanology:block/bronze_bell_1"
+    "1": "create_campanology:block/bronze_bell_1_1",
+    "particle": "create_campanology:block/bronze_bell_1_1"
   },
   "elements": [
     {

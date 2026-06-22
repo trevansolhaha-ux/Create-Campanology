@@ -1,3 +1,17 @@
 {
-  "parent": "create_campanology:block/oxidized_copper_bell_1"
+  "parent": "create_campanology:block/oxidized_copper_bell_1_1",
+  "overrides": [
+    {
+      "model": "create_campanology:block/oxidized_copper_bell_1_2",
+      "predicate": {
+        "create_campanology:size": 1.0
+      }
+    },
+    {
+      "model": "create_campanology:block/oxidized_copper_bell_1_3",
+      "predicate": {
+        "create_campanology:size": 2.0
+      }
+    }
+  ]
 }

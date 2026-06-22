@@ -4,8 +4,8 @@
 	"parent": "minecraft:block/cube_bottom_top",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "create_campanology:block/brass_bell_3",
-		"particle": "create_campanology:block/brass_bell_3"
+		"0": "create_campanology:block/brass_bell_1_3",
+		"particle": "create_campanology:block/brass_bell_1_3"
 	},
 	"elements": [
 		{

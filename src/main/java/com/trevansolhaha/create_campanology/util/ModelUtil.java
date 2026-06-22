@@ -5,21 +5,22 @@ import com.trevansolhaha.create_campanology.content.bell.generic.*;
 import net.minecraft.resources.ResourceLocation;
 
 public class ModelUtil {
-    public static ResourceLocation getModelResource(String name, ModBaseBellBlockEntity animatable) {
-            ModBellSizes size = animatable.getLevel() != null
-                    ? animatable.getBlockState().getValue(ModBaseBellBlock.SIZE)
-                    : ModBellSizes.SMALL;
+
+    public static ResourceLocation getSmallBellModelResource(String name, ModBaseBellBlockEntity animatable) {
+        ModBellSizes size = animatable.getLevel() != null
+                ? animatable.getBlockState().getValue(ModBaseBellBlock.SIZE)
+                : ModBellSizes.SMALL;
         return ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "geo/block/" + name + "_" + (size.getId() + 1) + ".geo.json");
     }
 
-    public static ResourceLocation getTextureResource(String name, ModBaseBellBlockEntity animatable) {
+    public static ResourceLocation getSmallBellTextureResource(String name, ModBaseBellBlockEntity animatable) {
         ModBellSizes size = animatable.getLevel() != null
                 ? animatable.getBlockState().getValue(ModBaseBellBlock.SIZE)
                 : ModBellSizes.SMALL;
         return ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "textures/block/" + name + "_" + (size.getId() + 1) + ".png");
     }
 
-    public static ResourceLocation getAnimationResource(String name, ModBaseBellBlockEntity animatable) {
+    public static ResourceLocation getSmallBellAnimationResource(String name, ModBaseBellBlockEntity animatable) {
         ModBellSizes size = animatable.getLevel() != null
                 ? animatable.getBlockState().getValue(ModBaseBellBlock.SIZE)
                 : ModBellSizes.SMALL;

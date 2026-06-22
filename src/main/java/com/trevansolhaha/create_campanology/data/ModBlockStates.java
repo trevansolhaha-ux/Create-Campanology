@@ -45,6 +45,6 @@ public class ModBlockStates extends BlockStateProvider {
     private void simpleParent(Block block) {
         getVariantBuilder(block)
                 .partialState()
-                .setModels(new ConfiguredModel(models().getExistingFile(ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "block/" + BuiltInRegistries.BLOCK.getKey(block).getPath()))));
+                .setModels(new ConfiguredModel(models().getExistingFile(ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "block/" + BuiltInRegistries.BLOCK.getKey(block).getPath() + "_1"))));
     }
 }
