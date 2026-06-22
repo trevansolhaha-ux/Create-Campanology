@@ -30,6 +30,15 @@ public class ModBlockStates extends BlockStateProvider {
         cubeAll(ModBlocks.OXIDISED_MUSICAL_BLOCK.get());
         cubeAll(ModBlocks.RAW_MUSICAL_TIN_BLOCK.get());
 
+        simpleParent(ModBlocks.COPPER_BELL_1.get());
+        simpleParent(ModBlocks.OXIDIZED_COPPER_BELL_1.get());
+        simpleParent(ModBlocks.IRON_BELL_1.get());
+        simpleParent(ModBlocks.BRONZE_BELL_1.get());
+        simpleParent(ModBlocks.BRASS_BELL_1.get());
+        simpleParent(ModBlocks.GOLD_BELL_1.get());
+        simpleParent(ModBlocks.ZINC_BELL_1.get());
+        simpleParent(ModBlocks.ANDESITE_ALLOY_BELL_1.get());
+
         simpleParent(ModBlocks.BRASS_BELL_2.get());
     }
 
