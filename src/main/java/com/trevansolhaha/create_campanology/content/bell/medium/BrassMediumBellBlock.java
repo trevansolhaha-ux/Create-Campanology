@@ -56,8 +56,9 @@ public class BrassMediumBellBlock extends ModBaseMediumBellBlock {
             Direction clickedFace = hitResult.getDirection();
             Direction bellFacing = state.getValue(FACING);
 
-            brassBell.triggerBellAnimation(clickedFace, bellFacing);
-            playBellSound(level, pos, state.getValue(SIZE));
+            if (brassBell.triggerBellAnimation(clickedFace, bellFacing)) {
+                playBellSound(level, pos, state.getValue(SIZE));
+            }
 
             return InteractionResult.sidedSuccess(level.isClientSide());
         }

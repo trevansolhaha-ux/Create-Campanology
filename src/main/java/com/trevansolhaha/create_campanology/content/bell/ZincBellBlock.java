@@ -56,8 +56,9 @@ public class ZincBellBlock extends ModBaseBellBlock {
             Direction clickedFace = hitResult.getDirection();
             Direction bellFacing = state.getValue(FACING);
 
-            zincBell.triggerBellAnimation(clickedFace, bellFacing);
-            playBellSound(level, pos, state.getValue(SIZE));
+            if (zincBell.triggerBellAnimation(clickedFace, bellFacing)) {
+                playBellSound(level, pos, state.getValue(SIZE));
+            }
 
             return InteractionResult.sidedSuccess(level.isClientSide());
         }

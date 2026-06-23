@@ -56,8 +56,9 @@ public class AndesiteBellBlock extends ModBaseBellBlock {
             Direction clickedFace = hitResult.getDirection();
             Direction bellFacing = state.getValue(FACING);
 
-            andesiteBell.triggerBellAnimation(clickedFace, bellFacing);
-            playBellSound(level, pos, state.getValue(SIZE));
+            if (andesiteBell.triggerBellAnimation(clickedFace, bellFacing)) {
+                playBellSound(level, pos, state.getValue(SIZE));
+            }
 
             return InteractionResult.sidedSuccess(level.isClientSide());
         }

@@ -56,8 +56,9 @@ public class IronBellBlock extends ModBaseBellBlock {
             Direction clickedFace = hitResult.getDirection();
             Direction bellFacing = state.getValue(FACING);
 
-            ironBell.triggerBellAnimation(clickedFace, bellFacing);
-            playBellSound(level, pos, state.getValue(SIZE));
+            if (ironBell.triggerBellAnimation(clickedFace, bellFacing)) {
+                playBellSound(level, pos, state.getValue(SIZE));
+            }
 
             return InteractionResult.sidedSuccess(level.isClientSide());
         }

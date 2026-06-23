@@ -56,8 +56,9 @@ public class GoldBellBlock extends ModBaseBellBlock {
             Direction clickedFace = hitResult.getDirection();
             Direction bellFacing = state.getValue(FACING);
 
-            goldBell.triggerBellAnimation(clickedFace, bellFacing);
-            playBellSound(level, pos, state.getValue(SIZE));
+            if (goldBell.triggerBellAnimation(clickedFace, bellFacing)) {
+                playBellSound(level, pos, state.getValue(SIZE));
+            }
 
             return InteractionResult.sidedSuccess(level.isClientSide());
         }

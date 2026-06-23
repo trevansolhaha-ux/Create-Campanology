@@ -34,14 +34,16 @@ public class ModBaseMediumBellBlockEntity extends SmartBlockEntity implements Ge
         return null;
     }
 
-    public void triggerBellAnimation(Direction clickedFace, Direction bellFacing) {
+    public boolean triggerBellAnimation(Direction clickedFace, Direction bellFacing) {
         if (clickedFace.getAxis() == bellFacing.getAxis()) {
             if (clickedFace == bellFacing) {
                 this.triggerAnim("click_controller", "trigger_click_front");
             } else {
                 this.triggerAnim("click_controller", "trigger_click_back");
             }
+            return true;
         }
+        return false;
     }
 
     protected void goggleTooltipInfo(List<Component> tooltip, boolean isPlayerSneaking, ModMediumBellSizes size) {
