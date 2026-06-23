@@ -12,13 +12,17 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.BiConsumer;
@@ -40,10 +44,11 @@ public class BrassMediumBellBlock extends ModBaseMediumBellBlock {
         return ModBlockEntities.BRASS_BELL_2.get().create(blockPos, blockState);
     }
 
-//    @Override
-//    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) { // TODO: Improve collision shape
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) { // TODO: Improve collision shape
+        return Block.box(1, -2, 1, 15, 16, 15);
 //        return ModShapes.BRASS_BELL_2.get(state.getValue(SIZE));
-//    }
+    }
 
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
