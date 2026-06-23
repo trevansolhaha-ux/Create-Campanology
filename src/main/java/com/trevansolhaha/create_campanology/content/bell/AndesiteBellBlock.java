@@ -85,7 +85,7 @@ public class AndesiteBellBlock extends ModBaseBellBlock {
     }
 
     private void playBellSound(Level level, BlockPos pos, ModBellSizes size) {
-        playBellSound(level, pos, size, ModSoundEvents.BLOCK_ANDESITE_ALLOY_BELL.value());
+        playBellSound(level, pos, size, ModSoundEvents.ANDESITE_ALLOY_BELL_USE.value());
     }
 
 }

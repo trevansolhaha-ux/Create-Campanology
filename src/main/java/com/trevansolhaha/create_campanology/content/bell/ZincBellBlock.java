@@ -85,6 +85,6 @@ public class ZincBellBlock extends ModBaseBellBlock {
     }
 
     private void playBellSound(Level level, BlockPos pos, ModBellSizes size) {
-        playBellSound(level, pos, size, ModSoundEvents.BLOCK_ZINC_BELL.value());
+        playBellSound(level, pos, size, ModSoundEvents.ZINC_BELL_USE.value());
     }
 }

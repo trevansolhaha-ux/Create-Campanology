@@ -85,6 +85,6 @@ public class CopperBellBlock extends ModBaseBellBlock {
     }
 
     private void playBellSound(Level level, BlockPos pos, ModBellSizes size) {
-        playBellSound(level, pos, size, ModSoundEvents.BLOCK_COPPER_BELL.value());
+        playBellSound(level, pos, size, ModSoundEvents.COPPER_BELL_USE.value());
     }
 }

@@ -85,6 +85,6 @@ public class OxidizedCopperBellBlock extends ModBaseBellBlock {
     }
 
     private void playBellSound(Level level, BlockPos pos, ModBellSizes size) {
-        playBellSound(level, pos, size, ModSoundEvents.BLOCK_OXIDIZED_COPPER_BELL.value());
+        playBellSound(level, pos, size, ModSoundEvents.OXIDIZED_COPPER_BELL_USE.value());
     }
 }

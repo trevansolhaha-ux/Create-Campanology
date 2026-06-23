@@ -85,6 +85,6 @@ public class BronzeBellBlock extends ModBaseBellBlock {
     }
 
     private void playBellSound(Level level, BlockPos pos, ModBellSizes size) {
-        playBellSound(level, pos, size, ModSoundEvents.BLOCK_BRASS_BELL.value());
+        playBellSound(level, pos, size, ModSoundEvents.BRONZE_BELL_USE.value());
     }
 }

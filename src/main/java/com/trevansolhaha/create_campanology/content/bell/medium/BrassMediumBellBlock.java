@@ -85,6 +85,6 @@ public class BrassMediumBellBlock extends ModBaseMediumBellBlock {
     }
 
     private void playBellSound(Level level, BlockPos pos, ModMediumBellSizes size) {
-        playBellSound(level, pos, size, ModSoundEvents.BLOCK_BRASS_BELL.value());
+        playBellSound(level, pos, size, ModSoundEvents.BRASS_BELL_USE.value());
     }
 }
