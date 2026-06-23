@@ -2,8 +2,10 @@ package com.trevansolhaha.create_campanology.content.bell.generic;
 
 import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
+import com.simibubi.create.foundation.utility.CreateLang;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import software.bernie.geckolib.animatable.GeoBlockEntity;
@@ -32,13 +34,20 @@ public class ModBaseBellBlockEntity extends SmartBlockEntity implements GeoBlock
         return null;
     }
 
-    public void triggerBellAnimation(Direction clickedFace, Direction bellFacing) {
+    public boolean triggerBellAnimation(Direction clickedFace, Direction bellFacing) {
         if (clickedFace.getAxis() == bellFacing.getAxis()) {
             if (clickedFace == bellFacing) {
                 this.triggerAnim("click_controller", "trigger_click_front");
             } else {
                 this.triggerAnim("click_controller", "trigger_click_back");
             }
+            return true;
         }
+        return false;
+    }
+
+    protected void goggleTooltipInfo(List<Component> tooltip, boolean isPlayerSneaking, ModBellSizes size) {
+        CreateLang.translate("create_campanology.bell_size", Component.translatable("create_campanology.bell_size." + size.getSerializedName()))
+                .forGoggles(tooltip); // To be improved
     }
 }

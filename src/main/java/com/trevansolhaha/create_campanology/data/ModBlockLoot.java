@@ -52,6 +52,10 @@ public class ModBlockLoot extends BlockLootSubProvider {
         dropSelf(ModBlocks.ZINC_BELL_1.get());
         dropSelf(ModBlocks.ANDESITE_ALLOY_BELL_1.get());
 
+        dropSelf(ModBlocks.BRASS_BELL_2.get());
+
+        dropSelf(ModBlocks.BRASS_BELL_3.get());
+
         this.add(ModBlocks.MUSICAL_TIN_ORE.get(),
                 block -> createOreDrop(ModBlocks.MUSICAL_TIN_ORE.get(),ModItems.RAW_MUSICAL_TIN.get()));
 

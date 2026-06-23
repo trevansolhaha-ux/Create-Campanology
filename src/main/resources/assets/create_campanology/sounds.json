@@ -1,6 +1,6 @@
 {
-  "block.copper_bell": {
-    "subtitle": "create_campanology.subtitles.block.copper_bell",
+  "block.copper_bell.use": {
+    "subtitle": "create_campanology.subtitles.block.copper_bell.use",
     "sounds": [
       {
         "name": "block.bell.use",
@@ -8,8 +8,8 @@
       }
     ]
   },
-  "block.oxidized_copper_bell": {
-    "subtitle": "create_campanology.subtitles.block.oxidized_copper_bell",
+  "block.oxidized_copper_bell.use": {
+    "subtitle": "create_campanology.subtitles.block.oxidized_copper_bell.use",
     "sounds": [
       {
         "name": "block.bell.use",
@@ -17,8 +17,8 @@
       }
     ]
   },
-  "block.iron_bell": {
-    "subtitle": "create_campanology.subtitles.block.iron_bell",
+  "block.iron_bell.use": {
+    "subtitle": "create_campanology.subtitles.block.iron_bell.use",
     "sounds": [
       {
         "name": "block.bell.use",
@@ -26,8 +26,8 @@
       }
     ]
   },
-  "block.bronze_bell": {
-    "subtitle": "create_campanology.subtitles.block.bronze_bell",
+  "block.bronze_bell.use": {
+    "subtitle": "create_campanology.subtitles.block.bronze_bell.use",
     "sounds": [
       {
         "name": "block.bell.use",
@@ -35,8 +35,8 @@
       }
     ]
   },
-  "block.brass_bell": {
-    "subtitle": "create_campanology.subtitles.block.brass_bell",
+  "block.brass_bell.use": {
+    "subtitle": "create_campanology.subtitles.block.brass_bell.use",
     "sounds": [
       {
         "name": "block.bell.use",
@@ -44,8 +44,8 @@
       }
     ]
   },
-  "block.gold_bell": {
-    "subtitle": "create_campanology.subtitles.block.gold_bell",
+  "block.gold_bell.use": {
+    "subtitle": "create_campanology.subtitles.block.gold_bell.use",
     "sounds": [
       {
         "name": "block.bell.use",
@@ -53,8 +53,8 @@
       }
     ]
   },
-  "block.zinc_bell": {
-    "subtitle": "create_campanology.subtitles.block.zinc_bell",
+  "block.zinc_bell.use": {
+    "subtitle": "create_campanology.subtitles.block.zinc_bell.use",
     "sounds": [
       {
         "name": "block.bell.use",
@@ -62,8 +62,8 @@
       }
     ]
   },
-  "block.andesite_alloy_bell": {
-    "subtitle": "create_campanology.subtitles.block.andesite_alloy_bell",
+  "block.andesite_alloy_bell.use": {
+    "subtitle": "create_campanology.subtitles.block.andesite_alloy_bell.use",
     "sounds": [
       {
         "name": "block.bell.use",

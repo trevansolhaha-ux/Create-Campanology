@@ -1,7 +1,9 @@
 package com.trevansolhaha.create_campanology.init;
 
 import com.trevansolhaha.create_campanology.CreateCampanology;
-import com.trevansolhaha.create_campanology.content.bell.*;
+import com.trevansolhaha.create_campanology.content.bell.large.BrassLargeBellBlock;
+import com.trevansolhaha.create_campanology.content.bell.medium.BrassMediumBellBlock;
+import com.trevansolhaha.create_campanology.content.bell.small.*;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -144,6 +146,12 @@ public class ModBlocks {
             () -> new ZincBellBlock(bell(MapColor.COLOR_CYAN)));
     public static final DeferredBlock<Block> ANDESITE_ALLOY_BELL_1 = BLOCKS.register("andesite_alloy_bell_1",
             () -> new AndesiteBellBlock(bell(MapColor.COLOR_GRAY)));
+
+    public static final DeferredBlock<Block> BRASS_BELL_2 = BLOCKS.register("brass_bell_2",
+            () -> new BrassMediumBellBlock(bell(MapColor.COLOR_YELLOW)));
+
+    public static final DeferredBlock<Block> BRASS_BELL_3 = BLOCKS.register("brass_bell_3",
+            () -> new BrassLargeBellBlock(bell(MapColor.COLOR_YELLOW)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name,block);

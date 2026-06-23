@@ -1,11 +1,14 @@
 package com.trevansolhaha.create_campanology;
 
-import com.trevansolhaha.create_campanology.client.renderer.block.*;
+import com.trevansolhaha.create_campanology.client.renderer.block.ModLargeBellBlockRenderer;
+import com.trevansolhaha.create_campanology.client.renderer.block.ModMediumBellBlockRenderer;
+import com.trevansolhaha.create_campanology.client.renderer.block.ModSmallBellBlockRenderer;
 import com.trevansolhaha.create_campanology.component.BellSizeComponent;
+import com.trevansolhaha.create_campanology.component.LargeBellSizeComponent;
+import com.trevansolhaha.create_campanology.component.MediumBellSizeComponent;
 import com.trevansolhaha.create_campanology.init.ModBlockEntities;
 import com.trevansolhaha.create_campanology.init.ModDataComponents;
 import com.trevansolhaha.create_campanology.init.ModItems;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -33,11 +36,19 @@ public class CreateCampanologyClient {
 
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
-        // Some client setup code
-        CreateCampanology.LOGGER.info("HELLO FROM CLIENT SETUP");
-        CreateCampanology.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         // TODO: move to a more appropriate place when more bells are added
-        registerBellItemProperty(ModItems.BRASS_BELL_1.get()); // TODO: add remaining bells when medium/large models are added
+        registerBellItemProperty(ModItems.COPPER_BELL_1.get());
+        registerBellItemProperty(ModItems.OXIDIZED_COPPER_BELL_1.get());
+        registerBellItemProperty(ModItems.IRON_BELL_1.get());
+        registerBellItemProperty(ModItems.BRONZE_BELL_1.get());
+        registerBellItemProperty(ModItems.BRASS_BELL_1.get());
+        registerBellItemProperty(ModItems.GOLD_BELL_1.get());
+        registerBellItemProperty(ModItems.ZINC_BELL_1.get());
+        registerBellItemProperty(ModItems.ANDESITE_ALLOY_BELL_1.get());
+
+        registerMediumBellItemProperty(ModItems.BRASS_BELL_2.get());
+
+        registerLargeBellItemProperty(ModItems.BRASS_BELL_3.get());
     }
 
     private static void registerBellItemProperty(Item item) {
@@ -45,15 +56,29 @@ public class CreateCampanologyClient {
                 stack.getOrDefault(ModDataComponents.BELL_SIZE, BellSizeComponent.getDefaultValue()).getSize().getId());
     }
 
+    private static void registerMediumBellItemProperty(Item item) {
+        ItemProperties.register(item, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "size"), (stack, world, entity, i) ->
+                stack.getOrDefault(ModDataComponents.MEDIUM_BELL_SIZE, MediumBellSizeComponent.getDefaultValue()).getSize().getId());
+    }
+
+    private static void registerLargeBellItemProperty(Item item) {
+        ItemProperties.register(item, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "size"), (stack, world, entity, i) ->
+                stack.getOrDefault(ModDataComponents.LARGE_BELL_SIZE, LargeBellSizeComponent.getDefaultValue()).getSize().getId());
+    }
+
     @SubscribeEvent
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
-        event.registerBlockEntityRenderer(ModBlockEntities.COPPER_BELL_1.get(), CopperBellBlockRenderer::new);
-        event.registerBlockEntityRenderer(ModBlockEntities.OXIDIZED_COPPER_BELL_1.get(), OxidizedCopperBellBlockRenderer::new);
-        event.registerBlockEntityRenderer(ModBlockEntities.IRON_BELL_1.get(), IronBellBlockRenderer::new);
-        event.registerBlockEntityRenderer(ModBlockEntities.BRONZE_BELL_1.get(), BronzeBellBlockRenderer::new);
-        event.registerBlockEntityRenderer(ModBlockEntities.BRASS_BELL_1.get(), BrassBellBlockRenderer::new);
-        event.registerBlockEntityRenderer(ModBlockEntities.GOLD_BELL_1.get(), GoldBellBlockRenderer::new);
-        event.registerBlockEntityRenderer(ModBlockEntities.ZINC_BELL_1.get(), ZincBellBlockRenderer::new);
-        event.registerBlockEntityRenderer(ModBlockEntities.ANDESITE_ALLOY_BELL_1.get(), AndesiteBellBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.COPPER_BELL_1.get(), context -> new ModSmallBellBlockRenderer(context, "copper_bell_1"));
+        event.registerBlockEntityRenderer(ModBlockEntities.OXIDIZED_COPPER_BELL_1.get(), context -> new ModSmallBellBlockRenderer(context, "oxidized_copper_bell_1"));
+        event.registerBlockEntityRenderer(ModBlockEntities.IRON_BELL_1.get(), context -> new ModSmallBellBlockRenderer(context, "iron_bell_1"));
+        event.registerBlockEntityRenderer(ModBlockEntities.BRONZE_BELL_1.get(), context -> new ModSmallBellBlockRenderer(context, "bronze_bell_1"));
+        event.registerBlockEntityRenderer(ModBlockEntities.BRASS_BELL_1.get(), context -> new ModSmallBellBlockRenderer(context, "brass_bell_1"));
+        event.registerBlockEntityRenderer(ModBlockEntities.GOLD_BELL_1.get(), context -> new ModSmallBellBlockRenderer(context, "gold_bell_1"));
+        event.registerBlockEntityRenderer(ModBlockEntities.ZINC_BELL_1.get(), context -> new ModSmallBellBlockRenderer(context, "zinc_bell_1"));
+        event.registerBlockEntityRenderer(ModBlockEntities.ANDESITE_ALLOY_BELL_1.get(), context -> new ModSmallBellBlockRenderer(context, "andesite_alloy_bell_1"));
+
+        event.registerBlockEntityRenderer(ModBlockEntities.BRASS_BELL_2.get(), context -> new ModMediumBellBlockRenderer(context, "brass_bell_2"));
+
+        event.registerBlockEntityRenderer(ModBlockEntities.BRASS_BELL_3.get(), context -> new ModLargeBellBlockRenderer(context, "brass_bell_3"));
     }
 }

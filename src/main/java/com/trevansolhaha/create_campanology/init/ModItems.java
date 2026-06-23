@@ -2,7 +2,9 @@ package com.trevansolhaha.create_campanology.init;
 
 import com.trevansolhaha.create_campanology.CreateCampanology;
 import com.trevansolhaha.create_campanology.component.BellSizeComponent;
+import com.trevansolhaha.create_campanology.component.MediumBellSizeComponent;
 import com.trevansolhaha.create_campanology.item.ModBellBlockItem;
+import com.trevansolhaha.create_campanology.item.ModMediumBellBlockItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
@@ -13,6 +15,10 @@ public class ModItems {
 
     public static Item.Properties bell() {
         return new Item.Properties().component(ModDataComponents.BELL_SIZE, BellSizeComponent.getDefaultValue());
+    }
+
+    public static Item.Properties mediumBell() {
+        return new Item.Properties().component(ModDataComponents.MEDIUM_BELL_SIZE, MediumBellSizeComponent.getDefaultValue());
     }
 
     public static final DeferredRegister.Items ITEMS =
@@ -86,6 +92,12 @@ public class ModItems {
             () -> new ModBellBlockItem(ModBlocks.ZINC_BELL_1.get(), bell()));
     public static final DeferredItem<BlockItem> ANDESITE_ALLOY_BELL_1 = ITEMS.register("andesite_alloy_bell_1",
             () -> new ModBellBlockItem(ModBlocks.ANDESITE_ALLOY_BELL_1.get(), bell()));
+
+    public static final DeferredItem<BlockItem> BRASS_BELL_2 = ITEMS.register("brass_bell_2",
+            () -> new ModMediumBellBlockItem(ModBlocks.BRASS_BELL_2.get(), mediumBell()));
+
+    public static final DeferredItem<BlockItem> BRASS_BELL_3 = ITEMS.register("brass_bell_3",
+            () -> new ModMediumBellBlockItem(ModBlocks.BRASS_BELL_3.get(), mediumBell()));
 
     //clappers
     public static final DeferredItem<Item> COPPER_SMALL_CLAPPER = ITEMS.register("copper_small_clapper",
