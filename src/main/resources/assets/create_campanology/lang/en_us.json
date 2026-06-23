@@ -113,5 +113,7 @@
   "create_campanology.medium_bell_size.two": "Two",
   "create_campanology.medium_bell_size.three": "Three",
   "create_campanology.medium_bell_size.four": "Four",
-  "create_campanology.medium_bell_size.five": "Five"
+  "create_campanology.medium_bell_size.five": "Five",
+
+  "create.create_campanology.bell_size": "Size: %s"
 }

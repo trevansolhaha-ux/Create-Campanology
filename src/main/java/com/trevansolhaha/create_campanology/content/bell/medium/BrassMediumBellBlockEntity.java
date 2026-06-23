@@ -1,9 +1,11 @@
 package com.trevansolhaha.create_campanology.content.bell.medium;
 
 import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
+import com.trevansolhaha.create_campanology.content.bell.generic.ModBaseMediumBellBlock;
 import com.trevansolhaha.create_campanology.content.bell.generic.ModBaseMediumBellBlockEntity;
 import com.trevansolhaha.create_campanology.init.ModBlockEntities;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.state.BlockState;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.AnimatableManager;
@@ -11,6 +13,8 @@ import software.bernie.geckolib.animation.AnimationController;
 import software.bernie.geckolib.animation.PlayState;
 import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.util.GeckoLibUtil;
+
+import java.util.List;
 
 public class BrassMediumBellBlockEntity extends ModBaseMediumBellBlockEntity implements IHaveGoggleInformation {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
@@ -42,5 +46,11 @@ public class BrassMediumBellBlockEntity extends ModBaseMediumBellBlockEntity imp
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return this.cache;
+    }
+
+    @Override
+    public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking) {
+        goggleTooltipInfo(tooltip, isPlayerSneaking, getBlockState().getValue(ModBaseMediumBellBlock.SIZE));
+        return true;
     }
 }
