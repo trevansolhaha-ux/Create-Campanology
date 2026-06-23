@@ -1,13 +1,13 @@
-package com.trevansolhaha.create_campanology.content.bell;
+package com.trevansolhaha.create_campanology.content.bell.small;
 
-import com.simibubi.create.content.equipment.wrench.WrenchItem;
-import com.trevansolhaha.create_campanology.component.BellSizeComponent;
 import com.trevansolhaha.create_campanology.content.bell.generic.ModBaseBellBlock;
 import com.trevansolhaha.create_campanology.content.bell.generic.ModBellSizes;
-import com.trevansolhaha.create_campanology.init.*;
+import com.trevansolhaha.create_campanology.init.ModBlockEntities;
+import com.trevansolhaha.create_campanology.init.ModItems;
+import com.trevansolhaha.create_campanology.init.ModShapes;
+import com.trevansolhaha.create_campanology.init.ModSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -25,41 +25,38 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.BiConsumer;
 
-public class BrassBellBlock extends ModBaseBellBlock {
-
-    public BrassBellBlock(Properties properties) {
+public class CopperBellBlock extends ModBaseBellBlock {
+    public CopperBellBlock(Properties properties) {
         super(properties);
     }
 
     @Override
     public ItemStack getCloneItemStack(BlockState state, HitResult target, LevelReader level, BlockPos pos, Player player) {
-        ItemStack stack = new ItemStack(ModItems.BRASS_BELL_1.get());
-        stack.set(ModDataComponents.BELL_SIZE, new BellSizeComponent(state.getValue(SIZE)));
-        return stack;
+        return new ItemStack(ModItems.COPPER_BELL_1.get());
     }
 
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return ModBlockEntities.BRASS_BELL_1.get().create(blockPos, blockState);
+        return ModBlockEntities.COPPER_BELL_1.get().create(blockPos, blockState);
     }
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return ModShapes.BRASS_BELL_1.get(state.getValue(SIZE));
+        return ModShapes.COPPER_BELL_1.get(state.getValue(SIZE));
     }
 
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        if (player.getItemInHand(InteractionHand.MAIN_HAND).getItem() instanceof WrenchItem ||
-                player.getItemInHand(InteractionHand.OFF_HAND).getItem() instanceof WrenchItem) {
-            return InteractionResult.PASS;
-        }
+//        if (player.getItemInHand(InteractionHand.MAIN_HAND).getItem() instanceof WrenchItem || // TODO: Uncomment when medium/large models are added
+//                player.getItemInHand(InteractionHand.OFF_HAND).getItem() instanceof WrenchItem) {
+//            return InteractionResult.PASS;
+//        }
 
-        if (level.getBlockEntity(pos) instanceof BrassBellBlockEntity brassBell) {
+        if (level.getBlockEntity(pos) instanceof CopperBellBlockEntity copperBell) {
             Direction clickedFace = hitResult.getDirection();
             Direction bellFacing = state.getValue(FACING);
 
-            if (brassBell.triggerBellAnimation(clickedFace, bellFacing)) {
+            if (copperBell.triggerBellAnimation(clickedFace, bellFacing)) {
                 playBellSound(level, pos, state.getValue(SIZE));
             }
 
@@ -68,7 +65,6 @@ public class BrassBellBlock extends ModBaseBellBlock {
         return InteractionResult.SUCCESS;
     }
 
-    //for the animation features (explosion)
     @Override
     protected void onExplosionHit(BlockState blockState, Level level, BlockPos blockPos, Explosion explosion, BiConsumer<ItemStack, BlockPos> biConsumer) {
         if (explosion.canTriggerBlocks() && !level.isClientSide()) {
@@ -78,18 +74,18 @@ public class BrassBellBlock extends ModBaseBellBlock {
             Direction explosionSourceDirection = getExplosionSourceDirection(explosion, blockPos, bellFacing);
 
             BlockEntity blockEntity = level.getBlockEntity(blockPos);
-            if (blockEntity instanceof BrassBellBlockEntity brassBell) {
+            if (blockEntity instanceof CopperBellBlockEntity copperBell) {
                 playBellSound(level, blockPos, blockState.getValue(SIZE));
                 if (explosionSourceDirection == bellFacing) {
-                    brassBell.triggerAnim("click_controller", "trigger_click_front");
-                } else {
-                    brassBell.triggerAnim("click_controller", "trigger_click_back");
+                    copperBell.triggerAnim("click_controller", "trigger_click_front");
+                } else {// If it's not front (including sides defaulting to back), play back
+                    copperBell.triggerAnim("click_controller", "trigger_click_back");
                 }
             }
         }
     }
 
     private void playBellSound(Level level, BlockPos pos, ModBellSizes size) {
-        playBellSound(level, pos, size, ModSoundEvents.BRASS_BELL_USE.value());
+        playBellSound(level, pos, size, ModSoundEvents.COPPER_BELL_USE.value());
     }
 }

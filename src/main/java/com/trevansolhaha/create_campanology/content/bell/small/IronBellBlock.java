@@ -1,4 +1,4 @@
-package com.trevansolhaha.create_campanology.content.bell;
+package com.trevansolhaha.create_campanology.content.bell.small;
 
 import com.trevansolhaha.create_campanology.content.bell.generic.ModBaseBellBlock;
 import com.trevansolhaha.create_campanology.content.bell.generic.ModBellSizes;
@@ -25,24 +25,24 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.BiConsumer;
 
-public class BronzeBellBlock extends ModBaseBellBlock {
-    public BronzeBellBlock(Properties properties) {
+public class IronBellBlock extends ModBaseBellBlock {
+    public IronBellBlock(Properties properties) {
         super(properties);
     }
 
     @Override
     public ItemStack getCloneItemStack(BlockState state, HitResult target, LevelReader level, BlockPos pos, Player player) {
-        return new ItemStack(ModItems.BRONZE_BELL_1.get());
+        return new ItemStack(ModItems.IRON_BELL_1.get());
     }
 
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return ModBlockEntities.BRONZE_BELL_1.get().create(blockPos, blockState);
+        return ModBlockEntities.IRON_BELL_1.get().create(blockPos, blockState);
     }
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return ModShapes.BRONZE_BELL_1.get(state.getValue(SIZE));
+        return ModShapes.IRON_BELL_1.get(state.getValue(SIZE));
     }
 
     @Override
@@ -52,11 +52,11 @@ public class BronzeBellBlock extends ModBaseBellBlock {
 //            return InteractionResult.PASS;
 //        }
 
-        if (level.getBlockEntity(pos) instanceof BronzeBellBlockEntity bronzeBell) {
+        if (level.getBlockEntity(pos) instanceof IronBellBlockEntity ironBell) {
             Direction clickedFace = hitResult.getDirection();
             Direction bellFacing = state.getValue(FACING);
 
-            if (bronzeBell.triggerBellAnimation(clickedFace, bellFacing)) {
+            if (ironBell.triggerBellAnimation(clickedFace, bellFacing)) {
                 playBellSound(level, pos, state.getValue(SIZE));
             }
 
@@ -74,18 +74,18 @@ public class BronzeBellBlock extends ModBaseBellBlock {
             Direction explosionSourceDirection = getExplosionSourceDirection(explosion, blockPos, bellFacing);
 
             BlockEntity blockEntity = level.getBlockEntity(blockPos);
-            if (blockEntity instanceof BronzeBellBlockEntity bronzeBell) {
+            if (blockEntity instanceof IronBellBlockEntity ironBell) {
                 playBellSound(level, blockPos, blockState.getValue(SIZE));
                 if (explosionSourceDirection == bellFacing) {
-                    bronzeBell.triggerAnim("click_controller", "trigger_click_front");
+                    ironBell.triggerAnim("click_controller", "trigger_click_front");
                 } else {// If it's not front (including sides defaulting to back), play back
-                    bronzeBell.triggerAnim("click_controller", "trigger_click_back");
+                    ironBell.triggerAnim("click_controller", "trigger_click_back");
                 }
             }
         }
     }
 
     private void playBellSound(Level level, BlockPos pos, ModBellSizes size) {
-        playBellSound(level, pos, size, ModSoundEvents.BRONZE_BELL_USE.value());
+        playBellSound(level, pos, size, ModSoundEvents.IRON_BELL_USE.value());
     }
 }

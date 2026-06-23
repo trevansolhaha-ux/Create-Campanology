@@ -1,8 +1,8 @@
 package com.trevansolhaha.create_campanology.init;
 
 import com.trevansolhaha.create_campanology.CreateCampanology;
-import com.trevansolhaha.create_campanology.content.bell.*;
 import com.trevansolhaha.create_campanology.content.bell.medium.BrassMediumBellBlockEntity;
+import com.trevansolhaha.create_campanology.content.bell.small.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;

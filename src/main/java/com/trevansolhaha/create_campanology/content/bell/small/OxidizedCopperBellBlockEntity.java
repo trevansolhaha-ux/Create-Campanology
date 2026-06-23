@@ -1,4 +1,4 @@
-package com.trevansolhaha.create_campanology.content.bell;
+package com.trevansolhaha.create_campanology.content.bell.small;
 
 import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
@@ -17,16 +17,16 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.List;
 
-public class GoldBellBlockEntity extends ModBaseBellBlockEntity implements IHaveGoggleInformation {
+public class OxidizedCopperBellBlockEntity extends ModBaseBellBlockEntity implements IHaveGoggleInformation {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
-    protected static final RawAnimation SWING_FRONT = RawAnimation.begin().thenPlay("gold_bell_1.swing_front");
-    protected static final RawAnimation SWING_BACK = RawAnimation.begin().thenPlay("gold_bell_1.swing_back");
+    protected static final RawAnimation SWING_FRONT = RawAnimation.begin().thenPlay("oxidized_copper_bell_1.swing_front");
+    protected static final RawAnimation SWING_BACK = RawAnimation.begin().thenPlay("oxidized_copper_bell_1.swing_back");
 
-    private AnimationController<GoldBellBlockEntity> clickController;
+    private AnimationController<OxidizedCopperBellBlockEntity> clickController;
 
-    public GoldBellBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.GOLD_BELL_1.get(), pos, state);
+    public OxidizedCopperBellBlockEntity(BlockPos pos, BlockState state) {
+        super(ModBlockEntities.OXIDIZED_COPPER_BELL_1.get(), pos, state);
     }
 
     @Override

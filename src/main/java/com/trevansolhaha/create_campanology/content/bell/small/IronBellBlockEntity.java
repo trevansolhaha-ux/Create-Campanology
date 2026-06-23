@@ -1,4 +1,4 @@
-package com.trevansolhaha.create_campanology.content.bell;
+package com.trevansolhaha.create_campanology.content.bell.small;
 
 import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
@@ -17,21 +17,20 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.List;
 
-public class CopperBellBlockEntity extends ModBaseBellBlockEntity implements IHaveGoggleInformation {
+public class IronBellBlockEntity extends ModBaseBellBlockEntity implements IHaveGoggleInformation {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
-    protected static final RawAnimation SWING_FRONT = RawAnimation.begin().thenPlay("copper_bell_1.swing_front");
-    protected static final RawAnimation SWING_BACK = RawAnimation.begin().thenPlay("copper_bell_1.swing_back");
+    protected static final RawAnimation SWING_FRONT = RawAnimation.begin().thenPlay("iron_bell_1.swing_front");
+    protected static final RawAnimation SWING_BACK = RawAnimation.begin().thenPlay("iron_bell_1.swing_back");
 
-    private AnimationController<CopperBellBlockEntity> clickController;
+    private AnimationController<IronBellBlockEntity> clickController;
 
-    public CopperBellBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.COPPER_BELL_1.get(), pos, state);
+    public IronBellBlockEntity(BlockPos pos, BlockState state) {
+        super(ModBlockEntities.IRON_BELL_1.get(), pos, state);
     }
 
     @Override
     public void addBehaviours(List<BlockEntityBehaviour> behaviours) {
-
     }
 
     @Override

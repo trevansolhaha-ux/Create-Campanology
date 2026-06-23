@@ -1,4 +1,4 @@
-package com.trevansolhaha.create_campanology.content.bell;
+package com.trevansolhaha.create_campanology.content.bell.small;
 
 import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
@@ -17,16 +17,16 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.List;
 
-public class ZincBellBlockEntity extends ModBaseBellBlockEntity implements IHaveGoggleInformation {
+public class BrassBellBlockEntity extends ModBaseBellBlockEntity implements IHaveGoggleInformation {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
-    protected static final RawAnimation SWING_FRONT = RawAnimation.begin().thenPlay("zinc_bell_1.swing_front");
-    protected static final RawAnimation SWING_BACK = RawAnimation.begin().thenPlay("zinc_bell_1.swing_back");
+    private final RawAnimation swingFront = RawAnimation.begin().thenPlay("brass_bell_1.swing_front");
+    private final RawAnimation swingBack = RawAnimation.begin().thenPlay("brass_bell_1.swing_back");
 
-    private AnimationController<ZincBellBlockEntity> clickController;
+    private AnimationController<BrassBellBlockEntity> clickController;
 
-    public ZincBellBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.ZINC_BELL_1.get(), pos, state);
+    public BrassBellBlockEntity(BlockPos pos, BlockState state) {
+        super(ModBlockEntities.BRASS_BELL_1.get(), pos, state);
     }
 
     @Override
@@ -37,8 +37,8 @@ public class ZincBellBlockEntity extends ModBaseBellBlockEntity implements IHave
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         this.clickController = new AnimationController<>(this, "click_controller", 0, state -> PlayState.STOP)
-                .triggerableAnim("trigger_click_front", SWING_FRONT)
-                .triggerableAnim("trigger_click_back", SWING_BACK);
+                .triggerableAnim("trigger_click_front", swingFront)
+                .triggerableAnim("trigger_click_back", swingBack);
 
         controllers.add(this.clickController);
     }
