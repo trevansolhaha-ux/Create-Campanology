@@ -93,6 +93,7 @@ public class CreateCampanology
                                 output.accept(ModItems.BRASS_BELL_2.get());
 
                                 // Large Bells
+                                output.accept(ModItems.BRASS_BELL_3.get());
 
                                 //clappers
                                 output.accept(ModItems.BRONZE_SMALL_CLAPPER.get());

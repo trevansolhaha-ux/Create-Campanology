@@ -1,8 +1,10 @@
 package com.trevansolhaha.create_campanology;
 
+import com.trevansolhaha.create_campanology.client.renderer.block.ModLargeBellBlockRenderer;
 import com.trevansolhaha.create_campanology.client.renderer.block.ModMediumBellBlockRenderer;
 import com.trevansolhaha.create_campanology.client.renderer.block.ModSmallBellBlockRenderer;
 import com.trevansolhaha.create_campanology.component.BellSizeComponent;
+import com.trevansolhaha.create_campanology.component.LargeBellSizeComponent;
 import com.trevansolhaha.create_campanology.component.MediumBellSizeComponent;
 import com.trevansolhaha.create_campanology.init.ModBlockEntities;
 import com.trevansolhaha.create_campanology.init.ModDataComponents;
@@ -45,6 +47,8 @@ public class CreateCampanologyClient {
         registerBellItemProperty(ModItems.ANDESITE_ALLOY_BELL_1.get());
 
         registerMediumBellItemProperty(ModItems.BRASS_BELL_2.get());
+
+        registerLargeBellItemProperty(ModItems.BRASS_BELL_3.get());
     }
 
     private static void registerBellItemProperty(Item item) {
@@ -55,6 +59,11 @@ public class CreateCampanologyClient {
     private static void registerMediumBellItemProperty(Item item) {
         ItemProperties.register(item, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "size"), (stack, world, entity, i) ->
                 stack.getOrDefault(ModDataComponents.MEDIUM_BELL_SIZE, MediumBellSizeComponent.getDefaultValue()).getSize().getId());
+    }
+
+    private static void registerLargeBellItemProperty(Item item) {
+        ItemProperties.register(item, ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "size"), (stack, world, entity, i) ->
+                stack.getOrDefault(ModDataComponents.LARGE_BELL_SIZE, LargeBellSizeComponent.getDefaultValue()).getSize().getId());
     }
 
     @SubscribeEvent
@@ -69,5 +78,7 @@ public class CreateCampanologyClient {
         event.registerBlockEntityRenderer(ModBlockEntities.ANDESITE_ALLOY_BELL_1.get(), context -> new ModSmallBellBlockRenderer(context, "andesite_alloy_bell_1"));
 
         event.registerBlockEntityRenderer(ModBlockEntities.BRASS_BELL_2.get(), context -> new ModMediumBellBlockRenderer(context, "brass_bell_2"));
+
+        event.registerBlockEntityRenderer(ModBlockEntities.BRASS_BELL_3.get(), context -> new ModLargeBellBlockRenderer(context, "brass_bell_3"));
     }
 }

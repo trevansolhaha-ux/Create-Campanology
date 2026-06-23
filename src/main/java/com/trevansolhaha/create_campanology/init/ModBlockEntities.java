@@ -1,6 +1,7 @@
 package com.trevansolhaha.create_campanology.init;
 
 import com.trevansolhaha.create_campanology.CreateCampanology;
+import com.trevansolhaha.create_campanology.content.bell.large.BrassLargeBellBlockEntity;
 import com.trevansolhaha.create_campanology.content.bell.medium.BrassMediumBellBlockEntity;
 import com.trevansolhaha.create_campanology.content.bell.small.*;
 import net.minecraft.core.registries.Registries;
@@ -32,6 +33,9 @@ public class ModBlockEntities {
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BrassMediumBellBlockEntity>> BRASS_BELL_2 = BLOCK_ENTITIES.register("brass_bell_2",
             () -> BlockEntityType.Builder.of(BrassMediumBellBlockEntity::new, ModBlocks.BRASS_BELL_2.get()).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BrassLargeBellBlockEntity>> BRASS_BELL_3 = BLOCK_ENTITIES.register("brass_bell_3",
+            () -> BlockEntityType.Builder.of(BrassLargeBellBlockEntity::new, ModBlocks.BRASS_BELL_3.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

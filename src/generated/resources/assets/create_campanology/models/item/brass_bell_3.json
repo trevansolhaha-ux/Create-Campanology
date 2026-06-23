@@ -1,0 +1,29 @@
+{
+  "parent": "create_campanology:block/brass_bell_3_1",
+  "overrides": [
+    {
+      "model": "create_campanology:block/brass_bell_3_2",
+      "predicate": {
+        "create_campanology:size": 1.0
+      }
+    },
+    {
+      "model": "create_campanology:block/brass_bell_3_3",
+      "predicate": {
+        "create_campanology:size": 2.0
+      }
+    },
+    {
+      "model": "create_campanology:block/brass_bell_3_4",
+      "predicate": {
+        "create_campanology:size": 3.0
+      }
+    },
+    {
+      "model": "create_campanology:block/brass_bell_3_5",
+      "predicate": {
+        "create_campanology:size": 4.0
+      }
+    }
+  ]
+}

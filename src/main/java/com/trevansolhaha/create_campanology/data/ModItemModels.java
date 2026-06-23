@@ -48,6 +48,8 @@ public class ModItemModels extends ItemModelProvider {
 
         mediumBellItem(ModItems.BRASS_BELL_2.get());
 
+        largeBellItem(ModItems.BRASS_BELL_3.get());
+
         basicItem(ModItems.BRASS_SMALL_CLAPPER.get());
         basicItem(ModItems.BRASS_MEDIUM_CLAPPER.get());
         basicItem(ModItems.BRASS_BIG_CLAPPER.get());
@@ -142,5 +144,74 @@ public class ModItemModels extends ItemModelProvider {
                 // Targets the corresponding large block model
                 .model(getExistingFile(modLoc("block/" + baseName + "_5")))
                 .end();
+    }
+
+    private void largeBellItem(Item item) {
+        ResourceLocation itemKey = BuiltInRegistries.ITEM.getKey(item);
+        String baseName = itemKey.getPath();
+
+        ResourceLocation propertyId = ResourceLocation.fromNamespaceAndPath(CreateCampanology.MOD_ID, "size");
+
+        // Generate the main base item model (saved as models/item/{baseName}.json)
+        getBuilder(baseName)
+                // Set the default small variant block model as the structural parent
+                .parent(getExistingFile(modLoc("block/" + baseName + "_1")))
+
+                // Override for 2
+                .override()
+                .predicate(propertyId, 1.0F)
+                // Targets the corresponding medium block model
+                .model(getExistingFile(modLoc("block/" + baseName + "_2")))
+                .end()
+
+                // Override for 3
+                .override()
+                .predicate(propertyId, 2.0F)
+                // Targets the corresponding large block model
+                .model(getExistingFile(modLoc("block/" + baseName + "_3")))
+                .end()
+
+                // Override for 4
+                .override()
+                .predicate(propertyId, 3.0F)
+                // Targets the corresponding large block model
+                .model(getExistingFile(modLoc("block/" + baseName + "_4")))
+                .end()
+
+                // Override for 5
+                .override()
+                .predicate(propertyId, 4.0F)
+                // Targets the corresponding large block model
+                .model(getExistingFile(modLoc("block/" + baseName + "_5")))
+                .end();
+
+                    // Keep in case large bell has more than 5 sizes in the future
+//                // Override for 6
+//                .override()
+//                .predicate(propertyId, 5.0F)
+//                // Targets the corresponding large block model
+//                .model(getExistingFile(modLoc("block/" + baseName + "_6")))
+//                .end()
+//
+//                // Override for 7
+//                .override()
+//                .predicate(propertyId, 6.0F)
+//                // Targets the corresponding large block model
+//                .model(getExistingFile(modLoc("block/" + baseName + "_7")))
+//                .end()
+//
+//                // Override for 8
+//                .override()
+//                .predicate(propertyId, 7.0F)
+//                // Targets the corresponding large block model
+//                .model(getExistingFile(modLoc("block/" + baseName + "_8")))
+//                .end()
+//
+//                // Override for 9
+//                .override()
+//                .predicate(propertyId, 8.0F)
+//                // Targets the corresponding large block model
+//                .model(getExistingFile(modLoc("block/" + baseName + "_9")))
+//                .end();
     }
 }

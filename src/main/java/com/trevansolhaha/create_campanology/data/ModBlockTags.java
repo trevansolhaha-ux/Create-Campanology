@@ -44,6 +44,8 @@ public class ModBlockTags extends BlockTagsProvider {
                 .add(ModBlocks.ZINC_BELL_1.get())
 
                 .add(ModBlocks.BRASS_BELL_2.get())
+
+                .add(ModBlocks.BRASS_BELL_3.get())
         ;
 
         tag(ModTags.Common.BlockTags.TIN_ORES.getTag())

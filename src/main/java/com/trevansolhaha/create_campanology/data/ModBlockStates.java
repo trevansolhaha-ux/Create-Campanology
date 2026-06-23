@@ -40,6 +40,8 @@ public class ModBlockStates extends BlockStateProvider {
         simpleParent(ModBlocks.ANDESITE_ALLOY_BELL_1.get());
 
         simpleParent(ModBlocks.BRASS_BELL_2.get());
+
+        simpleParent(ModBlocks.BRASS_BELL_3.get());
     }
 
     private void simpleParent(Block block) {
